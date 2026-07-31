@@ -1,0 +1,2825 @@
+<!DOCTYPE html>
+
+<html class="light" lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Chúc Mừng Sinh Nhật!</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-dim": "#fec9ff",
+                    "surface-container-high": "#ffdefd",
+                    "inverse-primary": "#ffb1c3",
+                    "on-secondary": "#ffffff",
+                    "surface-variant": "#ffd6fe",
+                    "surface-container-low": "#ffeffb",
+                    "surface-container-highest": "#ffd6fe",
+                    "on-primary": "#ffffff",
+                    "on-tertiary-container": "#f5feff",
+                    "surface-bright": "#fff7fa",
+                    "on-tertiary": "#ffffff",
+                    "surface-container-lowest": "#ffffff",
+                    "on-tertiary-fixed": "#002022",
+                    "on-surface": "#33053b",
+                    "inverse-on-surface": "#ffebfb",
+                    "error": "#ba1a1a",
+                    "on-tertiary-fixed-variant": "#004f54",
+                    "secondary-fixed-dim": "#d1bcff",
+                    "on-secondary-container": "#ddcdff",
+                    "on-error": "#ffffff",
+                    "surface": "#ffffff",
+                    "on-primary-fixed-variant": "#8f0041",
+                    "outline": "#906e75",
+                    "tertiary-fixed": "#7df4ff",
+                    "inverse-surface": "#4b1d52",
+                    "surface-container": "#ffe7fc",
+                    "outline-variant": "#e5bcc4",
+                    "tertiary": "#00666d",
+                    "primary-fixed-dim": "#ffb1c3",
+                    "primary": "#E91E63",
+                    "secondary": "#9C27B0",
+                    "on-secondary-fixed": "#23005b",
+                    "background": "#FFF6FA",
+                    "tertiary-fixed-dim": "#00dbe9",
+                    "surface-tint": "#bb0058",
+                    "primary-container": "#f8bbd0",
+                    "on-surface-variant": "#5c3f45",
+                    "tertiary-container": "#00818a",
+                    "error-container": "#ffdad6",
+                    "on-primary-container": "#fffbff",
+                    "secondary-container": "#7000ff",
+                    "on-secondary-fixed-variant": "#5700c9",
+                    "on-primary-fixed": "#3f0019",
+                    "on-error-container": "#93000a",
+                    "secondary-fixed": "#e9ddff",
+                    "primary-fixed": "#ffd9e0",
+                    "on-background": "#4A4A4A"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "gutter": "24px",
+                    "margin-desktop": "64px",
+                    "margin-mobile": "16px",
+                    "base": "8px",
+                    "container-max": "1280px"
+            },
+            "fontFamily": {
+                    "display-lg": ["Fredoka"],
+                    "headline-lg-mobile": ["Fredoka"],
+                    "body-md": ["Poppins"],
+                    "label-sm": ["Poppins"],
+                    "headline-lg": ["Fredoka"]
+            },
+            "fontSize": {
+                    "display-lg": ["72px", {"lineHeight": "76px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "headline-lg-mobile": ["32px", {"lineHeight": "38px", "fontWeight": "700"}],
+                    "body-md": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "label-sm": ["13px", {"lineHeight": "16px", "fontWeight": "700"}],
+                    "headline-lg": ["40px", {"lineHeight": "48px", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+        }
+        @keyframes pulse-glow {
+            0%, 100% { filter: drop-shadow(0 0 8px rgba(182, 0, 85, 0.3)); }
+            50% { filter: drop-shadow(0 0 15px rgba(228, 0, 108, 0.5)); }
+        }
+        @keyframes shake {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            25% { transform: translate(-2px, 2px) rotate(-1deg); }
+            50% { transform: translate(2px, -2px) rotate(1deg); }
+            75% { transform: translate(-2px, -2px) rotate(-1deg); }
+        }
+        .animate-float { animation: float 6s ease-in-out infinite; }
+        .animate-pulse-glow { animation: pulse-glow 3s ease-in-out infinite; }
+        .animate-shake { animation: shake 0.4s ease-in-out; }
+        
+        .glass-card {
+            background: rgba(255, 255, 255, 0.96);
+            backdrop-filter: blur(18px);
+            border: 1px solid rgba(233, 30, 99, 0.16);
+            box-shadow: 0 26px 70px rgba(233, 30, 99, 0.08);
+        }
+        .neon-text-glow {
+            text-shadow: 0 0 12px rgba(233, 30, 99, 0.18);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .profile-avatar {
+            box-shadow: 0 18px 45px rgba(233, 30, 99, 0.14);
+            border: 4px solid rgba(233, 30, 99, 0.18);
+        }
+        .fairy-container {
+            max-width: 180px;
+            gap: 0.25rem;
+        }
+        .fairy-bear {
+            font-size: 1rem;
+            line-height: 1.1;
+        }
+        .fairy-speech-bubble {
+            font-size: 0.85rem;
+            padding: 0.75rem 1rem;
+            max-width: 180px;
+        }
+        .fairy-speech-bubble::after {
+            border-color: white transparent transparent transparent;
+        }
+        .status-message {
+            font-family: 'Poppins', sans-serif;
+            color: #E91E63;
+        }
+        .count-item {
+            background: rgba(255, 255, 255, 0.92);
+            border: 1px solid rgba(233, 30, 99, 0.18);
+            border-radius: 1.5rem;
+            box-shadow: inset 0 0 16px rgba(233, 30, 99, 0.06);
+        }
+        .intro-card h1,
+        .intro-card p,
+        .count-label,
+        .intro-button,
+        .font-body-md,
+        .font-label-sm,
+        .font-headline-lg-mobile,
+        .font-headline-lg {
+            font-family: 'Poppins', sans-serif;
+        }
+        .font-display-lg,
+        .font-headline-lg-mobile,
+        .font-headline-lg {
+            font-family: 'Fredoka', sans-serif;
+        }
+        body {
+            min-height: max(884px, 100dvh);
+            font-family: 'Poppins', sans-serif;
+            background: #FFF6FA;
+            color: #4A4A4A;
+        }
+        .neon-text-glow {
+            text-shadow: 0 0 12px rgba(233, 30, 99, 0.18);
+        }
+        .animate-pulse-glow {
+            animation: none;
+        }
+        .letter-container {
+            border: 1px solid rgba(233, 30, 99, 0.18);
+            box-shadow: 0 24px 60px rgba(233, 30, 99, 0.08);
+            background: rgba(255, 255, 255, 0.94);
+        }
+        .cursor {
+            display: inline-block;
+            width: 3px;
+            height: 1.2em;
+            background-color: #b60055;
+            margin-left: 2px;
+            vertical-align: middle;
+            animation: blink 1s infinite;
+        }
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+
+        /* Cake Styles */
+        .cake-container {
+            position: relative;
+            width: 320px;
+            height: 320px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 0;
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            z-index: 10;
+            overflow: visible;
+            background: transparent; /* ensure no white box from container */
+            animation: cake-breathe 6s ease-in-out infinite;
+        }
+        .cake-container::before {
+            content: '';
+            position: absolute;
+            inset: -26px;
+            border-radius: 50%;
+            background: radial-gradient(circle at center, rgba(255, 183, 203, 0.35), transparent 60%);
+            filter: blur(22px);
+            pointer-events: none;
+            opacity: 0.9;
+            z-index: 2;
+        }
+        .cake-container::after {
+            content: '';
+            position: absolute;
+            inset: -10px;
+            border-radius: 50%;
+            box-shadow: 0 0 30px rgba(255, 120, 180, 0.2), 0 0 60px rgba(255, 120, 180, 0.35);
+            pointer-events: none;
+            opacity: 0.95;
+            z-index: 2;
+            animation: glow 4.5s ease-in-out infinite;
+        }
+        .cake-flame {
+            position: absolute;
+            width: 18px;
+            height: 40px;
+            pointer-events: none;
+            z-index: 60; /* render above cake and other decorations */
+            animation: flame 1.1s ease-in-out infinite;
+            /* center horizontally, move fully above the top edge of the cake image */
+            transform: translate(-50%, -120%);
+            will-change: transform;
+        }
+        /* specific flame positions for the two digit candles (tweak percentages if needed) */
+        .cake-flame.flame-1 { left: 39%; top: -2%; animation-delay: 0s; }
+        .cake-flame.flame-2 { left: 57%; top: -2%; animation-delay: 0.12s; }
+        .cake-flame::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            transform: translateX(-50%);
+            background: radial-gradient(circle at 50% 20%, rgba(255,255,255,1) 0%, rgba(255,235,130,0.95) 28%, rgba(255,135,170,0.55) 58%, transparent 100%);
+            border-radius: 50% 50% 40% 40%;
+        }
+        .cake-sparkle {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            border-radius: 9999px;
+            background: radial-gradient(circle, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.2) 58%, transparent 100%);
+            filter: blur(0.6px);
+            pointer-events: none;
+            z-index: 3;
+            opacity: 0;
+            animation: sparkle-pop 2.4s ease-in-out infinite;
+        }
+        .cake-sparkle.sparkle-1 { top: 18%; left: 50%; animation-delay: 0s; }
+        .cake-sparkle.sparkle-2 { top: 10%; left: 20%; animation-delay: 0.3s; }
+        .cake-sparkle.sparkle-3 { top: 26%; left: 80%; animation-delay: 0.6s; }
+        .cake-sparkle.sparkle-4 { top: 74%; left: 18%; animation-delay: 1s; }
+        .cake-sparkle.sparkle-5 { top: 72%; left: 78%; animation-delay: 1.4s; }
+        .cake-sparkle:nth-child(6) { top: 52%; left: 54%; animation-delay: 1.8s; }
+        @keyframes sparkle-pop {
+            0%, 100% { opacity: 0; transform: scale(0.5); }
+            40% { opacity: 1; transform: scale(1.2); }
+            70% { opacity: 0.7; transform: scale(1); }
+        }
+        @keyframes flame {
+            0% { transform: translateX(-50%) rotate(-3deg) scale(1); }
+            50% { transform: translateX(-50%) rotate(3deg) scale(1.08); }
+            100% { transform: translateX(-50%) rotate(-3deg) scale(1); }
+        }
+        @keyframes glow {
+            0% { box-shadow: 0 0 30px rgba(255,120,180,0.2); }
+            50% { box-shadow: 0 0 60px rgba(255,120,180,0.45); }
+            100% { box-shadow: 0 0 30px rgba(255,120,180,0.2); }
+        }
+        .cake-container:active {
+            transform: scale(0.95);
+        }
+        .cake-img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            user-select: none;
+            -webkit-user-drag: none;
+            filter: drop-shadow(0 16px 24px rgba(255, 126, 170, 0.25));
+            mix-blend-mode: normal; /* use normal blending for transparent PNGs */
+            background: transparent;
+            display: block;
+            animation: cake-glow 4.5s ease-in-out infinite;
+            position: relative;
+            z-index: 2;
+        }
+        .cake-cta {
+            margin-top: 1rem;
+            font-size: 1rem;
+            color: #9c27b0;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255, 255, 255, 0.88);
+            padding: 0.85rem 1rem;
+            border-radius: 999px;
+            box-shadow: 0 14px 30px rgba(233, 30, 99, 0.12);
+            border: 1px solid rgba(255, 105, 180, 0.24);
+            z-index: 10;
+        }
+        .close-gift-small {
+            width: 40px;
+            height: 40px;
+            padding: 0.55rem;
+        }
+        .close-gift-small span {
+            font-size: 28px;
+        }
+        #gift-modal {
+            position: fixed;
+        }
+        #memory-stage {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #gift-modal::before,
+        #gift-modal::after {
+            content: '';
+            position: absolute;
+            pointer-events: none;
+            z-index: 120;
+            border-radius: 999px;
+        }
+        #gift-modal::before {
+            width: 180px;
+            height: 180px;
+            top: 10%;
+            left: 8%;
+            background: radial-gradient(circle, rgba(255, 200, 240, 0.12), transparent 60%);
+        }
+        #gift-modal::after {
+            width: 220px;
+            height: 220px;
+            bottom: 10%;
+            right: 8%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.12), transparent 58%);
+        }
+        .gift-star {
+            position: absolute;
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.85);
+            opacity: 0.2;
+            animation: star-fall 7.5s ease-in-out infinite;
+            z-index: 115;
+        }
+        .gift-stars .gift-star:nth-child(1) { top: 16%; left: 18%; animation-delay: 0s; }
+        .gift-stars .gift-star:nth-child(2) { top: 28%; right: 20%; animation-delay: 1.1s; }
+        .gift-stars .gift-star:nth-child(3) { bottom: 22%; left: 14%; animation-delay: 2.2s; }
+        .gift-stars .gift-star:nth-child(4) { bottom: 18%; right: 24%; animation-delay: 3.3s; }
+        .gift-stars .gift-star:nth-child(5) { top: 12%; right: 12%; animation-delay: 4.4s; }
+        @keyframes star-fall {
+            0% { transform: translateY(0) scale(1); opacity: 0.22; }
+            50% { opacity: 0.35; }
+            100% { transform: translateY(28px) scale(1.05); opacity: 0.05; }
+        }
+        @keyframes cake-breathe {
+            0%, 100% { transform: translateY(0) scale(1); }
+            40% { transform: translateY(-6px) scale(1.01); }
+            60% { transform: translateY(2px) scale(0.995); }
+        }
+        @keyframes cake-glow {
+            0%, 100% { filter: drop-shadow(0 10px 20px rgba(182, 0, 85, 0.2)); }
+            50% { filter: drop-shadow(0 18px 30px rgba(182, 0, 85, 0.35)); }
+        }
+        .cake-split-wrapper {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            pointer-events: none;
+            z-index: 20;
+        }
+        .cake-split-layer {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        .cake-split-layer.left {
+            clip-path: inset(0 50% 0 0);
+        }
+        .cake-split-layer.right {
+            clip-path: inset(0 0 0 50%);
+        }
+        .cake-split-layer img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+        }
+        @keyframes cake-slice-left {
+            from { transform: translateX(0) rotate(0deg); opacity: 1; }
+            to { transform: translate(-140%, -20%) rotate(-18deg); opacity: 0; }
+        }
+        @keyframes cake-slice-right {
+            from { transform: translateX(0) rotate(0deg); opacity: 1; }
+            to { transform: translate(140%, -20%) rotate(18deg); opacity: 0; }
+        }
+        .cake-split-left {
+            animation: cake-slice-left 900ms ease forwards;
+        }
+        .cake-split-right {
+            animation: cake-slice-right 900ms ease forwards;
+        }
+        .countdown-overlay {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #b60055;
+            font-size: clamp(5rem, 10vw, 8rem);
+            font-weight: 800;
+            text-shadow: 0 0 40px rgba(182, 0, 85, 0.2);
+            background: transparent;
+            border-radius: 2rem;
+            z-index: 30;
+            opacity: 0;
+            transform: scale(0.96);
+        }
+        @keyframes countdown-pop {
+            0% { transform: scale(0.9); opacity: 0; }
+            25% { transform: scale(1.15); opacity: 1; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        .countdown-pop {
+            animation: countdown-pop 500ms ease both;
+        }
+
+        .photo-frame {
+            padding: 10px;
+            background: white;
+            box-shadow: 0 8px 30px rgba(182, 0, 85, 0.25);
+            border: 3px solid #b60055;
+            border-radius: 16px;
+            width: 140px;
+            height: 160px;
+            transform: rotate(var(--rot));
+            transition: transform 0.5s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            will-change: transform;
+        }
+
+        .photo-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 12px;
+            display: block;
+        }
+
+        .photo-frame:hover {
+            transform: scale(1.06) rotate(var(--rot));
+            z-index: 160;
+        }
+
+        .neon-crumb {
+            position: fixed;
+            pointer-events: none;
+            z-index: 200;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            box-shadow: 0 0 8px currentColor;
+        }
+
+        .status-message {
+            font-family: 'Space Mono', monospace;
+            color: #b60055;
+            text-shadow: 0 0 8px rgba(182, 0, 85, 0.3);
+            font-size: 1.1rem;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+        .status-message.visible {
+            opacity: 1;
+        }
+
+        /* Fairy Guide Styles */
+        .fairy-container {
+            position: absolute;
+            pointer-events: none;
+            z-index: 200;
+            transition: top 0.2s ease, left 0.2s ease;
+            display: flex;
+            flex-direction: column;
+            gap: 0.2rem;
+            min-width: 100px;
+            max-width: 220px;
+            padding: 0.15rem;
+            transform: none;
+        }
+
+        .fairy-top-left {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .fairy-bottom-right {
+            flex-direction: column-reverse;
+            align-items: flex-end;
+        }
+
+        .fairy-avatar {
+            flex-direction: column-reverse;
+            align-items: center;
+        }
+
+        .fairy-avatar .fairy-speech-bubble::after {
+            top: 40%;
+            right: -8px;
+            border-width: 8px 0 8px 8px;
+            border-color: transparent transparent transparent white;
+        }
+
+        .fairy-bear {
+            font-size: 1.7rem;
+            line-height: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #b60055;
+            text-shadow: 0 0 12px rgba(182, 0, 85, 0.35);
+            animation: fairy-bounce 2.5s ease-in-out infinite;
+        }
+
+        .fairy-bear.small {
+            font-size: 1.5rem;
+        }
+
+        .fairy-speech-bubble {
+            background: white;
+            color: #b60055;
+            padding: 8px 12px;
+            border-radius: 20px;
+            font-family: 'Hanken Grotesk', sans-serif;
+            font-weight: 700;
+            font-size: 13px;
+            box-shadow: 0 4px 15px rgba(182, 0, 85, 0.3);
+            border: 2px solid #ffb1c3;
+            margin-top: 0;
+            white-space: normal;
+            text-align: center;
+            max-width: 220px;
+            word-break: break-word;
+            animation: bubble-float 2.5s ease-in-out infinite;
+            position: relative;
+            z-index: 210;
+        }
+
+        .fairy-speech-bubble::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-style: solid;
+        }
+
+        .fairy-top-left .fairy-speech-bubble::after {
+            bottom: -8px;
+            left: 20px;
+            border-width: 8px 8px 0 8px;
+            border-color: white transparent transparent transparent;
+        }
+
+        .fairy-bottom-right .fairy-speech-bubble::after {
+            top: -8px;
+            right: 20px;
+            border-width: 0 8px 8px 8px;
+            border-color: transparent transparent white transparent;
+        }
+
+        @keyframes fairy-bounce {
+            0%, 100% { transform: translateY(0) scale(1) rotate(-2deg); }
+            50% { transform: translateY(-12px) scale(1.05) rotate(2deg); }
+        }
+
+        @keyframes bubble-float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+
+        .fairy-hide {
+            opacity: 0;
+            transform: scale(0) translate(-50%, -100%);
+            pointer-events: none;
+        }
+
+        @media (max-width: 640px) {
+            .fairy-container {
+                width: 90px;
+            }
+            .fairy-speech-bubble {
+                font-size: 12px;
+                padding: 4px 12px;
+            }
+        }
+    </style>
+    <style>
+        /* Modal animations */
+        @keyframes backdrop-fade-in { from { opacity: 0 } to { opacity: 1 } }
+        @keyframes backdrop-fade-out { from { opacity: 1 } to { opacity: 0 } }
+        @keyframes modal-pop-in { 0% { transform: translateY(12px) scale(.98); opacity: 0 } 60% { transform: translateY(-6px) scale(1.02); opacity: 1 } 100% { transform: translateY(0) scale(1); opacity: 1 } }
+        @keyframes modal-pop-out { from { transform: translateY(0) scale(1); opacity: 1 } to { transform: translateY(8px) scale(.98); opacity: 0 } }
+
+        .modal-backdrop-anim-in { animation: backdrop-fade-in 280ms ease both; }
+        .modal-backdrop-anim-out { animation: backdrop-fade-out 220ms ease both; }
+
+        .modal-pop-in { animation: modal-pop-in 360ms cubic-bezier(.2,.9,.2,1) both; }
+        .modal-pop-out { animation: modal-pop-out 220ms ease both; }
+
+        /* ensure modal content has transform origin for smooth pop */
+        .letter-container, .memory-modal-content {
+            transform-origin: center center;
+        }
+    </style>
+<style>
+        .memory-balloon {
+            position: absolute;
+            z-index: 150;
+            pointer-events: auto;
+            opacity: 0;
+            transform: translate(-50%, 48vh) scale(0.5);
+            transition: top 1.55s cubic-bezier(.18,.8,.28,1), opacity 0.5s ease, transform 1.55s cubic-bezier(.18,.8,.28,1);
+        }
+        .memory-balloon.float-up {
+            opacity: 1;
+            transform: translate(-50%, 16vh) scale(1);
+        }
+        .memory-balloon.burst .bubble-core {
+            animation: bubble-pop 760ms cubic-bezier(.2,.8,.3,1) forwards;
+        }
+        .memory-balloon.revealed {
+            opacity: 1;
+            transform: translate(-50%, 0) scale(1);
+        }
+        .memory-balloon .bubble-core {
+            width: clamp(90px, 14vw, 128px);
+            height: clamp(90px, 14vw, 128px);
+            border-radius: 9999px;
+            background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.98), rgba(255,255,255,0.72) 30%, rgba(219,39,119,0.32) 78%);
+            border: 3px solid rgba(219,39,119,0.55);
+            box-shadow: 0 16px 30px rgba(219,39,119,0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 0.45s ease, transform 0.6s ease;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+        }
+        .memory-balloon.revealed .bubble-core {
+            opacity: 0;
+            transform: scale(1.55);
+        }
+        .memory-balloon .photo-frame {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%) scale(0.35);
+            padding: 8px;
+            background: white;
+            box-shadow: 0 10px 30px rgba(182, 0, 85, 0.35);
+            border: 2px solid #b60055;
+            border-radius: 12px;
+            width: clamp(82px, 12vw, 120px);
+            height: clamp(102px, 15vw, 142px);
+            opacity: 0;
+            transition: opacity 0.65s ease 0.18s, transform 0.75s cubic-bezier(.2,.85,.28,1) 0.18s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            pointer-events: auto;
+            z-index: 2;
+            will-change: transform, opacity;
+            animation: memory-photo-float 4.8s ease-in-out infinite;
+            animation-delay: var(--photo-delay, 0s);
+        }
+        .memory-balloon.revealed .photo-frame {
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1);
+            animation: memory-photo-float 4.8s ease-in-out infinite;
+        }
+        .memory-balloon .photo-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+        .memory-balloon .photo-frame:hover {
+            transform: translate(-50%, -50%) scale(1.05) rotate(var(--photo-rotate, 0deg)) !important;
+            z-index: 160;
+        }
+        @keyframes memory-photo-float {
+            0%, 100% {
+                transform: translate(-50%, -50%) translate3d(0, 0, 0) scale(1) rotate(var(--photo-rotate, 0deg));
+            }
+            25% {
+                transform: translate(-50%, -50%) translate3d(calc(var(--drift-x, 0px) * 0.4), calc(var(--drift-y, 0px) * 0.35), 0) scale(1.03) rotate(calc(var(--photo-rotate, 0deg) + 2deg));
+            }
+            50% {
+                transform: translate(-50%, -50%) translate3d(var(--drift-x, 0px), var(--drift-y, 0px), 0) scale(1.06) rotate(calc(var(--photo-rotate, 0deg) - 2deg));
+            }
+            75% {
+                transform: translate(-50%, -50%) translate3d(calc(var(--drift-x, 0px) * -0.35), calc(var(--drift-y, 0px) * -0.2), 0) scale(1.02) rotate(calc(var(--photo-rotate, 0deg) + 1deg));
+            }
+        }
+        @keyframes bubble-pop {
+            0% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+            65% { opacity: 1; transform: translate(-50%, -58%) scale(1.18); }
+            100% { opacity: 0; transform: translate(-50%, -70%) scale(1.75); }
+        }
+        @media (max-width: 640px) {
+            .memory-balloon .bubble-core,
+            .memory-balloon .photo-frame {
+                width: 78px;
+                height: 97px;
+                padding: 5px;
+            }
+        }
+    </style>
+    <style>
+        /* Fullscreen fireworks canvas */
+        .fireworks-canvas {
+            position: fixed;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 60; /* above header (z-50) but below modals (z-100+) */
+            mix-blend-mode: screen;
+        }
+        .intro-screen {
+            position: fixed;
+            inset: 0;
+            z-index: 320;
+            display: flex;
+            align-items: stretch;
+            justify-content: stretch;
+            padding: 0;
+            background: radial-gradient(circle at top, rgba(255, 255, 255, 0.18), rgba(182, 0, 85, 0.95));
+            color: #fff;
+            text-align: center;
+            overflow: hidden;
+            transition: opacity 0.5s ease;
+        }
+        .intro-screen.fade-away {
+            opacity: 0;
+        }
+        .intro-screen::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at center, rgba(255, 255, 255, 0.08), transparent 45%);
+            pointer-events: none;
+        }
+        .intro-card {
+            position: relative;
+            inset: 0;
+            width: 100vw;
+            height: 100vh;
+            max-width: none;
+            max-height: none;
+            margin: 0;
+            padding: 2.5rem 1.75rem;
+            border-radius: 0;
+            background: rgba(255, 255, 255, 0.14);
+            border: none;
+            box-shadow: none;
+            backdrop-filter: blur(18px);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .intro-card h1 {
+            font-size: clamp(2rem, 5vw, 4rem);
+            line-height: 1.05;
+            margin-bottom: 0.75rem;
+            letter-spacing: -0.04em;
+        }
+        .intro-card p {
+            font-size: 1rem;
+            opacity: 0.9;
+            margin-bottom: 1.5rem;
+        }
+        .intro-countdown-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(64px, 1fr));
+            gap: 0.9rem;
+            width: 100%;
+            max-width: 520px;
+            margin: 0 auto 1.5rem;
+        }
+        .count-item {
+            min-height: 110px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+            border-radius: 1.5rem;
+            background: rgba(255, 255, 255, 0.18);
+            border: 1px solid rgba(255, 255, 255, 0.28);
+            box-shadow: inset 0 0 30px rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(12px);
+        }
+        .count-item span:first-child {
+            display: block;
+            font-size: clamp(2rem, 6vw, 3.6rem);
+            font-weight: 900;
+            color: #fff;
+            line-height: 1;
+            letter-spacing: -0.08em;
+        }
+        .count-label {
+            margin-top: 0.35rem;
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.85);
+            text-transform: uppercase;
+            letter-spacing: 0.14em;
+        }
+        .intro-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            min-width: 220px;
+            padding: 1rem 1.5rem;
+            border-radius: 999px;
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            background: rgba(255, 255, 255, 0.16);
+            color: #fff;
+            font-weight: 700;
+            font-size: 1rem;
+            box-shadow: 0 18px 40px rgba(182, 0, 85, 0.28);
+            backdrop-filter: blur(10px);
+            cursor: pointer;
+            transition: transform 220ms ease, background 220ms ease, box-shadow 220ms ease;
+        }
+        .intro-button:hover {
+            transform: translateY(-2px);
+            background: rgba(255, 255, 255, 0.22);
+        }
+        .intro-button.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+        .countdown-word-overlay {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            pointer-events: none;
+            z-index: 40;
+        }
+        .countdown-word {
+            font-family: 'Fredoka', sans-serif;
+            font-size: clamp(4.5rem, 10vw, 9rem);
+            font-weight: 800;
+            color: #ffffff;
+            letter-spacing: 0.12em;
+            text-shadow: 0 0 40px rgba(255, 255, 255, 0.24), 0 0 120px rgba(233, 30, 99, 0.28);
+            opacity: 0;
+            transform: scale(0.6);
+            transition: opacity 220ms ease, transform 220ms ease;
+            position: absolute;
+        }
+        .intro-firework {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(255,200,240,0.5) 50%, transparent 100%);
+            pointer-events: none;
+            opacity: 0;
+            filter: blur(0.6px);
+            animation: intro-firework-pop 900ms ease-out forwards;
+        }
+        @keyframes intro-firework-pop {
+            0% { opacity: 0; transform: translate(0, 0) scale(0.5); }
+            20% { opacity: 1; }
+            60% { opacity: 1; transform: translate(var(--dx), var(--dy)) scale(1.2); }
+            100% { opacity: 0; transform: translate(calc(var(--dx) * 1.2), calc(var(--dy) * 1.2)) scale(0.4); }
+        }
+        .countdown-word.visible {
+            animation: word-zoom 1.2s ease both;
+        }
+        @keyframes word-zoom {
+            0% { opacity: 0; transform: scale(0.6); }
+            20% { opacity: 1; transform: scale(1.18); }
+            55% { opacity: 1; transform: scale(1); }
+            100% { opacity: 0; transform: scale(1.4); }
+        }
+    </style>
+    <style>
+        /* Candle overlay styles */
+        .candle-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.95);
+            z-index: 220; /* above modals while active */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffd9e6;
+            font-family: 'Hanken Grotesk', sans-serif;
+            -webkit-touch-callout: none;
+            touch-action: none;
+            transition: opacity 360ms ease;
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+        .candle-overlay .candle-prompt {
+            background: rgba(255,255,255,0.04);
+            padding: 12px 18px;
+            border-radius: 999px;
+            border: 1px solid rgba(255, 200, 220, 0.08);
+            font-weight: 700;
+            backdrop-filter: blur(4px);
+        }
+        .candle-overlay.active { opacity: 1; visibility: visible; pointer-events: auto; }
+        .candle-feedback {
+            position: absolute;
+            width: 88px;
+            height: 88px;
+            border-radius: 999px;
+            border: 2px solid rgba(255,255,255,0.18);
+            box-shadow: 0 8px 30px rgba(182,0,85,0.18), inset 0 0 18px rgba(255,200,220,0.06);
+            transform: scale(0.2);
+            transition: transform 120ms linear, opacity 200ms ease;
+            pointer-events: none;
+        }
+        .candle-overlay.revealed { opacity: 0; pointer-events: none; visibility: hidden; }
+
+        /* Keep blow overlay transparent so it doesn't darken the screen */
+        #blow-overlay { background: transparent; }
+        /* Make the blow prompt more visible and nudge it downward so it doesn't cover other UI */
+        #blow-overlay .candle-prompt {
+            background: rgba(255,255,255,0.95);
+            color: #b60055;
+            padding: 8px 14px;
+            font-size: 0.98rem;
+            border: 1px solid rgba(182,0,85,0.12);
+            border-radius: 999px;
+            box-shadow: none;
+            backdrop-filter: blur(4px);
+            line-height: 1;
+            min-width: 160px;
+            text-align: center;
+            margin-top: 80px; /* push the prompt downward */
+        }
+
+        /* Slightly smaller offset on narrow screens */
+        @media (max-width: 640px) {
+            #blow-overlay .candle-prompt { margin-top: 100px; }
+        }
+
+        /* Candle blow progress UI (hidden: remove visual percent bar) */
+        #blow-progress-ui { display: none !important; position: absolute; left: 50%; transform: translate(-50%,-100%); z-index: 230; color: #ffd9e6; text-align: center; pointer-events: none; }
+        #blow-progress-ui .progress-bar { width: 180px; height: 8px; background: rgba(255,255,255,0.9); border-radius: 999px; overflow: hidden; margin: 6px auto 0; box-shadow: inset 0 1px 0 rgba(255,255,255,0.6); }
+        #blow-progress-ui .progress-fill { height: 100%; width: 0%; background: linear-gradient(90deg,#ff8fab,#ffd9e6); transition: width 120ms linear; box-shadow: none; }
+
+        /* Smoke and blow visuals */
+        .candle-smoke { position: absolute; width: 42px; height: 42px; border-radius: 50%; background: radial-gradient(circle, rgba(220,220,220,0.9), rgba(180,180,180,0.35)); opacity: 0; transform: translate(-50%, -50%) scale(0.3); animation: smoke-rise 1500ms ease forwards; pointer-events: none; z-index: 58; mix-blend-mode: screen; }
+        @keyframes smoke-rise { 0%{opacity:0; transform: translate(-50%,-50%) scale(0.4);} 25%{opacity:0.9; transform: translate(-45%,-80%) scale(1);} 100%{opacity:0; transform: translate(-28%,-160%) scale(1.8);} }
+
+        .cake-flame.blown { animation: none !important; transform: translate(-50%,-200%) scale(0.6) !important; opacity: 0 !important; transition: transform 600ms ease, opacity 600ms ease; }
+
+        /* Confetti */
+        .confetti-container { position: fixed; inset: 0; pointer-events: none; overflow: visible; z-index: 240; }
+        .confetti-piece { position: absolute; width: 10px; height: 16px; border-radius: 2px; opacity: 0.95; animation: confetti-fall 2200ms cubic-bezier(.2,.7,.3,1) forwards; }
+        @keyframes confetti-fall { 0%{transform: translateY(-10vh) rotate(0);} 100%{transform: translateY(110vh) rotate(520deg);} }
+
+        .wish-toast { position: fixed; bottom: 20%; left: 50%; transform: translate(-50%, 24px); background: linear-gradient(90deg,#fff,#fff3fb); color: #b60055; padding: 12px 18px; border-radius: 12px; box-shadow: 0 8px 30px rgba(182,0,85,0.12); opacity: 0; z-index: 260; transition: all 360ms ease; font-weight:700; }
+        .wish-toast.visible { opacity: 1; transform: translate(-50%, 0); }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen overflow-x-hidden selection:bg-primary-container selection:text-on-primary-container">
+    <canvas id="fireworks-canvas" class="fireworks-canvas" aria-hidden="true"></canvas>
+    <div id="intro-screen" class="intro-screen" aria-label="Màn hình mở đầu">
+        <div class="intro-card">
+            <h1>Her Special Day is Coming</h1>
+            <p>Đợi thêm một chút để khoảnh khắc này mở ra. Sau khi đồng hồ chạy hết, nhấn nút để vào màn chính.</p>
+            <div class="intro-countdown-grid">
+                <div class="count-item">
+                    <span id="count-days">00</span>
+                    <span class="count-label">Ngày</span>
+                </div>
+                <div class="count-item">
+                    <span id="count-hours">00</span>
+                    <span class="count-label">Giờ</span>
+                </div>
+                <div class="count-item">
+                    <span id="count-minutes">00</span>
+                    <span class="count-label">Phút</span>
+                </div>
+                <div class="count-item">
+                    <span id="count-seconds">2</span>
+                    <span class="count-label">Giây</span>
+                </div>
+            </div>
+            <div class="countdown-word-overlay" id="countdown-word-overlay"></div>
+        </div>
+    </div>
+    <!-- Candle lighting overlay: tap-and-hold to reveal -->
+    <div id="candle-overlay" class="candle-overlay" aria-hidden="true">
+        <div class="candle-prompt">Chạm và giữ để thắp nến</div>
+        <div class="candle-feedback" id="candle-feedback" aria-hidden="true"></div>
+    </div>
+    <!-- Blow overlay (appears after candles are lit) -->
+    <div id="blow-overlay" class="candle-overlay" aria-hidden="true">
+        <div class="candle-prompt">Chạm và giữ để thổi nến</div>
+        <div class="candle-feedback" id="blow-feedback" aria-hidden="true"></div>
+    </div>
+<!-- Ambient Animated Background -->
+<div class="fixed inset-0 z-0 pointer-events-none">
+<div class="absolute top-[-10%] left-[-10%] w-[60%] h-[60%] bg-primary/10 rounded-full blur-[120px]"></div>
+<div class="absolute bottom-[-10%] right-[-10%] w-[60%] h-[60%] bg-secondary/10 rounded-full blur-[120px]"></div>
+<div class="absolute top-[18%] left-[12%] animate-float opacity-30 text-primary"><span class="material-symbols-outlined text-[42px]" style='font-variation-settings: "FILL" 1;'>star</span></div>
+<div class="absolute bottom-[18%] right-[12%] animate-float opacity-20 text-secondary" style="animation-delay: 1s;"><span class="material-symbols-outlined text-[46px]" style='font-variation-settings: "FILL" 1;'>auto_awesome</span></div>
+</div>
+<!-- Top Navigation Bar -->
+<header class="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-xl border-b border-primary/10 shadow-sm flex items-center justify-between px-margin-mobile md:px-margin-desktop h-16">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[26px]">celebration</span>
+<h1 class="font-headline-lg-mobile text-[24px] text-primary tracking-tight">Celebration</h1>
+</div>
+<button class="hover:opacity-80 transition-opacity active:scale-95 duration-200">
+<span class="material-symbols-outlined text-primary" data-icon="more_vert">more_vert</span>
+</button>
+</header>
+<!-- Main Canvas -->
+<main class="relative z-10 pt-24 pb-16 px-margin-mobile flex flex-col items-center justify-center min-h-screen text-center">
+<div class="mb-12 max-w-xl mx-auto px-4">
+<h2 class="font-display-lg text-[48px] md:text-[56px] leading-tight text-primary mb-6">
+            Happy Birthday
+        </h2>
+<p class="font-body-md text-on-background/80 text-base md:text-lg leading-relaxed max-w-2xl mx-auto">
+            Thắp sáng khoảnh khắc của bạn với một thiết kế dịu dàng, ngọt ngào và hài hòa.
+</p>
+</div>
+<div class="w-full max-w-md mx-auto relative mb-12" id="avatar-card-wrapper">
+<div class="absolute inset-0 bg-primary/10 blur-3xl rounded-full scale-90"></div>
+<div class="glass-card rounded-[2rem] p-8 relative overflow-hidden">
+<div class="relative w-44 h-44 mx-auto mb-4">
+<div class="absolute inset-0 rounded-full bg-primary/10"></div>
+<div class="absolute inset-1 rounded-full bg-white flex items-center justify-center overflow-hidden profile-avatar">
+<img id="profile-avatar" alt="Recipient Portrait" class="w-full h-full object-cover cursor-pointer rounded-full" src="image/image1.png"/>
+</div>
+</div>
+<div class="fairy-container" id="fairy-guide">
+    <div class="fairy-speech-bubble shadow-lg">
+        Bấm đây trước nè !
+    </div>
+</div>
+<h3 class="font-headline-lg text-[32px] text-on-background mb-2">Võ Lê Xuân Nữ</h3>
+<p class="font-body-md text-on-background/70 font-semibold">11 Tháng 08, 2003</p>
+<div class="mt-5 flex justify-center gap-3">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="w-2 h-2 rounded-full bg-primary/50"></span>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-4 w-full max-w-sm justify-center relative" id="guide-target-area">
+<button class="w-full border-2 border-secondary text-secondary font-semibold text-[21px] py-4 px-8 rounded-2xl bg-white/95 hover:bg-secondary/5 transition-all duration-300 active:scale-95 flex items-center justify-center gap-3" id="cut-cake-btn">
+<span class="material-symbols-outlined text-[24px]">redeem</span>
+            Cắt bánh kem nè !
+        </button>
+<button class="w-full bg-primary text-white font-semibold text-[21px] py-4 px-8 rounded-2xl shadow-xl shadow-primary/20 hover:shadow-primary/30 transition-all duration-300 active:scale-95 flex items-center justify-center gap-3" id="open-game-btn">
+<span class="material-symbols-outlined text-[24px]">drafts</span>
+            Chơi trò chơi nè !
+        </button>
+<button class="w-full border-2 border-secondary text-secondary font-semibold text-[21px] py-4 px-8 rounded-2xl bg-white/95 hover:bg-secondary/5 transition-all duration-300 active:scale-95 flex items-center justify-center gap-3" id="open-gift-btn">
+<span class="material-symbols-outlined text-[24px]">redeem</span>
+            Mở quà nè !
+        </button>
+<button class="w-full bg-primary text-white font-semibold text-[21px] py-4 px-8 rounded-2xl shadow-xl shadow-primary/20 hover:shadow-primary/30 transition-all duration-300 active:scale-95 flex items-center justify-center gap-3" id="open-letter-btn">
+<span class="material-symbols-outlined text-[24px]">drafts</span>
+            Đọc thư nè !
+        </button>
+</div>
+</main>
+
+<!-- Full-screen Letter Modal -->
+<div class="fixed inset-0 z-[100] hidden items-center justify-center p-6 bg-background/80 backdrop-blur-sm" id="letter-modal">
+<div class="letter-container w-full max-w-lg rounded-2xl p-8 relative flex flex-col items-center overflow-hidden">
+<button class="absolute top-4 right-4 text-primary hover:scale-110 transition-transform" id="close-letter-btn">
+<span class="material-symbols-outlined text-[32px]">close</span>
+</button>
+<div class="w-full min-h-[160px] mb-8 flex items-center justify-center relative">
+<p class="font-body-md text-on-surface text-lg text-center leading-relaxed" id="typewriter-text"></p>
+<div class="absolute inset-0 flex items-center justify-center pointer-events-none" id="status-container"></div>
+</div>
+<button class="bg-primary text-white font-headline-lg-mobile text-[18px] py-3 px-10 rounded-full shadow-lg shadow-primary/20 hover:shadow-xl active:scale-95 transition-all opacity-0 pointer-events-none" id="close-letter-bottom-btn">
+            Đóng
+        </button>
+</div>
+</div>
+<!-- Gift Overlay Modal -->
+<div class="fixed inset-0 z-[110] hidden flex flex-col items-center justify-center bg-background/95 backdrop-blur-lg overflow-hidden" id="gift-modal">
+<button class="absolute top-8 right-8 text-on-surface bg-surface-container-high rounded-full close-gift-small hover:scale-110 transition-all z-[160]" id="close-gift-modal">
+<span class="material-symbols-outlined">close</span>
+</button>
+<div class="text-center mb-4 px-6 z-10" aria-hidden="true"></div>
+<div class="relative w-full max-w-[680px] h-[420px] sm:h-[500px] md:h-[560px] overflow-hidden" id="memory-stage">
+<div class="cake-container" id="birthday-cake-container">
+<div class="cake-sparkle"></div>
+<div class="cake-sparkle"></div>
+<div class="cake-sparkle"></div>
+<div class="cake-sparkle"></div>
+<div class="cake-sparkle"></div>
+<div class="cake-sparkle"></div>
+<!-- Two separate flames positioned above the '2' and '3' digits -->
+<div class="cake-flame flame-1" aria-hidden="true"></div>
+<div class="cake-flame flame-2" aria-hidden="true"></div>
+<img alt="Bánh sinh nhật neon" class="cake-img" id="cake-main-img" src="image/cake.png"/>
+</div>
+</div>
+<div id="cake-cta" class="cake-cta">👇 Chạm vào bánh để cắt nhé</div>
+<div class="gift-stars" aria-hidden="true">
+    <span class="gift-star">✨</span>
+    <span class="gift-star">⭐</span>
+    <span class="gift-star">💖</span>
+    <span class="gift-star">✨</span>
+    <span class="gift-star">⭐</span>
+</div>
+</div>
+<!-- Memory detail modal (opened when clicking a photo) -->
+<div id="memory-modal" class="hidden fixed inset-0 z-[170] items-center justify-center bg-black/60">
+    <div class="memory-modal-content bg-white rounded-2xl p-4 max-w-[92%] max-h-[90%] flex flex-col items-center">
+        <button id="memory-modal-close" class="ml-auto mb-2 text-on-surface text-[20px] bg-surface-container-high rounded-full p-2">✕</button>
+        <div class="w-full flex items-center justify-center">
+            <img id="memory-modal-img" src="" alt="memory detail" style="max-width:100%; max-height:78vh; border-radius:12px;" />
+        </div>
+        <p id="memory-modal-caption" class="mt-3 text-center text-primary"></p>
+    </div>
+</div>
+<!-- Game Modal: 3x3 puzzle -->
+<div id="game-modal" class="hidden fixed inset-0 z-[340] items-center justify-center bg-black/60">
+    <div class="w-full max-w-md bg-white rounded-2xl p-4 relative">
+        <button id="close-game-btn" class="absolute top-3 right-3 text-primary bg-surface-container-high rounded-full p-2">✕</button>
+        <h3 class="text-primary font-headline-lg-mobile text-[20px] text-center">Xếp Hình (3×3)</h3>
+        <div class="flex gap-2 my-3 items-center justify-center">
+            <!-- start button removed: puzzle auto-starts when modal opens -->
+        </div>
+        <div id="puzzle-board" class="grid grid-cols-3 gap-1 w-full" style="height:360px;">
+            <!-- tiles injected here -->
+        </div>
+        <div id="puzzle-message" class="text-center text-primary mt-3"></div>
+    </div>
+</div>
+<!-- Word Game Modal: arrange letters into 'ICHIGO ICHIE' -->
+<div id="word-modal" class="hidden fixed inset-0 z-[350] items-center justify-center bg-black/60">
+    <div class="w-full max-w-md bg-white rounded-2xl p-4 relative">
+        <button id="close-word-btn" class="absolute top-3 right-3 text-primary bg-surface-container-high rounded-full p-2">✕</button>
+        <h3 class="text-primary font-headline-lg-mobile text-[20px] text-center">Xếp Chữ</h3>
+        <p class="text-center text-on-background/70 mt-2">Sắp xếp các chữ cái thành từ đúng. Gõ đáp án vào ô bên dưới và nhấn gửi.</p>
+        <div class="flex items-center justify-center gap-3 mt-3">
+            <button id="word-hint-btn" class="bg-white border rounded-md px-3 py-2">Gợi ý</button>
+            <button id="word-reveal-btn" class="bg-white border rounded-md px-3 py-2">Đáp án</button>
+        </div>
+        <div id="word-board" class="grid grid-cols-6 gap-2 w-full mt-4" style="min-height:120px;">
+            <!-- letter tiles injected here -->
+        </div>
+        <div id="word-message" class="text-center text-primary mt-3"></div>
+    </div>
+</div>
+<!-- Code Game Modal: enter secret code DDMMYY -->
+<div id="code-modal" class="hidden fixed inset-0 z-[360] items-center justify-center bg-black/60">
+    <div class="w-full max-w-md bg-white rounded-2xl p-4 relative">
+        <button id="close-code-btn" class="absolute top-3 right-3 text-primary bg-surface-container-high rounded-full p-2">✕</button>
+        <h3 class="text-primary font-headline-lg-mobile text-[20px] text-center">Mở quà</h3>
+        <p class="text-center text-on-background/70 mt-2">Hãy nhập mật mã vừa rồi để xem quà.</p>
+        <div class="mt-4 flex gap-2 items-center">
+            <input id="code-input" type="password" maxlength="6" placeholder="" class="grow border rounded-md py-2 px-3 text-center text-lg" autocomplete="off" inputmode="numeric" />
+            <button id="code-submit" class="bg-primary text-white px-4 py-2 rounded-full">Gửi</button>
+        </div>
+        <div id="code-message" class="text-center text-primary mt-3"></div>
+    </div>
+</div>
+<audio id="countdown-audio" src="audio/countdown.mp3" preload="auto"></audio>
+<audio id="birthday-audio" src="audio/birthday.mp3" preload="auto"></audio>
+<!-- Scripts -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const cutCakeBtn = document.getElementById('cut-cake-btn');
+        const openGiftBtn = document.getElementById('open-gift-btn');
+        const giftModal = document.getElementById('gift-modal');
+        const closeGiftBtn = document.getElementById('close-gift-modal');
+        const cakeContainer = document.getElementById('birthday-cake-container');
+        const cakeImg = document.getElementById('cake-main-img');
+        window.cakeClicked = false; // ensure cake only triggers once
+        
+        const openLetterBtn = document.getElementById('open-letter-btn');
+        const closeLetterBtn = document.getElementById('close-letter-btn');
+        const closeLetterBottomBtn = document.getElementById('close-letter-bottom-btn');
+        const letterModal = document.getElementById('letter-modal');
+        const typewriterElement = document.getElementById('typewriter-text');
+        const statusContainer = document.getElementById('status-container');
+        
+        const fairyGuide = document.getElementById('fairy-guide');
+        const profileAvatar = document.getElementById('profile-avatar');
+        const fairyWrapper = document.getElementById('avatar-card-wrapper');
+        const countdownAudio = document.getElementById('countdown-audio');
+        const birthdayAudio = document.getElementById('birthday-audio');
+        let birthdayMusicPlayed = false;
+        
+const message =
+"Happy Birthday Nữ! 🎂\n" +
+"Chúc mừng bạn đã bước sang một tuổi mới. Tui cũng không giỏi nói mấy lời hoa mỹ, nên chỉ muốn gửi đến bạn vài lời chúc thật lòng. \n" +
+"Sắp tới bạn sẽ bắt đầu một hành trình mới ở Nhật. Chúc bạn luôn mạnh mẽ, lạc quan, sớm thích nghi với cuộc sống mới, gặp được nhiều người tốt và có nhiều kỷ niệm đẹp.\n" +
+"Cảm ơn bạn đã dành thời gian xem hết món quà này. Chúc bạn có một sinh nhật thật vui và một chặng đường mới thật nhiều may mắn. 🎉";
+       let typingTimeout;
+
+        // Fairy Guide Logic
+        let guideActive = true;
+
+        // Prevent layout shift when modals open by locking scroll and compensating scrollbar width
+        function lockScroll() {
+            const scrollBarWidth = window.innerWidth - document.documentElement.clientWidth;
+            if (scrollBarWidth > 0) document.body.style.paddingRight = scrollBarWidth + 'px';
+            document.documentElement.style.overflow = 'hidden';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function unlockScroll() {
+            document.documentElement.style.overflow = '';
+            document.body.style.overflow = '';
+            document.body.style.paddingRight = '';
+        }
+        
+        function updateFairyPosition() {
+            if (!guideActive || !profileAvatar || !fairyWrapper) return;
+            
+            const wrapperRect = fairyWrapper.getBoundingClientRect();
+            const rect = profileAvatar.getBoundingClientRect();
+            const margin = 8;
+            const guideWidth = fairyGuide.offsetWidth || 140;
+            const guideHeight = fairyGuide.offsetHeight || 90;
+            
+            fairyGuide.classList.remove('fairy-top-left', 'fairy-bottom-right', 'fairy-avatar');
+            fairyGuide.classList.add('fairy-avatar');
+            
+            let left = rect.left - wrapperRect.left - guideWidth - 24;
+            if (left < margin) {
+                left = margin;
+            }
+            let top = rect.top - wrapperRect.top + (rect.height - guideHeight) / 2;
+            if (top < margin) {
+                top = margin;
+            }
+            const maxTop = Math.max(margin, wrapperRect.height - guideHeight - margin);
+            if (top > maxTop) {
+                top = maxTop;
+            }
+            
+            fairyGuide.style.left = `${left}px`;
+            fairyGuide.style.top = `${top}px`;
+        }
+
+        // Start guide
+        updateFairyPosition();
+
+        // Status messages logic
+        async function playStatusSequence() {
+            const statuses = [
+                { text: "ʕっ•ᴥ•ʔっ  Đợi tí đang viết thư...", duration: 3000 },
+                { text: "ʕ •ᴥ•ʔ✍️  Sắp xong rồi...", duration: 3000 },
+                { text: "ʕᵔᴥᵔʔ🎉  Xong rồi nè...", duration: 3000 }
+            ];
+
+            for (const status of statuses) {
+                const el = document.createElement('div');
+                el.className = 'status-message';
+                el.innerText = status.text;
+                statusContainer.innerHTML = '';
+                statusContainer.appendChild(el);
+                
+                // Force reflow for transition
+                void el.offsetWidth;
+                el.classList.add('visible');
+                
+                await new Promise(resolve => setTimeout(resolve, status.duration));
+                
+                el.classList.remove('visible');
+                await new Promise(resolve => setTimeout(resolve, 300)); // fade out time
+            }
+            statusContainer.innerHTML = '';
+        }
+
+        // Letter Logic
+        function typeWriter(text, i) {
+            if (i < text.length) {
+                const display = text.substring(0, i + 1).replace(/\n/g, '<br>');
+                typewriterElement.innerHTML = display + '<span class="cursor"></span>';
+                typingTimeout = setTimeout(() => typeWriter(text, i + 1), 50);
+            } else {
+                typewriterElement.innerHTML = text.replace(/\n/g, '<br>');
+                closeLetterBottomBtn.classList.remove('opacity-0', 'pointer-events-none');
+            }
+        }
+
+        async function openLetter() {
+            lockScroll();
+            letterModal.classList.remove('hidden');
+            letterModal.classList.add('flex');
+            // backdrop + content enter animations
+            letterModal.classList.remove('modal-backdrop-anim-out');
+            letterModal.classList.add('modal-backdrop-anim-in');
+            const letterContent = letterModal.querySelector('.letter-container');
+            letterContent?.classList.remove('modal-pop-out');
+            letterContent?.classList.add('modal-pop-in');
+            if (fairyGuide) fairyGuide.classList.add('fairy-hide');
+            typewriterElement.innerHTML = "";
+            statusContainer.innerHTML = "";
+            closeLetterBottomBtn.classList.add('opacity-0', 'pointer-events-none');
+            clearTimeout(typingTimeout);
+            
+            await playStatusSequence();
+            
+            setTimeout(() => typeWriter(message, 0), 300);
+        }
+
+        function closeLetter() {
+            // play exit animations then hide
+            const letterContent = letterModal.querySelector('.letter-container');
+            letterContent?.classList.remove('modal-pop-in');
+            letterContent?.classList.add('modal-pop-out');
+            letterModal.classList.remove('modal-backdrop-anim-in');
+            letterModal.classList.add('modal-backdrop-anim-out');
+            const onAnimEnd = () => {
+                letterModal.classList.add('hidden');
+                letterModal.classList.remove('flex');
+                unlockScroll();
+                clearTimeout(typingTimeout);
+                typewriterElement.innerHTML = "";
+                statusContainer.innerHTML = "";
+                if (fairyGuide) fairyGuide.classList.remove('fairy-hide');
+                letterContent.removeEventListener('animationend', onAnimEnd);
+            };
+            letterContent?.addEventListener('animationend', onAnimEnd);
+        }
+
+        openLetterBtn.addEventListener('click', openLetter);
+        closeLetterBtn.addEventListener('click', closeLetter);
+        closeLetterBottomBtn.addEventListener('click', closeLetter);
+        
+        if (profileAvatar) {
+            profileAvatar.addEventListener('click', () => {
+                if (birthdayAudio && !birthdayMusicPlayed) {
+                    birthdayMusicPlayed = true;
+                    birthdayAudio.currentTime = 0;
+                    birthdayAudio.play().catch(() => {});
+                }
+                if (fairyGuide) {
+                    fairyGuide.classList.add('fairy-hide');
+                }
+                profileAvatar.classList.add('animate-shake');
+                setTimeout(() => profileAvatar.classList.remove('animate-shake'), 400);
+            });
+        }
+
+        const introScreen = document.getElementById('intro-screen');
+        const daysEl = document.getElementById('count-days');
+        const hoursEl = document.getElementById('count-hours');
+        const minutesEl = document.getElementById('count-minutes');
+        const secondsEl = document.getElementById('count-seconds');
+        const enterMainBtn = document.getElementById('enter-main-btn');
+        let introSeconds = 11;
+        let introInterval;
+
+        function updateIntroCountdown() {
+            if (daysEl) daysEl.textContent = '00';
+            if (hoursEl) hoursEl.textContent = '00';
+            if (minutesEl) minutesEl.textContent = '00';
+            if (secondsEl) secondsEl.textContent = String(introSeconds).padStart(2, '0');
+        }
+
+        function clearIntroContent() {
+            if (!introScreen) return;
+            const introCard = introScreen.querySelector('.intro-card');
+            if (!introCard) return;
+            introCard.innerHTML = '<div class="countdown-word-overlay" id="countdown-word-overlay"></div>';
+        }
+
+        function showEnterButton() {
+            if (!enterMainBtn) return;
+            enterMainBtn.classList.remove('hidden');
+        }
+
+        function createIntroFirework(parent) {
+            const firework = document.createElement('div');
+            firework.className = 'intro-firework';
+            const dx = (Math.random() - 0.5) * 220 + 'px';
+            const dy = (Math.random() - 0.5) * 160 + 'px';
+            firework.style.setProperty('--dx', dx);
+            firework.style.setProperty('--dy', dy);
+            firework.style.left = '50%';
+            firework.style.top = '50%';
+            parent.appendChild(firework);
+            firework.addEventListener('animationend', () => firework.remove());
+        }
+
+        async function showCountdownWords(words) {
+            const overlay = document.getElementById('countdown-word-overlay');
+            if (!overlay) return;
+            overlay.innerHTML = '';
+            for (const word of words) {
+                const wordEl = document.createElement('div');
+                wordEl.className = 'countdown-word';
+                wordEl.textContent = word;
+                overlay.appendChild(wordEl);
+                await new Promise(resolve => requestAnimationFrame(resolve));
+                wordEl.classList.add('visible');
+                for (let i = 0; i < 6; i++) {
+                    createIntroFirework(overlay);
+                }
+                await new Promise(resolve => setTimeout(resolve, 1100));
+                wordEl.classList.remove('visible');
+                await new Promise(resolve => setTimeout(resolve, 120));
+                wordEl.remove();
+            }
+        }
+
+        async function enterMainScreen() {
+            if (!introScreen) return;
+            if (countdownAudio) {
+                countdownAudio.pause();
+                countdownAudio.currentTime = 0;
+            }
+            introScreen.classList.add('fade-away');
+            introScreen.style.pointerEvents = 'none';
+            setTimeout(() => {
+                introScreen.remove();
+            }, 520);
+        }
+
+        async function startIntroCountdown() {
+            if (countdownAudio) {
+                countdownAudio.currentTime = 0;
+                countdownAudio.play().catch(() => {});
+            }
+            updateIntroCountdown();
+            introInterval = setInterval(() => {
+                introSeconds -= 1;
+                if (introSeconds <= 0) {
+                    clearInterval(introInterval);
+                    introSeconds = 0;
+                    updateIntroCountdown();
+                    clearIntroContent();
+                    enterMainBtn?.classList.add('hidden');
+                    const wordSequence = ['HAPPY', 'BIRTHDAY', 'TO', 'NAME'];
+                    showCountdownWords(wordSequence).then(() => {
+                        enterMainScreen();
+                    });
+                    return;
+                }
+                updateIntroCountdown();
+            }, 1000);
+        }
+
+        if (enterMainBtn) {
+            enterMainBtn.addEventListener('click', () => {
+                enterMainScreen();
+            });
+        }
+
+        startIntroCountdown();
+
+        // Gift Logic
+        function openCakeModal() {
+            lockScroll();
+            giftModal.classList.remove('hidden');
+            giftModal.classList.add('flex');
+            giftModal.classList.remove('modal-backdrop-anim-out');
+            giftModal.classList.add('modal-backdrop-anim-in');
+            const giftContent = giftModal.querySelector('#memory-stage');
+            giftContent?.classList.remove('modal-pop-out');
+            giftContent?.classList.add('modal-pop-in');
+            if (fairyGuide) fairyGuide.classList.add('fairy-hide');
+            createConfetti(cutCakeBtn || document.body);
+            if (cakeContainer) cakeContainer.style.display = '';
+            const cakeCta = document.getElementById('cake-cta');
+            if (cakeCta) cakeCta.style.display = '';
+            // show candle overlay and position feedback near the cake
+            const overlay = document.getElementById('candle-overlay');
+            const feedback = document.getElementById('candle-feedback');
+            if (!window.giftSequenceCompleted) {
+                if (overlay) {
+                    overlay.classList.add('active');
+                    overlay.setAttribute('aria-hidden', 'false');
+                }
+                if (feedback) {
+                    const rect = cakeContainer?.getBoundingClientRect();
+                    if (rect) {
+                        feedback.style.left = (rect.left + rect.width / 2 ) + 'px';
+                        feedback.style.top = (rect.top + rect.height / 2) + 'px';
+                        feedback.style.position = 'fixed';
+                        feedback.style.transform = 'translate(-50%,-50%) scale(0.2)';
+                        feedback.style.opacity = '1';
+                    }
+                }
+            } else {
+                if (overlay) {
+                    overlay.classList.remove('active');
+                    overlay.setAttribute('aria-hidden', 'true');
+                }
+                if (window.spawnMemoriesFlow) {
+                    window.memoriesSpawned = false;
+                    window.spawnMemoriesFlow();
+                }
+            }
+        }
+
+        async function playGiftCountdown() {
+            if (!giftModal) return;
+            const countdown = document.createElement('div');
+            countdown.className = 'countdown-overlay countdown-pop';
+            countdown.style.position = 'absolute';
+            countdown.style.inset = '0';
+            countdown.style.zIndex = '260';
+            countdown.style.display = 'flex';
+            countdown.style.alignItems = 'center';
+            countdown.style.justifyContent = 'center';
+            countdown.style.pointerEvents = 'none';
+            countdown.style.background = 'rgba(255,255,255,0.06)';
+            giftModal.appendChild(countdown);
+
+            for (const number of [3, 2, 1]) {
+                countdown.textContent = number;
+                countdown.classList.remove('countdown-pop');
+                void countdown.offsetWidth;
+                countdown.classList.add('countdown-pop');
+                await new Promise(resolve => setTimeout(resolve, 700));
+            }
+
+            countdown.remove();
+        }
+
+        async function openGiftModal() {
+            lockScroll();
+            giftModal.classList.remove('hidden');
+            giftModal.classList.add('flex');
+            giftModal.classList.remove('modal-backdrop-anim-out');
+            giftModal.classList.add('modal-backdrop-anim-in');
+            const giftContent = giftModal.querySelector('#memory-stage');
+            giftContent?.classList.remove('modal-pop-out');
+            giftContent?.classList.add('modal-pop-in');
+            if (fairyGuide) fairyGuide.classList.add('fairy-hide');
+            createConfetti(openGiftBtn || document.body);
+            if (cakeContainer) cakeContainer.style.display = 'none';
+            const cakeCta = document.getElementById('cake-cta');
+            if (cakeCta) cakeCta.style.display = 'none';
+            const overlay = document.getElementById('candle-overlay');
+            if (overlay) {
+                overlay.classList.remove('active');
+                overlay.setAttribute('aria-hidden', 'true');
+            }
+            await playGiftCountdown();
+            if (window.spawnGiftMemoryBalloons) {
+                window.spawnGiftMemoryBalloons();
+            }
+            if (window.spawnMemoriesFlow) {
+                window.memoriesSpawned = false;
+                window.spawnMemoriesFlow();
+            }
+        }
+        window.openGiftModal = openGiftModal;
+
+        function closeGift() {
+            const giftContent = giftModal.querySelector('#memory-stage');
+            giftContent?.classList.remove('modal-pop-in');
+            giftContent?.classList.add('modal-pop-out');
+            giftModal.classList.remove('modal-backdrop-anim-in');
+            giftModal.classList.add('modal-backdrop-anim-out');
+            const onGiftEnd = () => {
+                giftModal.classList.add('hidden');
+                giftModal.classList.remove('flex');
+                unlockScroll();
+                document.querySelectorAll('.memory-balloon').forEach(b => b.remove());
+                document.querySelectorAll('.cake-split-wrapper').forEach(el => el.remove());
+                if (cakeImg) cakeImg.style.visibility = 'visible';
+                if (cakeContainer) cakeContainer.style.display = '';
+                const cakeCta = document.getElementById('cake-cta');
+                if (cakeCta) cakeCta.style.display = '';
+                if (fairyGuide) fairyGuide.classList.remove('fairy-hide');
+                try { window.cakeClicked = false; } catch (e) {}
+                try { window.memoriesSpawned = false; } catch (e) {}
+                giftContent.removeEventListener('animationend', onGiftEnd);
+            };
+            giftContent?.addEventListener('animationend', onGiftEnd);
+        }
+
+    // Puzzle game (3x3) - click to swap tiles implementation
+    function initPuzzleGame() {
+        const openGameBtn = document.getElementById('open-game-btn');
+        const gameModal = document.getElementById('game-modal');
+        const closeGameBtn = document.getElementById('close-game-btn');
+        const board = document.getElementById('puzzle-board');
+        const message = document.getElementById('puzzle-message');
+
+        let imgSrc = 'image/image1.png';
+        let original = Array.from({length:9}, (_,i)=>i);
+        let current = [];
+        let firstPick = null;
+
+        function openGame() {
+            gameModal.classList.remove('hidden');
+            gameModal.classList.add('flex');
+            message.textContent = '';
+            buildBoard(imgSrc);
+        }
+
+        function closeGame() {
+            gameModal.classList.add('hidden');
+            gameModal.classList.remove('flex');
+            board.innerHTML = '';
+            firstPick = null;
+        }
+
+        function buildBoard(source) {
+            board.innerHTML = '';
+            // init current to shuffled order
+            current = shuffle(Array.from(original));
+            // ensure not already solved
+            if (isSolved()) current = shuffle(Array.from(original));
+
+            for (let cell = 0; cell < 9; cell++) {
+                const origIndex = current[cell];
+                const tile = document.createElement('div');
+                tile.className = 'puzzle-tile';
+                tile.style.width = '100%';
+                tile.style.height = '100%';
+                tile.style.border = '2px solid rgba(0,0,0,0.06)';
+                tile.style.boxSizing = 'border-box';
+                tile.style.backgroundImage = `url(${source})`;
+                tile.style.backgroundSize = '300% 300%';
+                const col = origIndex % 3;
+                const row = Math.floor(origIndex / 3);
+                tile.style.backgroundPosition = `${col * 50}% ${row * 50}%`;
+                tile.style.cursor = 'pointer';
+                tile.dataset.cell = cell;
+                tile.dataset.orig = origIndex;
+                tile.style.display = 'flex';
+                tile.style.alignItems = 'center';
+                tile.style.justifyContent = 'center';
+                // support press-and-hold drag (and click fallback)
+                let holdTimer = null;
+                let isDragging = false;
+                let pointerId = null;
+                tile.addEventListener('pointerdown', (ev) => {
+                    ev.preventDefault();
+                    pointerId = ev.pointerId;
+                    // short hold before starting drag
+                    holdTimer = setTimeout(() => {
+                        beginDrag(tile, ev.clientX, ev.clientY, pointerId);
+                    }, 160);
+                });
+                tile.addEventListener('pointerup', (ev) => {
+                    // if pointerup before hold, treat as click (swap)
+                    if (holdTimer) { clearTimeout(holdTimer); holdTimer = null; }
+                    if (!isDragging) {
+                        onTileClick(ev);
+                    } else {
+                        endDrag(ev.clientX, ev.clientY);
+                    }
+                });
+                tile.addEventListener('pointercancel', () => {
+                    if (holdTimer) { clearTimeout(holdTimer); holdTimer = null; }
+                    if (isDragging) endDrag();
+                });
+                board.appendChild(tile);
+            }
+            // make grid cells square by using padding trick per child
+            // set each grid cell to be a square via CSS variable
+            const tiles = board.querySelectorAll('.puzzle-tile');
+            tiles.forEach(t => { t.style.minHeight = '0'; });
+        }
+
+        function onTileClick(e) {
+            const tile = e.currentTarget;
+            const idx = Number(tile.dataset.cell);
+            if (firstPick === null) {
+                firstPick = idx;
+                tile.style.outline = '3px solid rgba(34,197,94,0.9)';
+                return;
+            }
+            if (firstPick === idx) {
+                // deselect
+                firstPick = null;
+                tile.style.outline = '';
+                render();
+                return;
+            }
+            // swap in current array
+            const a = firstPick, b = idx;
+            [current[a], current[b]] = [current[b], current[a]];
+            firstPick = null;
+            render();
+            if (isSolved()) onWin();
+        }
+
+        // Drag helpers (clone-based dragging)
+        let dragClone = null;
+        let dragFromCell = null;
+
+        function beginDrag(tile, startX, startY, pid) {
+            isDragging = true;
+            dragFromCell = Number(tile.dataset.cell);
+            // create clone visual
+            const rect = tile.getBoundingClientRect();
+            dragClone = tile.cloneNode(false);
+            dragClone.style.position = 'fixed';
+            dragClone.style.left = rect.left + 'px';
+            dragClone.style.top = rect.top + 'px';
+            dragClone.style.width = rect.width + 'px';
+            dragClone.style.height = rect.height + 'px';
+            dragClone.style.margin = '0';
+            dragClone.style.zIndex = 1000;
+            dragClone.style.pointerEvents = 'none';
+            dragClone.style.transition = 'transform 80ms linear';
+            // keep background + position
+            const origIndex = Number(tile.dataset.orig);
+            const col = origIndex % 3;
+            const row = Math.floor(origIndex / 3);
+            dragClone.style.backgroundImage = tile.style.backgroundImage;
+            dragClone.style.backgroundSize = tile.style.backgroundSize;
+            dragClone.style.backgroundPosition = `${col * 50}% ${row * 50}%`;
+            document.body.appendChild(dragClone);
+            // hide original tile while dragging
+            tile.style.visibility = 'hidden';
+
+            function onMove(ev) {
+                const x = ev.clientX - rect.width/2;
+                const y = ev.clientY - rect.height/2;
+                dragClone.style.left = x + 'px';
+                dragClone.style.top = y + 'px';
+            }
+
+            function onUp(ev) {
+                document.removeEventListener('pointermove', onMove);
+                document.removeEventListener('pointerup', onUp);
+                endDrag(ev.clientX, ev.clientY);
+            }
+
+            document.addEventListener('pointermove', onMove);
+            document.addEventListener('pointerup', onUp);
+        }
+
+        function endDrag(clientX, clientY) {
+            isDragging = false;
+            // find drop target
+            let targetTile = null;
+            if (typeof clientX === 'number' && typeof clientY === 'number') {
+                const el = document.elementFromPoint(clientX, clientY);
+                if (el) targetTile = el.closest('.puzzle-tile');
+            }
+            // if drop on a valid tile, swap
+            if (targetTile) {
+                const toCell = Number(targetTile.dataset.cell);
+                if (!Number.isNaN(toCell) && dragFromCell !== null) {
+                    [current[dragFromCell], current[toCell]] = [current[toCell], current[dragFromCell]];
+                }
+            }
+            // cleanup clone and restore original visibility
+            const originals = board.querySelectorAll('.puzzle-tile');
+            originals.forEach(t => t.style.visibility = 'visible');
+            if (dragClone && dragClone.parentElement) dragClone.remove();
+            dragClone = null;
+            dragFromCell = null;
+            render();
+            if (isSolved()) onWin();
+        }
+
+        function render() {
+            // update tiles to reflect current mapping
+            const tiles = board.querySelectorAll('.puzzle-tile');
+            tiles.forEach((tile, cell) => {
+                const origIndex = current[cell];
+                tile.dataset.cell = cell;
+                tile.dataset.orig = origIndex;
+                const col = origIndex % 3;
+                const row = Math.floor(origIndex / 3);
+                tile.style.backgroundPosition = `${col * 50}% ${row * 50}%`;
+                tile.style.outline = '';
+            });
+        }
+
+        function isSolved() {
+            for (let i=0;i<9;i++) if (current[i] !== i) return false;
+            return true;
+        }
+
+        function onWin() {
+            message.textContent = '🎉 Hoàn thành! Chúc mừng bạn!';
+            celebrateConfetti();
+            // after puzzle win, open the word-arrange game
+            setTimeout(() => {
+                if (window.openWordGame) window.openWordGame();
+            }, 1200);
+        }
+
+        function shuffle(arr) {
+            const a = arr.slice();
+            for (let i = a.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [a[i], a[j]] = [a[j], a[i]];
+            }
+            return a;
+        }
+
+        function celebrateConfetti(){
+            const container = document.createElement('div');
+            container.className = 'confetti-container';
+            container.style.position = 'fixed';
+            container.style.inset = '0';
+            container.style.pointerEvents = 'none';
+            container.style.zIndex = 360;
+            document.body.appendChild(container);
+            const colors = ['#ff4da6','#ffd166','#a0e7e5','#ff8fab','#cdb4db','#ffd1a9'];
+            for (let i=0;i<40;i++){
+                const p = document.createElement('div');
+                p.className = 'confetti-piece';
+                p.style.width = (6 + Math.random()*8) + 'px';
+                p.style.height = (10 + Math.random()*10) + 'px';
+                p.style.background = colors[Math.floor(Math.random()*colors.length)];
+                p.style.left = (10 + Math.random()*80) + '%';
+                p.style.top = '-10vh';
+                p.style.position = 'absolute';
+                p.style.borderRadius = '2px';
+                p.style.animation = 'confetti-fall 2200ms cubic-bezier(.2,.7,.3,1) forwards';
+                p.style.transform = 'rotate(' + (Math.random()*360) + 'deg)';
+                p.style.animationDelay = (Math.random()*400) + 'ms';
+                container.appendChild(p);
+            }
+            setTimeout(()=> container.remove(), 3000);
+        }
+
+        // === Word game: arrange provided letters into 'ICHIGO ICHIE' ===
+        function initWordGame(){
+            const wordModal = document.getElementById('word-modal');
+            const closeWordBtn = document.getElementById('close-word-btn');
+            const wordBoard = document.getElementById('word-board');
+            const wordMessage = document.getElementById('word-message');
+            const hintBtn = document.getElementById('word-hint-btn');
+            const revealBtn = document.getElementById('word-reveal-btn');
+
+            const target = 'ICHIGOICHIE'; // compare without space
+            const lettersSource = ['I','E','H','I','G','C','O','I','H','I','E','C'];
+            let current = shuffle(lettersSource.slice());
+            let firstPick = null;
+
+            function openWordGame(){
+                // close puzzle modal if still open
+                try { if (typeof closeGame === 'function') closeGame(); } catch(e){}
+                wordModal.classList.remove('hidden');
+                wordModal.classList.add('flex');
+                wordMessage.textContent = '';
+                current = shuffle(lettersSource.slice());
+                render();
+
+                // add input area (only once)
+                if (!document.getElementById('word-input')) {
+                    const inputContainer = document.createElement('div');
+                    inputContainer.className = 'mt-3 flex gap-2 items-center';
+                    const input = document.createElement('input');
+                    input.id = 'word-input';
+                    input.type = 'text';
+                    input.placeholder = 'Gõ đáp án vào đây và nhấn Enter';
+                    input.className = 'grow border rounded-md py-2 px-3';
+                    input.autocomplete = 'off';
+                    const submit = document.createElement('button');
+                    submit.id = 'word-submit';
+                    submit.className = 'bg-primary text-white px-4 py-2 rounded-full';
+                    submit.textContent = 'Gửi';
+                    function submitAnswer(){
+                        const val = (input.value || '').toUpperCase().replace(/\s+/g,'');
+                        if (!val) return;
+                        if (val === target) {
+                            wordMessage.textContent = '🎉 Chính xác!';
+                            celebrateConfetti();
+                            setTimeout(() => {
+                                closeWordGame();
+                                if (window.openCodeGame) window.openCodeGame();
+                            }, 1400);
+                        } else {
+                            wordMessage.textContent = '❌ Sai rồi — thử lại.';
+                        }
+                    }
+                    submit.addEventListener('click', submitAnswer);
+                    input.addEventListener('keydown', (e) => { if (e.key === 'Enter') submitAnswer(); });
+                    inputContainer.appendChild(input);
+                    inputContainer.appendChild(submit);
+                    // insert before message
+                    wordBoard.parentNode.insertBefore(inputContainer, wordMessage);
+                    // focus
+                    setTimeout(()=> input.focus(), 120);
+                }
+                // clear hint/message when opening
+                if (wordMessage) wordMessage.textContent = '';
+                // wire hint/reveal buttons
+                if (hintBtn) {
+                    hintBtn.addEventListener('click', () => {
+                        wordMessage.textContent = 'Gợi ý: là tiếng Nhật';
+                    });
+                }
+                if (revealBtn) {
+                    revealBtn.addEventListener('click', () => {
+                        wordMessage.textContent = 'Đáp án: ICHIGO ICHIE';
+                        const input = document.getElementById('word-input');
+                        if (input) input.value = 'ICHIGO ICHIE';
+                    });
+                }
+            }
+
+            function closeWordGame(){
+                wordModal.classList.add('hidden');
+                wordModal.classList.remove('flex');
+                wordBoard.innerHTML = '';
+                firstPick = null;
+            }
+
+            function render(){
+                wordBoard.innerHTML = '';
+                // display scrambled letters as visual hint (not answer)
+                current.forEach((ch) => {
+                    const tile = document.createElement('div');
+                    tile.className = 'bg-white border rounded-md text-xl font-bold py-3 flex items-center justify-center';
+                    tile.textContent = ch;
+                    wordBoard.appendChild(tile);
+                });
+            }
+
+            if (closeWordBtn) closeWordBtn.addEventListener('click', closeWordGame);
+            window.openWordGame = openWordGame;
+        }
+        // initialize word game so openWordGame is available
+        initWordGame();
+
+        // start button removed: puzzle auto-starts when modal opens
+
+        function initCodeGame(){
+            const codeModal = document.getElementById('code-modal');
+            const closeCodeBtn = document.getElementById('close-code-btn');
+            const codeInput = document.getElementById('code-input');
+            const codeSubmit = document.getElementById('code-submit');
+            const codeMessage = document.getElementById('code-message');
+            const targetCode = '110803';
+
+            function openCodeGame(){
+                try { if (typeof closeWordGame === 'function') closeWordGame(); } catch(e){}
+                codeModal.classList.remove('hidden');
+                codeModal.classList.add('flex');
+                if (codeMessage) codeMessage.textContent = '';
+                if (codeInput) {
+                    codeInput.value = '';
+                    setTimeout(() => codeInput.focus(), 120);
+                }
+            }
+
+            function closeCodeGame(){
+                codeModal.classList.add('hidden');
+                codeModal.classList.remove('flex');
+                if (codeInput) codeInput.value = '';
+                if (codeMessage) codeMessage.textContent = '';
+            }
+
+            function submitCode(){
+                if (!codeInput || !codeMessage) return;
+                const value = (codeInput.value || '').replace(/\s+/g, '');
+                if (!value) return;
+                if (value === targetCode) {
+                    codeMessage.textContent = '🎉 Đúng rồi! Hãy mở quà nhé.';
+                    celebrateConfetti();
+                    setTimeout(() => {
+                        closeCodeGame();
+                        if (window.pendingGiftUnlock) {
+                            window.pendingGiftUnlock = false;
+                            if (typeof window.openGiftModal === 'function') {
+                                window.openGiftModal();
+                            }
+                        }
+                    }, 1200);
+                } else {
+                    codeMessage.textContent = '❌ Sai rồi — hãy nhập mật mã vừa rồi để xem quà.';
+                }
+            }
+
+            if (closeCodeBtn) closeCodeBtn.addEventListener('click', closeCodeGame);
+            if (codeSubmit) codeSubmit.addEventListener('click', submitCode);
+            if (codeInput) codeInput.addEventListener('keydown', (e) => { if (e.key === 'Enter') submitCode(); });
+
+            window.openCodeGame = openCodeGame;
+        }
+        initCodeGame();
+
+        // expose for debug / inline calls
+        window.openGame = openGame;
+
+        if (openGameBtn) openGameBtn.addEventListener('click', openGame);
+        if (closeGameBtn) closeGameBtn.addEventListener('click', closeGame);
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initPuzzleGame);
+    } else {
+        initPuzzleGame();
+    }
+
+        if (cutCakeBtn) {
+            cutCakeBtn.addEventListener('click', openCakeModal);
+        }
+        if (openGiftBtn) {
+            openGiftBtn.addEventListener('click', () => {
+                window.pendingGiftUnlock = true;
+                if (typeof window.openCodeGame === 'function') {
+                    window.openCodeGame();
+                } else {
+                    window.openGiftModal?.();
+                }
+            });
+        }
+        closeGiftBtn.addEventListener('click', closeGift);
+
+        cakeContainer.addEventListener('click', (e) => {
+            // require that candle has been lit first
+            if (window.giftSequenceCompleted) return;
+            if (typeof window.ceremonyState === 'undefined' || window.ceremonyState !== 'candle-lit') {
+                cakeImg.classList.remove('animate-shake');
+                void cakeImg.offsetWidth;
+                cakeImg.classList.add('animate-shake');
+                return;
+            }
+            if (window.cakeClicked) return; // ignore subsequent clicks
+            window.cakeClicked = true;
+            cakeImg.classList.remove('animate-shake');
+            void cakeImg.offsetWidth; 
+            cakeImg.classList.add('animate-shake');
+
+            const cakeCta = document.getElementById('cake-cta');
+            if (cakeCta) {
+                cakeCta.style.display = 'none';
+            }
+            const giftSubtitle = document.getElementById('gift-subtitle');
+            if (giftSubtitle) {
+                giftSubtitle.style.display = 'none';
+            }
+
+            createCrumbs(e.clientX, e.clientY);
+            createConfetti(cakeContainer);
+
+            // advance ceremony state
+            window.ceremonyState = 'cake-cut';
+
+            // kick off the sequential reveal+memories flow (spawnMemoriesFlow calls reveal)
+            if (window.spawnMemoriesFlow) {
+                try {
+                    const runFlow = async () => {
+                        await window.spawnMemoriesFlow();
+                        window.giftSequenceCompleted = true;
+                    };
+                    runFlow();
+                } catch (err) { console.error(err); }
+            }
+        });
+
+        function createCrumbs(x, y) {
+            const colors = ['#b60055', '#e4006c', '#ffb1c3', '#7000ff', '#00dbe9'];
+            for (let i = 0; i < 20; i++) {
+                const crumb = document.createElement('div');
+                crumb.className = 'neon-crumb';
+                crumb.style.left = `${x}px`;
+                crumb.style.top = `${y}px`;
+                crumb.style.color = colors[Math.floor(Math.random() * colors.length)];
+                crumb.style.backgroundColor = 'currentColor';
+                
+                document.body.appendChild(crumb);
+                
+                const angle = Math.random() * Math.PI * 2;
+                const distance = 40 + Math.random() * 100;
+                const destX = x + Math.cos(angle) * distance;
+                const destY = y + Math.sin(angle) * distance;
+                
+                const animation = crumb.animate([
+                    { transform: 'translate(0, 0) scale(1)', opacity: 1 },
+                    { transform: `translate(${destX - x}px, ${destY - y}px) scale(0)`, opacity: 0 }
+                ], {
+                    duration: 600 + Math.random() * 400,
+                    easing: 'cubic-bezier(0, .9, .57, 1)'
+                });
+                
+                animation.onfinish = () => crumb.remove();
+            }
+        }
+
+        function createMemoryBalloon() {
+            const balloon = document.createElement('div');
+            balloon.className = 'memory-balloon';
+            
+            const rotation = (Math.random() - 0.5) * 45;
+            const targetY = 15 + Math.random() * 45;
+            const horizontalPos = Math.random() < 0.5 ? (5 + Math.random() * 25) : (70 + Math.random() * 25);
+            
+            balloon.style.setProperty('--rot', `${rotation}deg`);
+            balloon.style.setProperty('--target-y', `${targetY}vh`);
+            balloon.style.left = `${horizontalPos}%`;
+            balloon.style.top = `0`;
+            
+            balloon.innerHTML = `
+                <div class="photo-frame">
+                    <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCIN_D6bHbiyU1PO5auFEEqBS0WuxaE5W5qPP5txWG9SY2x0MHJdEQ3Qy7TT79NK4h058CqgO3YuzVIgdD5COGtzy89f1BRQT8V7k1rOqGJPavwKbJn5zgYs00frtSie4MrN5ypxc_O1lfR-80TKxzr4d9hADQafVqbCR7AvVPAybaNZg7Vy3Dh9hUQ_c0Rg_phQCzvxhWPxt_n5etP7XfirYp2gWvOGAG3tnucYom576N32Ldtcq1AlPh7YiaIeaLZO76R4TxdjX0" class="w-full h-full object-cover rounded-xl" alt="memory">
+                </div>
+            `;
+            
+            giftModal.appendChild(balloon);
+            
+            setTimeout(() => {
+                balloon.classList.add('drifting');
+                balloon.style.top = `${targetY}vh`;
+                balloon.style.transform = `translateY(0)`;
+            }, 4000);
+        }
+        
+        function createConfetti(originEl) {
+            const colors = ['#b60055', '#e4006c', '#ffb1c3', '#7000ff', '#00dbe9'];
+            const particleCount = 80;
+            
+            const rect = originEl.getBoundingClientRect();
+            const originX = rect.left + rect.width / 2;
+            const originY = rect.top + rect.height / 2;
+
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'confetti-particle';
+                
+                const size = Math.random() * 12 + 6;
+                const isCircle = Math.random() > 0.5;
+                
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                particle.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                particle.style.borderRadius = isCircle ? '50%' : '3px';
+                
+                particle.style.left = `${originX}px`;
+                particle.style.top = `${originY}px`;
+                
+                document.body.appendChild(particle);
+                
+                const velocityX = (Math.random() - 0.5) * 20;
+                const velocityY = (Math.random() - 0.7) * 25;
+                let posX = originX;
+                let posY = originY;
+                let curVelX = velocityX;
+                let curVelY = velocityY;
+                const gravity = 0.45;
+                const friction = 0.985;
+                let opacity = 1;
+                let rotation = Math.random() * 360;
+                const rotationSpeed = (Math.random() - 0.5) * 12;
+
+                function update() {
+                    curVelY += gravity;
+                    curVelX *= friction;
+                    posX += curVelX;
+                    posY += curVelY;
+                    opacity -= 0.008;
+                    rotation += rotationSpeed;
+
+                    particle.style.transform = `translate(${posX - originX}px, ${posY - originY}px) rotate(${rotation}deg)`;
+                    particle.style.opacity = opacity;
+
+                    if (opacity > 0 && posY < window.innerHeight) {
+                        requestAnimationFrame(update);
+                    } else {
+                        particle.remove();
+                    }
+                }
+                requestAnimationFrame(update);
+            }
+        }
+
+        const buttons = document.querySelectorAll('button');
+        buttons.forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                const ripple = document.createElement('span');
+                ripple.classList.add('absolute', 'bg-black/5', 'rounded-full', 'pointer-events-none', 'animate-ping');
+                const rect = this.getBoundingClientRect();
+                const size = Math.max(rect.width, rect.height);
+                ripple.style.width = ripple.style.height = `${size}px`;
+                ripple.style.left = `${e.clientX - rect.left - size/2}px`;
+                ripple.style.top = `${e.clientY - rect.top - size/2}px`;
+                this.appendChild(ripple);
+                setTimeout(() => ripple.remove(), 600);
+            });
+        });
+
+        // Recalculate fairy position on resize
+        window.addEventListener('resize', () => {
+            if (guideActive) {
+                updateFairyPosition();
+            }
+        });
+    });
+</script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => { 
+        const cake = document.getElementById('birthday-cake-container'); 
+        const stage = document.getElementById('memory-stage'); 
+        const memoryModal = document.getElementById('memory-modal');
+        const memoryModalImg = document.getElementById('memory-modal-img');
+        const memoryModalCaption = document.getElementById('memory-modal-caption');
+        const memoryModalClose = document.getElementById('memory-modal-close');
+        window.memoriesSpawned = window.memoriesSpawned || false;
+        window.cakeClicked = window.cakeClicked || false;
+        window.giftSequenceCompleted = window.giftSequenceCompleted || false;
+        window.ceremonyState = window.ceremonyState || undefined;
+
+        function openMemoryModal(src, caption) {
+            if (!memoryModal) return;
+            memoryModalImg.src = src;
+            memoryModalCaption.innerText = caption || '';
+            memoryModal.classList.remove('hidden');
+            memoryModal.classList.add('flex');
+        }
+
+        function closeMemoryModal() {
+            if (!memoryModal) return;
+            memoryModal.classList.remove('flex');
+            memoryModal.classList.add('hidden');
+            memoryModalImg.src = '';
+        }
+
+        memoryModalClose?.addEventListener('click', closeMemoryModal);
+        memoryModal?.addEventListener('click', (e) => { if (e.target === memoryModal) closeMemoryModal(); });
+
+        function sleep(ms) {
+            return new Promise(resolve => setTimeout(resolve, ms));
+        }
+
+        function waitForAnimationEnd(el) {
+            return new Promise(resolve => {
+                if (!el) return resolve();
+                const onEnd = () => {
+                    el.removeEventListener('animationend', onEnd);
+                    resolve();
+                };
+                el.addEventListener('animationend', onEnd);
+            });
+        }
+
+        async function revealCakeWithCountdown(cake) {
+            if (cake.dataset.revealed === 'true') return;
+            cake.dataset.revealed = 'true';
+            const cakeImage = cake.querySelector('img');
+            if (!cakeImage) return;
+            const imageSrc = cakeImage.src;
+            const splitWrapper = document.createElement('div');
+            splitWrapper.className = 'cake-split-wrapper';
+
+            const leftLayer = document.createElement('div');
+            leftLayer.className = 'cake-split-layer left';
+            const leftImg = document.createElement('img');
+            leftImg.src = imageSrc;
+            leftLayer.appendChild(leftImg);
+
+            const rightLayer = document.createElement('div');
+            rightLayer.className = 'cake-split-layer right';
+            const rightImg = document.createElement('img');
+            rightImg.src = imageSrc;
+            rightLayer.appendChild(rightImg);
+
+            splitWrapper.appendChild(leftLayer);
+            splitWrapper.appendChild(rightLayer);
+            cake.appendChild(splitWrapper);
+            cakeImage.style.visibility = 'hidden';
+
+            leftLayer.classList.add('cake-split-left');
+            rightLayer.classList.add('cake-split-right');
+            await Promise.all([waitForAnimationEnd(leftLayer), waitForAnimationEnd(rightLayer)]);
+            splitWrapper.remove();
+
+            const countdown = document.createElement('div');
+            countdown.className = 'countdown-overlay countdown-pop';
+            cake.appendChild(countdown);
+
+            for (let number of [3, 2, 1]) {
+                countdown.textContent = number;
+                countdown.classList.remove('countdown-pop');
+                void countdown.offsetWidth;
+                countdown.classList.add('countdown-pop');
+                await sleep(700);
+            }
+            countdown.remove();
+            cakeImage.style.visibility = 'hidden';
+        }
+
+        async function revealCakeWithoutCountdown(cake) {
+            if (cake.dataset.revealed === 'true') return;
+            cake.dataset.revealed = 'true';
+            const cakeImage = cake.querySelector('img');
+            if (!cakeImage) return;
+            const imageSrc = cakeImage.src;
+            const splitWrapper = document.createElement('div');
+            splitWrapper.className = 'cake-split-wrapper';
+
+            const leftLayer = document.createElement('div');
+            leftLayer.className = 'cake-split-layer left';
+            const leftImg = document.createElement('img');
+            leftImg.src = imageSrc;
+            leftLayer.appendChild(leftImg);
+
+            const rightLayer = document.createElement('div');
+            rightLayer.className = 'cake-split-layer right';
+            const rightImg = document.createElement('img');
+            rightImg.src = imageSrc;
+            rightLayer.appendChild(rightImg);
+
+            splitWrapper.appendChild(leftLayer);
+            splitWrapper.appendChild(rightLayer);
+            cake.appendChild(splitWrapper);
+            cakeImage.style.visibility = 'hidden';
+
+            leftLayer.classList.add('cake-split-left');
+            rightLayer.classList.add('cake-split-right');
+            await Promise.all([waitForAnimationEnd(leftLayer), waitForAnimationEnd(rightLayer)]);
+            splitWrapper.remove();
+        }
+
+        const memoryItems = [
+            { src: 'image/image2.jpg', description: 'Trời xanh, mây trắng, nắng vàng... và một chút dịu dàng cho ngày hôm đó.' },
+            { src: 'image/image12.png', description: 'Nàng thơ' },
+            { src: 'image/image4.jpg', description: 'Ánh nhìn có thể cắt đứt mọi thứ...' },
+            { src: 'image/image14.png', description: '日本人' },
+            { src: 'image/image6.jpg', description: 'So cool, I like  it' },
+            { src: 'image/image7.jpg', description: 'Này nhìn dịu quá' },
+            { src: 'image/image8.jpg', description: 'Ờ...' },
+            { src: 'image/image9.jpg', description: 'Bông hoa ở giữa là bông hoa đẹp nhất' },
+            { src: 'image/image10.png', description: 'Một trong những lí do tui đoán bạn thích màu đỏ hoặc trắng' },
+            { src: 'image/image11.jpg', description: '=))))))' },
+            { src: 'image/image13.png', description: 'I dont kone' }
+        ];
+
+        window.spawnGiftMemoryBalloons = function(count = memoryItems.length) {
+            const modal = document.getElementById('gift-modal');
+            if (!modal) return;
+            modal.querySelectorAll('.memory-balloon').forEach(b => b.remove());
+
+const positions = [
+    { left: 17, top: 14 },
+    { left: 63, top: 14 },
+
+    { left: 9, top: 30 },
+    { left: 79, top: 30 },
+
+    { left: 21, top: 50 },
+    { left: 67, top: 50 },
+
+    { left: 35, top: 66 },
+    { left: 53, top: 66 },
+
+    { left: 15, top: 82 },
+    { left: 73, top: 82 }
+];
+
+            const orderedItems = [...memoryItems].slice(0, Math.min(count, memoryItems.length));
+            const riseDelay = 120;
+            const burstBaseDelay = 1450;
+
+            orderedItems.forEach((item, index) => {
+                const balloon = document.createElement('div');
+                balloon.className = 'memory-balloon';
+                const position = positions[index] || { left: 50, top: 30 + (index % 3) * 10 };
+                const rotation = (Math.random() - 0.5) * 18;
+                const driftX = (Math.random() - 0.5) * 22;
+                const driftY = (Math.random() - 0.5) * 14;
+                const photoDelay = (Math.random() * 2).toFixed(2);
+                const burstDelay = burstBaseDelay + index * 180;
+                const revealDelay = burstDelay + 300;
+
+                balloon.style.left = `${position.left}%`;
+                balloon.style.top = `${position.top + 34}vh`;
+                balloon.style.setProperty('--rot', `${rotation}deg`);
+                balloon.style.setProperty('--photo-rotate', `${rotation}deg`);
+                balloon.style.setProperty('--drift-x', `${driftX}px`);
+                balloon.style.setProperty('--drift-y', `${driftY}px`);
+                balloon.style.setProperty('--photo-delay', `${photoDelay}s`);
+                balloon.innerHTML = `
+                    <div class="bubble-core"></div>
+                    <div class="photo-frame">
+                        <img src="${item.src}" class="w-full h-full object-cover rounded-xl" alt="memory" />
+                    </div>
+                `;
+                balloon.addEventListener('click', () => openMemoryModal(item.src, item.description));
+                modal.appendChild(balloon);
+
+                setTimeout(() => {
+                    balloon.style.top = `${position.top}vh`;
+                    balloon.classList.add('float-up');
+                }, riseDelay);
+
+                setTimeout(() => {
+                    balloon.classList.add('burst');
+                }, burstDelay);
+
+                setTimeout(() => {
+                    balloon.classList.add('revealed');
+                }, revealDelay);
+            });
+        };
+
+        if (cake && stage) {
+            // expose reveal to other scripts
+            window.revealCakeWithCountdown = revealCakeWithCountdown;
+
+            // simple reveal flow after cake cutting
+            window.spawnMemoriesFlow = async function(options = {}) {
+                if (window.memoriesSpawned) return;
+                window.memoriesSpawned = true;
+                const shouldReveal = !window.giftSequenceCompleted;
+                const countdown = options?.countdown === true;
+                if (shouldReveal) {
+                    if (countdown) {
+                        await revealCakeWithCountdown(cake);
+                    } else {
+                        await revealCakeWithoutCountdown(cake);
+                    }
+                } else {
+                    const cakeImage = cake.querySelector('img');
+                    if (cakeImage) cakeImage.style.visibility = 'hidden';
+                }
+            };
+        }
+        const closeGift = document.getElementById('close-gift-modal'); 
+        if (closeGift) { 
+            closeGift.addEventListener('click', () => { 
+                if (!window.giftSequenceCompleted) {
+                    window.memoriesSpawned = false; 
+                    try { window.cakeClicked = false; } catch (e) {}
+                    try { window.ceremonyState = undefined; } catch (e) {}
+                }
+                document.querySelectorAll('.memory-balloon, .bubble-item').forEach(b => b.remove()); 
+                closeMemoryModal();
+            }); 
+        } 
+    });
+</script>
+</script>
+<script>
+(() => {
+    const canvas = document.getElementById('fireworks-canvas');
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    let DPR = window.devicePixelRatio || 1;
+
+    function resize() {
+        DPR = window.devicePixelRatio || 1;
+        canvas.width = window.innerWidth * DPR;
+        canvas.height = window.innerHeight * DPR;
+        canvas.style.width = window.innerWidth + 'px';
+        canvas.style.height = window.innerHeight + 'px';
+        ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+    }
+
+    window.addEventListener('resize', resize);
+    resize();
+
+    const fireworks = [];
+    const particles = [];
+
+    const rand = (min, max) => Math.random() * (max - min) + min;
+
+    class Firework {
+        constructor(sx, sy, tx, ty, color) {
+            this.x = sx; this.y = sy; this.sx = sx; this.sy = sy;
+            this.tx = tx; this.ty = ty;
+            this.speed = rand(6, 9);
+            this.angle = Math.atan2(ty - sy, tx - sx);
+            this.distance = Math.hypot(tx - sx, ty - sy);
+            this.traveled = 0;
+            this.color = color || `hsl(${rand(0,360)},100%,60%)`;
+            this.lastPoints = [];
+        }
+        update(index) {
+            const vx = Math.cos(this.angle) * this.speed;
+            const vy = Math.sin(this.angle) * this.speed;
+            this.x += vx; this.y += vy;
+            this.traveled += Math.hypot(vx, vy);
+            this.lastPoints.push([this.x, this.y]);
+            if (this.lastPoints.length > 8) this.lastPoints.shift();
+            if (this.traveled >= this.distance) {
+                createParticles(this.tx, this.ty, this.color);
+                fireworks.splice(index, 1);
+            }
+        }
+        draw() {
+            ctx.beginPath();
+            const lp = this.lastPoints;
+            if (lp.length > 1) {
+                ctx.moveTo(lp[0][0], lp[0][1]);
+                for (let i = 1; i < lp.length; i++) ctx.lineTo(lp[i][0], lp[i][1]);
+                ctx.strokeStyle = this.color;
+                ctx.lineWidth = 2;
+                ctx.stroke();
+            } else {
+                ctx.fillStyle = this.color;
+                ctx.fillRect(this.x, this.y, 2, 2);
+            }
+        }
+    }
+
+    function createParticles(x, y, color) {
+        const count = Math.floor(rand(12, 26));
+        for (let i = 0; i < count; i++) {
+            const angle = rand(0, Math.PI * 2);
+            const speed = rand(1, 8);
+            particles.push({
+                x, y,
+                vx: Math.cos(angle) * speed,
+                vy: Math.sin(angle) * speed,
+                life: rand(50, 100),
+                decay: rand(0.93, 0.97),
+                color,
+                alpha: 1,
+                gravity: 0.12 + Math.random() * 0.12
+            });
+        }
+    }
+
+    function launch(sx, sy, tx, ty, color) {
+        fireworks.push(new Firework(sx, sy, tx, ty, color));
+    }
+
+    let lastAuto = 0;
+    function loop(t) {
+        ctx.globalCompositeOperation = 'source-over';
+        // stronger fade so trails disappear faster (less visual clutter)
+        ctx.fillStyle = 'rgba(6,6,12,0.25)';
+        ctx.fillRect(0, 0, canvas.width / DPR, canvas.height / DPR);
+        ctx.globalCompositeOperation = 'lighter';
+
+        for (let i = fireworks.length - 1; i >= 0; i--) {
+            fireworks[i].update(i);
+            fireworks[i].draw();
+        }
+        for (let i = particles.length - 1; i >= 0; i--) {
+            const p = particles[i];
+            p.vy += p.gravity;
+            p.vx *= p.decay; p.vy *= p.decay;
+            p.x += p.vx; p.y += p.vy;
+            p.life--; p.alpha = Math.max(0, p.life / 120);
+            ctx.fillStyle = p.color; ctx.globalAlpha = p.alpha;
+            ctx.beginPath(); ctx.arc(p.x, p.y, 1.6, 0, Math.PI * 2); ctx.fill(); ctx.globalAlpha = 1;
+            if (p.life <= 0 || p.y > canvas.height / DPR + 20) particles.splice(i, 1);
+        }
+
+        // auto-launch fireworks less frequently and single launches to reduce density
+        if (t - lastAuto > 900) {
+            const sx = rand(window.innerWidth * 0.2, window.innerWidth * 0.8);
+            const sy = window.innerHeight + 20;
+            const tx = rand(50, window.innerWidth - 50);
+            const ty = rand(window.innerHeight * 0.05, window.innerHeight * 0.6);
+            launch(sx, sy, tx, ty, `hsl(${Math.random() * 360},100%,60%)`);
+            lastAuto = t;
+        }
+
+        requestAnimationFrame(loop);
+    }
+    requestAnimationFrame(loop);
+
+    window.addEventListener('pointerdown', (e) => {
+        const sx = rand(window.innerWidth * 0.35, window.innerWidth * 0.65);
+        const sy = window.innerHeight + 20;
+        launch(sx, sy, e.clientX, e.clientY, `hsl(${Math.random() * 360},100%,60%)`);
+    });
+
+    // initial resize set
+    resize();
+})();
+</script>
+<script>
+// Candle lighting interaction: tap-and-hold to reveal screen and trigger cake
+(function() {
+    const overlay = document.getElementById('candle-overlay');
+    const cake = document.getElementById('birthday-cake-container');
+    if (!overlay) return;
+
+    let holdTimer = null;
+    let holding = false;
+    const holdDuration = 3000; // ms to light (3s)
+    const feedbackEl = document.getElementById('candle-feedback');
+
+    function startHold(e) {
+        try { e.preventDefault(); } catch (er) {}
+        if (holding) return;
+        holding = true;
+        const startX = e.clientX || (e.touches && e.touches[0].clientX) || (window.innerWidth/2);
+        const startY = e.clientY || (e.touches && e.touches[0].clientY) || (window.innerHeight/2);
+
+        const start = performance.now();
+        function step(now) {
+            const t = Math.min(1, (now - start) / holdDuration);
+            // scale feedback from 0.2 -> 1.2
+            if (feedbackEl) feedbackEl.style.transform = `translate(-50%,-50%) scale(${0.2 + t * 1.0})`;
+            // fade overlay gradually
+            overlay.style.opacity = `${Math.max(0, 1 - t)}`;
+            if (t < 1 && holding) requestAnimationFrame(step);
+        }
+        requestAnimationFrame(step);
+
+        holdTimer = setTimeout(() => {
+            // reveal and remove overlay
+            overlay.classList.add('revealed');
+            overlay.style.transition = 'opacity 420ms ease';
+            overlay.style.opacity = '0';
+            // mark ceremony state as candle-lit
+            window.ceremonyState = 'candle-lit';
+            // hide feedback and remove lighting overlay after fade; then enable blow overlay
+            setTimeout(() => {
+                if (feedbackEl) feedbackEl.style.opacity = '0';
+                // show blow overlay to allow blowing candles
+                const blow = document.getElementById('blow-overlay');
+                if (blow) {
+                    blow.classList.add('active');
+                    blow.setAttribute('aria-hidden', 'false');
+                    // position the blow progress UI above the cake
+                    try {
+                        const prog = document.getElementById('blow-progress-ui');
+                        const cakeEl = document.getElementById('birthday-cake-container');
+                        if (prog && cakeEl) {
+                            const rect = cakeEl.getBoundingClientRect();
+                            // place the progress UI just above the top of the cake
+                            prog.style.left = (rect.left + rect.width / 2) + 'px';
+                            prog.style.top = (rect.top - Math.max(64, rect.height * 0.18)) + 'px';
+                            prog.style.transform = 'translate(-50%,-100%)';
+                            // also move the blow prompt above the two flames (centered over cake)
+                            const prompt = blow.querySelector('.candle-prompt');
+                            if (prompt) {
+                                prompt.style.position = 'fixed';
+                                prompt.style.left = (rect.left + rect.width / 2) + 'px';
+                                // put prompt slightly above the flames for clear visibility
+                                prompt.style.top = (rect.top - Math.max(140, rect.height * 0.4)) + 'px';
+                                prompt.style.transform = 'translate(-50%,-50%)';
+                                prompt.style.zIndex = 235;
+                                prompt.style.pointerEvents = 'auto';
+                            }
+                        }
+                    } catch (e) { /* ignore */ }
+                }
+                if (overlay && overlay.parentElement) overlay.remove();
+            }, 520);
+            // show a small prompt to user
+            try {
+                const tip = document.createElement('div');
+                tip.className = 'status-message visible';
+                tip.style.position = 'fixed';
+                tip.style.left = '50%';
+                tip.style.top = '12%';
+                tip.style.transform = 'translateX(-50%)';
+                tip.style.zIndex = 240;
+                document.body.appendChild(tip);
+                setTimeout(() => tip.remove(), 2400);
+            } catch (e) {}
+        }, holdDuration);
+    }
+
+    function cancelHold() {
+        holding = false;
+        if (holdTimer) { clearTimeout(holdTimer); holdTimer = null; }
+        if (feedbackEl) feedbackEl.style.transform = 'translate(-50%,-50%) scale(0.2)';
+        overlay.style.transition = 'opacity 220ms ease-in';
+        overlay.style.opacity = '1';
+        setTimeout(() => overlay.style.transition = '', 300);
+    }
+
+    overlay.addEventListener('pointerdown', startHold);
+    window.addEventListener('pointerup', cancelHold);
+    overlay.addEventListener('touchstart', startHold, {passive:false});
+    window.addEventListener('touchend', cancelHold);
+
+    // prevent scrolling while overlay active
+    document.addEventListener('touchmove', function(e){ if (overlay && !overlay.classList.contains('revealed')) e.preventDefault(); }, {passive:false});
+})();
+</script>
+<script>
+// Additional candle blow handler appended: (supports press-and-hold progress, smoke, confetti, and wish message)
+(function(){
+    // lightweight helper queries
+    const $ = sel => document.querySelector(sel);
+    document.addEventListener('DOMContentLoaded', () => {
+        const overlay = $('#blow-overlay');
+        if (!overlay) return;
+        // if we've already added UI, don't duplicate
+        if (document.getElementById('blow-progress-ui')) return;
+
+        const progressUI = document.createElement('div');
+        progressUI.id = 'blow-progress-ui';
+        progressUI.innerHTML = `<div class="progress-bar"><div class="progress-fill"></div></div>`;
+        overlay.appendChild(progressUI);
+
+        let startTs = 0, intervalId = null;
+        const holdDuration = 2000;
+
+        function updateProgress() {
+            const elapsed = Date.now() - startTs;
+            const pct = Math.max(0, Math.min(100, Math.round((elapsed / holdDuration) * 100)));
+            progressUI.querySelector('.progress-fill').style.width = pct + '%';
+            if (pct >= 100) {
+                clearInterval(intervalId); intervalId = null; finishBlow();
+            }
+        }
+
+        function startHold(e) {
+            if (!overlay.classList.contains('active')) return;
+            try { e.preventDefault(); } catch (er) {}
+            startTs = Date.now();
+            updateProgress();
+            intervalId = setInterval(updateProgress, 80);
+            window.addEventListener('mouseup', cancelHold);
+            window.addEventListener('touchend', cancelHold);
+        }
+
+        function cancelHold() {
+            if (intervalId) { clearInterval(intervalId); intervalId = null; }
+            const fill = progressUI.querySelector('.progress-fill');
+            fill.style.transition = 'width 240ms ease';
+            fill.style.width = '0%';
+            setTimeout(()=>{ fill.style.transition = ''; }, 300);
+            window.removeEventListener('mouseup', cancelHold);
+            window.removeEventListener('touchend', cancelHold);
+        }
+
+        function finishBlow() {
+            const flames = document.querySelectorAll('.cake-flame');
+            flames.forEach(f => {
+                f.classList.add('blown');
+                // create smoke element
+                const smoke = document.createElement('div'); smoke.className = 'candle-smoke';
+                f.parentElement.appendChild(smoke);
+                const fRect = f.getBoundingClientRect();
+                const pRect = f.parentElement.getBoundingClientRect();
+                smoke.style.left = (fRect.left + fRect.width/2 - pRect.left) + 'px';
+                smoke.style.top = (fRect.top + fRect.height/2 - pRect.top) + 'px';
+            });
+            setTimeout(()=>{ document.querySelectorAll('.cake-flame').forEach(f=>f.style.opacity='0'); }, 220);
+            // deactivate blow overlay and cleanup progress UI
+            const blow = document.getElementById('blow-overlay');
+            if (blow) {
+                blow.classList.remove('active');
+                blow.setAttribute('aria-hidden', 'true');
+            }
+            const prog = document.getElementById('blow-progress-ui');
+            if (prog) prog.remove();
+            setTimeout(()=>{ launchConfetti(); showWish(); }, 520);
+        }
+
+        function launchConfetti(){
+            const container = document.createElement('div'); container.className = 'confetti-container'; document.body.appendChild(container);
+            const colors = ['#ff4da6','#ffd166','#a0e7e5','#ff8fab','#cdb4db','#ffd1a9'];
+            const count = 56;
+            for(let i=0;i<count;i++){
+                const piece = document.createElement('div'); piece.className = 'confetti-piece';
+                piece.style.background = colors[Math.floor(Math.random()*colors.length)];
+                piece.style.left = (20 + Math.random()*60) + '%';
+                piece.style.top = (-5 + Math.random()*6) + 'vh';
+                piece.style.transform = `rotate(${Math.random()*360}deg)`;
+                const delay = Math.random()*300; piece.style.animationDelay = delay+'ms';
+                piece.style.width = (8 + Math.random()*8) + 'px'; piece.style.height = (12 + Math.random()*10) + 'px';
+                container.appendChild(piece);
+            }
+            setTimeout(()=>{ container.remove(); }, 3800);
+        }
+
+        function showWish(){
+            const toast = document.createElement('div'); toast.className = 'wish-toast'; toast.textContent = '✨ Chúc điều ước của bạn sẽ thành hiện thực.'; document.body.appendChild(toast);
+            requestAnimationFrame(()=> toast.classList.add('visible'));
+            setTimeout(()=>{ toast.classList.remove('visible'); setTimeout(()=>toast.remove(),400); }, 5200);
+        }
+
+        overlay.addEventListener('mousedown', startHold);
+        overlay.addEventListener('touchstart', startHold, {passive:false});
+    });
+})();
+</script>
+</body></html>
