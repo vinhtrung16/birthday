@@ -221,6 +221,19 @@
             overflow: visible;
             background: transparent; /* ensure no white box from container */
             animation: cake-breathe 6s ease-in-out infinite;
+            will-change: transform, filter;
+            backface-visibility: hidden;
+            transform: translateZ(0);
+        }
+        .cake-container.is-cutting {
+            animation: none !important;
+        }
+        .cake-container.is-cutting::before,
+        .cake-container.is-cutting::after,
+        .cake-container.is-cutting .cake-flame,
+        .cake-container.is-cutting .cake-sparkle,
+        .cake-container.is-cutting .cake-img {
+            animation: none !important;
         }
         .cake-container::before {
             content: '';
@@ -407,38 +420,100 @@
             justify-content: center;
             pointer-events: none;
             z-index: 20;
+            overflow: visible;
+        }
+        .cake-split-wrapper::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 12%;
+            bottom: 12%;
+            width: 4px;
+            border-radius: 999px;
+            transform: translateX(-50%) scaleY(0.2);
+            background: linear-gradient(180deg, rgba(255,255,255,0), rgba(255,255,255,0.9), rgba(255,255,255,0));
+            box-shadow: 0 0 14px rgba(255,255,255,0.9);
+            opacity: 0;
+            animation: cake-cut-line 1400ms cubic-bezier(.22,1,.36,1) forwards;
         }
         .cake-split-layer {
             position: absolute;
             width: 100%;
             height: 100%;
             overflow: hidden;
+            transform-origin: center center;
+            will-change: transform, opacity, filter;
+            backface-visibility: hidden;
+            transform: translateZ(0);
+            contain: paint;
         }
         .cake-split-layer.left {
             clip-path: inset(0 50% 0 0);
+            transform-origin: right center;
         }
         .cake-split-layer.right {
             clip-path: inset(0 0 0 50%);
+            transform-origin: left center;
         }
         .cake-split-layer img {
             width: 100%;
             height: 100%;
             object-fit: contain;
             display: block;
+            filter: drop-shadow(0 10px 20px rgba(182, 0, 85, 0.18));
+        }
+        @keyframes cake-cut-line {
+            0% { opacity: 0; transform: translateX(-50%) scaleY(0.25); }
+            35% { opacity: 0.9; transform: translateX(-50%) scaleY(0.95); }
+            100% { opacity: 0; transform: translateX(-50%) scaleY(1.18); }
         }
         @keyframes cake-slice-left {
-            from { transform: translateX(0) rotate(0deg); opacity: 1; }
-            to { transform: translate(-140%, -20%) rotate(-18deg); opacity: 0; }
+            0% { transform: translateX(0) translateY(0) rotate(0deg) scale(1); opacity: 1; }
+            20% { transform: translate(-1.2%, -0.4%) rotate(-0.8deg) scale(1.002); opacity: 1; }
+            45% { transform: translate(-3.2%, -1%) rotate(-1.8deg) scale(1.004); opacity: 0.98; }
+            75% { transform: translate(-5.8%, -2.2%) rotate(-3.4deg) scale(0.998); opacity: 0.95; }
+            100% { transform: translate(-8.4%, -3.2%) rotate(-4.6deg) scale(0.99); opacity: 0.9; }
         }
         @keyframes cake-slice-right {
-            from { transform: translateX(0) rotate(0deg); opacity: 1; }
-            to { transform: translate(140%, -20%) rotate(18deg); opacity: 0; }
+            0% { transform: translateX(0) translateY(0) rotate(0deg) scale(1); opacity: 1; }
+            20% { transform: translate(1.2%, -0.4%) rotate(0.8deg) scale(1.002); opacity: 1; }
+            45% { transform: translate(3.2%, -1%) rotate(1.8deg) scale(1.004); opacity: 0.98; }
+            75% { transform: translate(5.8%, -2.2%) rotate(3.4deg) scale(0.998); opacity: 0.95; }
+            100% { transform: translate(8.4%, -3.2%) rotate(4.6deg) scale(0.99); opacity: 0.9; }
         }
         .cake-split-left {
-            animation: cake-slice-left 900ms ease forwards;
+            animation: cake-slice-left 1150ms cubic-bezier(.2,.8,.25,1) forwards;
         }
         .cake-split-right {
-            animation: cake-slice-right 900ms ease forwards;
+            animation: cake-slice-right 1150ms cubic-bezier(.2,.8,.25,1) forwards;
+        }
+        .cake-cut-message {
+            position: absolute;
+            left: 50%;
+            bottom: 14px;
+            transform: translate(-50%, 16px);
+            width: min(92vw, 420px);
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            z-index: 40;
+            opacity: 0;
+            transition: opacity 320ms ease, transform 320ms ease;
+            pointer-events: none;
+        }
+        .cake-cut-message.visible {
+            opacity: 1;
+            transform: translate(-50%, 0);
+        }
+        .cake-cut-note {
+            background: rgba(255,255,255,0.96);
+            color: #b60055;
+            border-radius: 16px;
+            text-align: center;
+            padding: 10px 14px;
+            font-weight: 700;
+            box-shadow: 0 8px 24px rgba(182, 0, 85, 0.14);
+            border: 1px solid rgba(182, 0, 85, 0.12);
         }
         .countdown-overlay {
             position: absolute;
@@ -937,6 +1012,15 @@
             55% { opacity: 1; transform: scale(1); }
             100% { opacity: 0; transform: scale(1.4); }
         }
+        /* Fade-out-forward used to transition from intro to main */
+        @keyframes fade-out-fwd {
+            0% { opacity: 1; transform: translateZ(0) translateY(0) scale(1); }
+            100% { opacity: 0; transform: translateZ(80px) translateY(-18px) scale(0.985); }
+        }
+        .fade-out-fwd {
+            animation: fade-out-fwd 1.6s ease both;
+            transform-origin: center center;
+        }
     </style>
     <style>
         /* Candle overlay styles */
@@ -979,6 +1063,26 @@
         }
         .candle-overlay.revealed { opacity: 0; pointer-events: none; visibility: hidden; }
 
+        /* Intermediate wish overlay */
+        #wish-overlay {
+            background: rgba(255, 246, 250, 0.78);
+            backdrop-filter: blur(6px);
+        }
+        #wish-overlay .candle-prompt {
+            background: rgba(255,255,255,0.98);
+            color: #b60055;
+            padding: 14px 22px;
+            font-size: 1.35rem;
+            font-weight: 800;
+            border: 1px solid rgba(182,0,85,0.16);
+            border-radius: 999px;
+            box-shadow: 0 10px 30px rgba(182,0,85,0.12);
+            backdrop-filter: blur(6px);
+            line-height: 1.25;
+            min-width: 220px;
+            text-align: center;
+        }
+
         /* Keep blow overlay transparent so it doesn't darken the screen */
         #blow-overlay { background: transparent; }
         /* Make the blow prompt more visible and nudge it downward so it doesn't cover other UI */
@@ -1018,7 +1122,24 @@
         .confetti-piece { position: absolute; width: 10px; height: 16px; border-radius: 2px; opacity: 0.95; animation: confetti-fall 2200ms cubic-bezier(.2,.7,.3,1) forwards; }
         @keyframes confetti-fall { 0%{transform: translateY(-10vh) rotate(0);} 100%{transform: translateY(110vh) rotate(520deg);} }
 
-        .wish-toast { position: fixed; bottom: 20%; left: 50%; transform: translate(-50%, 24px); background: linear-gradient(90deg,#fff,#fff3fb); color: #b60055; padding: 12px 18px; border-radius: 12px; box-shadow: 0 8px 30px rgba(182,0,85,0.12); opacity: 0; z-index: 260; transition: all 360ms ease; font-weight:700; }
+        .wish-toast {
+            position: fixed;
+            top: 0;
+            left: 50%;
+            transform: translate(-50%, 24px);
+            background: linear-gradient(90deg,#fff,#fff3fb);
+            color: #b60055;
+            padding: 14px 20px;
+            border-radius: 18px;
+            box-shadow: 0 10px 30px rgba(182,0,85,0.16);
+            opacity: 0;
+            z-index: 260;
+            transition: all 360ms ease;
+            font-weight: 700;
+            text-align: center;
+            max-width: min(92vw, 420px);
+            line-height: 1.4;
+        }
         .wish-toast.visible { opacity: 1; transform: translate(-50%, 0); }
     </style>
 </head>
@@ -1027,7 +1148,7 @@
     <div id="intro-screen" class="intro-screen" aria-label="Màn hình mở đầu">
         <div class="intro-card">
             <h1>Her Special Day is Coming</h1>
-            <p>Đợi thêm một chút để khoảnh khắc này mở ra. Sau khi đồng hồ chạy hết, nhấn nút để vào màn chính.</p>
+            <p>Đợi thêm một chút để khoảnh khắc này mở ra</p>
             <div class="intro-countdown-grid">
                 <div class="count-item">
                     <span id="count-days">00</span>
@@ -1042,7 +1163,7 @@
                     <span class="count-label">Phút</span>
                 </div>
                 <div class="count-item">
-                    <span id="count-seconds">2</span>
+                    <span id="count-seconds">11</span>
                     <span class="count-label">Giây</span>
                 </div>
             </div>
@@ -1053,6 +1174,10 @@
     <div id="candle-overlay" class="candle-overlay" aria-hidden="true">
         <div class="candle-prompt">Chạm và giữ để thắp nến</div>
         <div class="candle-feedback" id="candle-feedback" aria-hidden="true"></div>
+    </div>
+    <!-- Wish overlay shown between lighting and blowing -->
+    <div id="wish-overlay" class="candle-overlay" aria-hidden="true">
+        <div class="candle-prompt">Ước điều ước đi</div>
     </div>
     <!-- Blow overlay (appears after candles are lit) -->
     <div id="blow-overlay" class="candle-overlay" aria-hidden="true">
@@ -1070,7 +1195,7 @@
 <header class="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-xl border-b border-primary/10 shadow-sm flex items-center justify-between px-margin-mobile md:px-margin-desktop h-16">
 <div class="flex items-center gap-2">
 <span class="material-symbols-outlined text-primary text-[26px]">celebration</span>
-<h1 class="font-headline-lg-mobile text-[24px] text-primary tracking-tight">Celebration</h1>
+<h1 class="font-headline-lg-mobile text-[24px] text-primary tracking-tight">For Nira</h1>
 </div>
 <button class="hover:opacity-80 transition-opacity active:scale-95 duration-200">
 <span class="material-symbols-outlined text-primary" data-icon="more_vert">more_vert</span>
@@ -1083,7 +1208,9 @@
             Happy Birthday
         </h2>
 <p class="font-body-md text-on-background/80 text-base md:text-lg leading-relaxed max-w-2xl mx-auto">
-            Thắp sáng khoảnh khắc của bạn với một thiết kế dịu dàng, ngọt ngào và hài hòa.
+            Một món quà nhỏ, gửi đến bạn
+            Hy vọng mỗi lần lướt xuống, bạn sẽ mỉm cười thêm một chút.
+            Tất cả những điều dưới đây đều được chuẩn bị dành riêng cho ngày đặc biệt của bạn.
 </p>
 </div>
 <div class="w-full max-w-md mx-auto relative mb-12" id="avatar-card-wrapper">
@@ -1101,7 +1228,7 @@
     </div>
 </div>
 <h3 class="font-headline-lg text-[32px] text-on-background mb-2">Võ Lê Xuân Nữ</h3>
-<p class="font-body-md text-on-background/70 font-semibold">11 Tháng 08, 2003</p>
+<p class="font-body-md text-on-background/70 font-semibold">11 - 08 - 2003</p>
 <div class="mt-5 flex justify-center gap-3">
 <span class="w-2 h-2 rounded-full bg-primary"></span>
 <span class="w-2 h-2 rounded-full bg-secondary"></span>
@@ -1164,7 +1291,7 @@
 <img alt="Bánh sinh nhật neon" class="cake-img" id="cake-main-img" src="image/cake.png"/>
 </div>
 </div>
-<div id="cake-cta" class="cake-cta">👇 Chạm vào bánh để cắt nhé</div>
+<div id="cake-cta" class="cake-cta">Chạm vào bánh để cắt nhé</div>
 <div class="gift-stars" aria-hidden="true">
     <span class="gift-star">✨</span>
     <span class="gift-star">⭐</span>
@@ -1203,10 +1330,6 @@
         <button id="close-word-btn" class="absolute top-3 right-3 text-primary bg-surface-container-high rounded-full p-2">✕</button>
         <h3 class="text-primary font-headline-lg-mobile text-[20px] text-center">Xếp Chữ</h3>
         <p class="text-center text-on-background/70 mt-2">Sắp xếp các chữ cái thành từ đúng. Gõ đáp án vào ô bên dưới và nhấn gửi.</p>
-        <div class="flex items-center justify-center gap-3 mt-3">
-            <button id="word-hint-btn" class="bg-white border rounded-md px-3 py-2">Gợi ý</button>
-            <button id="word-reveal-btn" class="bg-white border rounded-md px-3 py-2">Đáp án</button>
-        </div>
         <div id="word-board" class="grid grid-cols-6 gap-2 w-full mt-4" style="min-height:120px;">
             <!-- letter tiles injected here -->
         </div>
@@ -1218,10 +1341,18 @@
     <div class="w-full max-w-md bg-white rounded-2xl p-4 relative">
         <button id="close-code-btn" class="absolute top-3 right-3 text-primary bg-surface-container-high rounded-full p-2">✕</button>
         <h3 class="text-primary font-headline-lg-mobile text-[20px] text-center">Mở quà</h3>
-        <p class="text-center text-on-background/70 mt-2">Hãy nhập mật mã vừa rồi để xem quà.</p>
+        <div class="mt-3 text-left text-sm text-on-background/80 space-y-2">
+            <p>Mọi cánh cửa đều cần một chiếc chìa khóa.</p>
+            <p>Còn chiếc chìa khóa của chiếc rương này...</p>
+            <p>lại chính là ngày mà một cô gái xuất hiện trên thế giới.</p>
+            <p>Ngày mà mỗi năm chỉ đến một lần.</p>
+            <p>Ngày đó cũng chính là lý do hôm nay có món quà này.</p>
+            <p>Hãy nhập theo dạng DDMMYY.</p>
+        </div>
+        <p id="code-hint-text" class="hidden text-center text-on-background/70 mt-3">Hãy nhập mật mã vừa rồi để xem quà.</p>
         <div class="mt-4 flex gap-2 items-center">
             <input id="code-input" type="password" maxlength="6" placeholder="" class="grow border rounded-md py-2 px-3 text-center text-lg" autocomplete="off" inputmode="numeric" />
-            <button id="code-submit" class="bg-primary text-white px-4 py-2 rounded-full">Gửi</button>
+            <button id="code-submit" class="bg-primary text-white px-4 py-2 rounded-full">Mở quà</button>
         </div>
         <div id="code-message" class="text-center text-primary mt-3"></div>
     </div>
@@ -1313,8 +1444,8 @@ const message =
         async function playStatusSequence() {
             const statuses = [
                 { text: "ʕっ•ᴥ•ʔっ  Đợi tí đang viết thư...", duration: 3000 },
-                { text: "ʕ •ᴥ•ʔ✍️  Sắp xong rồi...", duration: 3000 },
-                { text: "ʕᵔᴥᵔʔ🎉  Xong rồi nè...", duration: 3000 }
+                { text: "ʕっ•ᴥ•ʔっ  Sắp xong rồi...", duration: 3000 },
+                { text: "ʕっ•ᴥ•ʔっ  Xong rồi nè...", duration: 3000 }
             ];
 
             for (const status of statuses) {
@@ -1416,6 +1547,8 @@ const message =
         const enterMainBtn = document.getElementById('enter-main-btn');
         let introSeconds = 11;
         let introInterval;
+        let introEffectTimer;
+        let introConfettiTimer;
 
         function updateIntroCountdown() {
             if (daysEl) daysEl.textContent = '00';
@@ -1472,6 +1605,8 @@ const message =
 
         async function enterMainScreen() {
             if (!introScreen) return;
+            if (introEffectTimer) { clearInterval(introEffectTimer); introEffectTimer = null; }
+            if (introConfettiTimer) { clearInterval(introConfettiTimer); introConfettiTimer = null; }
             if (countdownAudio) {
                 countdownAudio.pause();
                 countdownAudio.currentTime = 0;
@@ -1488,23 +1623,40 @@ const message =
                 countdownAudio.currentTime = 0;
                 countdownAudio.play().catch(() => {});
             }
+            // start gentle visual effects while waiting
+            (function startIntroEffects(){
+                const overlay = document.getElementById('countdown-word-overlay') || introScreen || document.body;
+                // small firework pops near the words
+                introEffectTimer = setInterval(() => { try { createIntroFirework(overlay); } catch(e) {} }, 900);
+                // occasional confetti bursts to make waiting fun
+                introConfettiTimer = setInterval(() => { try { createConfetti(introScreen || document.body); } catch(e) {} }, 2200);
+            })();
             updateIntroCountdown();
             introInterval = setInterval(() => {
                 introSeconds -= 1;
                 if (introSeconds <= 0) {
                     clearInterval(introInterval);
+                    if (introEffectTimer) { clearInterval(introEffectTimer); introEffectTimer = null; }
+                    if (introConfettiTimer) { clearInterval(introConfettiTimer); introConfettiTimer = null; }
                     introSeconds = 0;
                     updateIntroCountdown();
                     clearIntroContent();
                     enterMainBtn?.classList.add('hidden');
-                    const wordSequence = ['HAPPY', 'BIRTHDAY', 'TO', 'NAME'];
+                    const wordSequence = ['HAPPY', 'BIRTHDAY', 'TO', 'YOU'];
                     showCountdownWords(wordSequence).then(() => {
-                        enterMainScreen();
+                        if (introScreen) {
+                            introScreen.classList.add('fade-out-fwd');
+                            introScreen.addEventListener('animationend', () => {
+                                enterMainScreen();
+                            }, { once: true });
+                        } else {
+                            enterMainScreen();
+                        }
                     });
                     return;
                 }
                 updateIntroCountdown();
-            }, 1000);
+            }, 1500);
         }
 
         if (enterMainBtn) {
@@ -1639,7 +1791,7 @@ const message =
             giftContent?.addEventListener('animationend', onGiftEnd);
         }
 
-    // Puzzle game (3x3) - click to swap tiles implementation
+    // Puzzle game (3x3) - hold one tile and drag to swap/reorder
     function initPuzzleGame() {
         const openGameBtn = document.getElementById('open-game-btn');
         const gameModal = document.getElementById('game-modal');
@@ -1651,6 +1803,11 @@ const message =
         let original = Array.from({length:9}, (_,i)=>i);
         let current = [];
         let firstPick = null;
+        let dragClone = null;
+        let dragFromCell = null;
+        let isDragging = false;
+        let holdTimer = null;
+        let dragPointerId = null;
 
         function openGame() {
             gameModal.classList.remove('hidden');
@@ -1664,13 +1821,16 @@ const message =
             gameModal.classList.remove('flex');
             board.innerHTML = '';
             firstPick = null;
+            clearHoldTimer();
+            if (dragClone && dragClone.parentElement) dragClone.remove();
+            dragClone = null;
+            dragFromCell = null;
+            isDragging = false;
         }
 
         function buildBoard(source) {
             board.innerHTML = '';
-            // init current to shuffled order
             current = shuffle(Array.from(original));
-            // ensure not already solved
             if (isSolved()) current = shuffle(Array.from(original));
 
             for (let cell = 0; cell < 9; cell++) {
@@ -1683,46 +1843,60 @@ const message =
                 tile.style.boxSizing = 'border-box';
                 tile.style.backgroundImage = `url(${source})`;
                 tile.style.backgroundSize = '300% 300%';
+                tile.style.backgroundRepeat = 'no-repeat';
+                tile.style.touchAction = 'none';
+                tile.style.userSelect = 'none';
                 const col = origIndex % 3;
                 const row = Math.floor(origIndex / 3);
                 tile.style.backgroundPosition = `${col * 50}% ${row * 50}%`;
-                tile.style.cursor = 'pointer';
-                tile.dataset.cell = cell;
-                tile.dataset.orig = origIndex;
+                tile.style.cursor = 'grab';
                 tile.style.display = 'flex';
                 tile.style.alignItems = 'center';
                 tile.style.justifyContent = 'center';
-                // support press-and-hold drag (and click fallback)
-                let holdTimer = null;
-                let isDragging = false;
-                let pointerId = null;
+                tile.dataset.cell = cell;
+                tile.dataset.orig = origIndex;
+
                 tile.addEventListener('pointerdown', (ev) => {
                     ev.preventDefault();
-                    pointerId = ev.pointerId;
-                    // short hold before starting drag
+                    dragPointerId = ev.pointerId;
+                    tile.setPointerCapture?.(ev.pointerId);
+                    clearHoldTimer();
                     holdTimer = setTimeout(() => {
-                        beginDrag(tile, ev.clientX, ev.clientY, pointerId);
-                    }, 160);
+                        beginDrag(tile, ev.clientX, ev.clientY);
+                    }, 140);
                 });
+
+                tile.addEventListener('pointermove', (ev) => {
+                    if (!isDragging) return;
+                    moveDragClone(ev.clientX, ev.clientY);
+                });
+
                 tile.addEventListener('pointerup', (ev) => {
-                    // if pointerup before hold, treat as click (swap)
-                    if (holdTimer) { clearTimeout(holdTimer); holdTimer = null; }
+                    clearHoldTimer();
                     if (!isDragging) {
                         onTileClick(ev);
                     } else {
                         endDrag(ev.clientX, ev.clientY);
                     }
                 });
+
                 tile.addEventListener('pointercancel', () => {
-                    if (holdTimer) { clearTimeout(holdTimer); holdTimer = null; }
+                    clearHoldTimer();
                     if (isDragging) endDrag();
                 });
+
                 board.appendChild(tile);
             }
-            // make grid cells square by using padding trick per child
-            // set each grid cell to be a square via CSS variable
+
             const tiles = board.querySelectorAll('.puzzle-tile');
             tiles.forEach(t => { t.style.minHeight = '0'; });
+        }
+
+        function clearHoldTimer() {
+            if (holdTimer) {
+                clearTimeout(holdTimer);
+                holdTimer = null;
+            }
         }
 
         function onTileClick(e) {
@@ -1734,13 +1908,11 @@ const message =
                 return;
             }
             if (firstPick === idx) {
-                // deselect
                 firstPick = null;
                 tile.style.outline = '';
                 render();
                 return;
             }
-            // swap in current array
             const a = firstPick, b = idx;
             [current[a], current[b]] = [current[b], current[a]];
             firstPick = null;
@@ -1748,15 +1920,11 @@ const message =
             if (isSolved()) onWin();
         }
 
-        // Drag helpers (clone-based dragging)
-        let dragClone = null;
-        let dragFromCell = null;
-
-        function beginDrag(tile, startX, startY, pid) {
+        function beginDrag(tile, startX, startY) {
             isDragging = true;
             dragFromCell = Number(tile.dataset.cell);
-            // create clone visual
             const rect = tile.getBoundingClientRect();
+
             dragClone = tile.cloneNode(false);
             dragClone.style.position = 'fixed';
             dragClone.style.left = rect.left + 'px';
@@ -1764,28 +1932,26 @@ const message =
             dragClone.style.width = rect.width + 'px';
             dragClone.style.height = rect.height + 'px';
             dragClone.style.margin = '0';
-            dragClone.style.zIndex = 1000;
+            dragClone.style.borderRadius = '8px';
+            dragClone.style.border = '2px solid rgba(0,0,0,0.06)';
+            dragClone.style.zIndex = '1000';
             dragClone.style.pointerEvents = 'none';
-            dragClone.style.transition = 'transform 80ms linear';
-            // keep background + position
-            const origIndex = Number(tile.dataset.orig);
-            const col = origIndex % 3;
-            const row = Math.floor(origIndex / 3);
+            dragClone.style.boxShadow = '0 10px 24px rgba(0,0,0,0.18)';
             dragClone.style.backgroundImage = tile.style.backgroundImage;
             dragClone.style.backgroundSize = tile.style.backgroundSize;
-            dragClone.style.backgroundPosition = `${col * 50}% ${row * 50}%`;
+            dragClone.style.backgroundRepeat = 'no-repeat';
+            dragClone.style.backgroundPosition = tile.style.backgroundPosition;
+            dragClone.style.touchAction = 'none';
             document.body.appendChild(dragClone);
-            // hide original tile while dragging
             tile.style.visibility = 'hidden';
 
             function onMove(ev) {
-                const x = ev.clientX - rect.width/2;
-                const y = ev.clientY - rect.height/2;
-                dragClone.style.left = x + 'px';
-                dragClone.style.top = y + 'px';
+                if (ev.pointerId !== dragPointerId) return;
+                moveDragClone(ev.clientX, ev.clientY);
             }
 
             function onUp(ev) {
+                if (ev.pointerId !== dragPointerId) return;
                 document.removeEventListener('pointermove', onMove);
                 document.removeEventListener('pointerup', onUp);
                 endDrag(ev.clientX, ev.clientY);
@@ -1793,26 +1959,30 @@ const message =
 
             document.addEventListener('pointermove', onMove);
             document.addEventListener('pointerup', onUp);
+            moveDragClone(startX, startY);
+        }
+
+        function moveDragClone(clientX, clientY) {
+            if (!dragClone) return;
+            const rect = dragClone.getBoundingClientRect();
+            dragClone.style.left = `${clientX - rect.width / 2}px`;
+            dragClone.style.top = `${clientY - rect.height / 2}px`;
         }
 
         function endDrag(clientX, clientY) {
             isDragging = false;
-            // find drop target
             let targetTile = null;
             if (typeof clientX === 'number' && typeof clientY === 'number') {
                 const el = document.elementFromPoint(clientX, clientY);
                 if (el) targetTile = el.closest('.puzzle-tile');
             }
-            // if drop on a valid tile, swap
-            if (targetTile) {
+            if (targetTile && dragFromCell !== null) {
                 const toCell = Number(targetTile.dataset.cell);
-                if (!Number.isNaN(toCell) && dragFromCell !== null) {
+                if (!Number.isNaN(toCell) && dragFromCell !== toCell) {
                     [current[dragFromCell], current[toCell]] = [current[toCell], current[dragFromCell]];
                 }
             }
-            // cleanup clone and restore original visibility
-            const originals = board.querySelectorAll('.puzzle-tile');
-            originals.forEach(t => t.style.visibility = 'visible');
+            board.querySelectorAll('.puzzle-tile').forEach(t => t.style.visibility = 'visible');
             if (dragClone && dragClone.parentElement) dragClone.remove();
             dragClone = null;
             dragFromCell = null;
@@ -1821,7 +1991,6 @@ const message =
         }
 
         function render() {
-            // update tiles to reflect current mapping
             const tiles = board.querySelectorAll('.puzzle-tile');
             tiles.forEach((tile, cell) => {
                 const origIndex = current[cell];
@@ -1842,7 +2011,6 @@ const message =
         function onWin() {
             message.textContent = '🎉 Hoàn thành! Chúc mừng bạn!';
             celebrateConfetti();
-            // after puzzle win, open the word-arrange game
             setTimeout(() => {
                 if (window.openWordGame) window.openWordGame();
             }, 1200);
@@ -1925,14 +2093,14 @@ const message =
                         const val = (input.value || '').toUpperCase().replace(/\s+/g,'');
                         if (!val) return;
                         if (val === target) {
-                            wordMessage.textContent = '🎉 Chính xác!';
+                            wordMessage.textContent = 'Chính xác!';
                             celebrateConfetti();
                             setTimeout(() => {
                                 closeWordGame();
                                 if (window.openCodeGame) window.openCodeGame();
                             }, 1400);
                         } else {
-                            wordMessage.textContent = '❌ Sai rồi — thử lại.';
+                            wordMessage.textContent = 'Sai rồi — thử lại.';
                         }
                     }
                     submit.addEventListener('click', submitAnswer);
@@ -1947,11 +2115,6 @@ const message =
                 // clear hint/message when opening
                 if (wordMessage) wordMessage.textContent = '';
                 // wire hint/reveal buttons
-                if (hintBtn) {
-                    hintBtn.addEventListener('click', () => {
-                        wordMessage.textContent = 'Gợi ý: là tiếng Nhật';
-                    });
-                }
                 if (revealBtn) {
                     revealBtn.addEventListener('click', () => {
                         wordMessage.textContent = 'Đáp án: ICHIGO ICHIE';
@@ -1993,6 +2156,7 @@ const message =
             const codeInput = document.getElementById('code-input');
             const codeSubmit = document.getElementById('code-submit');
             const codeMessage = document.getElementById('code-message');
+            const codeHintText = document.getElementById('code-hint-text');
             const targetCode = '110803';
 
             function openCodeGame(){
@@ -2000,6 +2164,7 @@ const message =
                 codeModal.classList.remove('hidden');
                 codeModal.classList.add('flex');
                 if (codeMessage) codeMessage.textContent = '';
+                if (codeHintText) codeHintText.classList.add('hidden');
                 if (codeInput) {
                     codeInput.value = '';
                     setTimeout(() => codeInput.focus(), 120);
@@ -2011,14 +2176,19 @@ const message =
                 codeModal.classList.remove('flex');
                 if (codeInput) codeInput.value = '';
                 if (codeMessage) codeMessage.textContent = '';
+                if (codeHintText) codeHintText.classList.add('hidden');
             }
 
             function submitCode(){
                 if (!codeInput || !codeMessage) return;
                 const value = (codeInput.value || '').replace(/\s+/g, '');
-                if (!value) return;
+                if (!value) {
+                    if (codeHintText) codeHintText.classList.remove('hidden');
+                    return;
+                }
+                if (codeHintText) codeHintText.classList.remove('hidden');
                 if (value === targetCode) {
-                    codeMessage.textContent = '🎉 Đúng rồi! Hãy mở quà nhé.';
+                    codeMessage.textContent = 'Đúng rồi! Hãy mở quà nhé.';
                     celebrateConfetti();
                     setTimeout(() => {
                         closeCodeGame();
@@ -2030,13 +2200,22 @@ const message =
                         }
                     }, 1200);
                 } else {
-                    codeMessage.textContent = '❌ Sai rồi — hãy nhập mật mã vừa rồi để xem quà.';
+                    codeMessage.textContent = 'Sai rồi — hãy nhập mật mã vừa rồi để xem quà.';
                 }
             }
 
             if (closeCodeBtn) closeCodeBtn.addEventListener('click', closeCodeGame);
             if (codeSubmit) codeSubmit.addEventListener('click', submitCode);
-            if (codeInput) codeInput.addEventListener('keydown', (e) => { if (e.key === 'Enter') submitCode(); });
+            if (codeInput) {
+                codeInput.addEventListener('input', () => {
+                    if (codeHintText && codeInput.value.trim()) {
+                        codeHintText.classList.remove('hidden');
+                    } else if (codeHintText) {
+                        codeHintText.classList.add('hidden');
+                    }
+                });
+                codeInput.addEventListener('keydown', (e) => { if (e.key === 'Enter') submitCode(); });
+            }
 
             window.openCodeGame = openCodeGame;
         }
@@ -2060,12 +2239,8 @@ const message =
         }
         if (openGiftBtn) {
             openGiftBtn.addEventListener('click', () => {
-                window.pendingGiftUnlock = true;
-                if (typeof window.openCodeGame === 'function') {
-                    window.openCodeGame();
-                } else {
-                    window.openGiftModal?.();
-                }
+                window.pendingGiftUnlock = false;
+                window.openGiftModal?.();
             });
         }
         closeGiftBtn.addEventListener('click', closeGift);
@@ -2094,6 +2269,7 @@ const message =
                 giftSubtitle.style.display = 'none';
             }
 
+            cakeContainer.classList.add('is-cutting');
             createCrumbs(e.clientX, e.clientY);
             createConfetti(cakeContainer);
 
@@ -2106,6 +2282,7 @@ const message =
                     const runFlow = async () => {
                         await window.spawnMemoriesFlow();
                         window.giftSequenceCompleted = true;
+                        cakeContainer.classList.remove('is-cutting');
                     };
                     runFlow();
                 } catch (err) { console.error(err); }
@@ -2114,7 +2291,7 @@ const message =
 
         function createCrumbs(x, y) {
             const colors = ['#b60055', '#e4006c', '#ffb1c3', '#7000ff', '#00dbe9'];
-            for (let i = 0; i < 20; i++) {
+            for (let i = 0; i < 12; i++) {
                 const crumb = document.createElement('div');
                 crumb.className = 'neon-crumb';
                 crumb.style.left = `${x}px`;
@@ -2140,6 +2317,35 @@ const message =
                 animation.onfinish = () => crumb.remove();
             }
         }
+
+        window.showCakeCutNotes = async function() {
+            const stage = document.getElementById('memory-stage');
+            if (!stage) return;
+
+            const messageBox = document.createElement('div');
+            messageBox.className = 'cake-cut-message';
+            stage.appendChild(messageBox);
+
+            const notes = [
+                'Mỗi người một miếng, k dành nhau',
+                'Xong rồi, ra chơi trò chơi đi'
+            ];
+
+            for (const note of notes) {
+                messageBox.innerHTML = '';
+                const noteEl = document.createElement('div');
+                noteEl.className = 'cake-cut-note';
+                noteEl.textContent = note;
+                messageBox.appendChild(noteEl);
+
+                requestAnimationFrame(() => messageBox.classList.add('visible'));
+                await new Promise(resolve => setTimeout(resolve, 1800));
+                messageBox.classList.remove('visible');
+                await new Promise(resolve => setTimeout(resolve, 320));
+            }
+
+            messageBox.remove();
+        };
 
         function createMemoryBalloon() {
             const balloon = document.createElement('div');
@@ -2171,7 +2377,7 @@ const message =
         
         function createConfetti(originEl) {
             const colors = ['#b60055', '#e4006c', '#ffb1c3', '#7000ff', '#00dbe9'];
-            const particleCount = 80;
+            const particleCount = 50;
             
             const rect = originEl.getBoundingClientRect();
             const originX = rect.left + rect.width / 2;
@@ -2381,11 +2587,11 @@ const message =
             { src: 'image/image14.png', description: '日本人' },
             { src: 'image/image6.jpg', description: 'So cool, I like  it' },
             { src: 'image/image7.jpg', description: 'Này nhìn dịu quá' },
-            { src: 'image/image8.jpg', description: 'Ờ...' },
+            { src: 'image/image8.jpg', description: '=))))))' },
             { src: 'image/image9.jpg', description: 'Bông hoa ở giữa là bông hoa đẹp nhất' },
-            { src: 'image/image10.png', description: 'Một trong những lí do tui đoán bạn thích màu đỏ hoặc trắng' },
-            { src: 'image/image11.jpg', description: '=))))))' },
-            { src: 'image/image13.png', description: 'I dont kone' }
+            { src: 'image/image10.png', description: 'Này đẹp nhì' },
+            { src: 'image/image11.jpg', description: 'Ờ... Dậy thì thành công' },
+            { src: 'image/image13.png', description: 'Tiên cá mắc cạn...' }
         ];
 
         window.spawnGiftMemoryBalloons = function(count = memoryItems.length) {
@@ -2472,6 +2678,7 @@ const positions = [
                     } else {
                         await revealCakeWithoutCountdown(cake);
                     }
+                    await window.showCakeCutNotes?.();
                 } else {
                     const cakeImage = cake.querySelector('img');
                     if (cakeImage) cakeImage.style.visibility = 'hidden';
@@ -2662,37 +2869,47 @@ const positions = [
             overlay.style.opacity = '0';
             // mark ceremony state as candle-lit
             window.ceremonyState = 'candle-lit';
-            // hide feedback and remove lighting overlay after fade; then enable blow overlay
+            // hide feedback and remove lighting overlay after fade; then show the wish text and wait for user to tap to continue
             setTimeout(() => {
                 if (feedbackEl) feedbackEl.style.opacity = '0';
-                // show blow overlay to allow blowing candles
+                const wish = document.getElementById('wish-overlay');
                 const blow = document.getElementById('blow-overlay');
-                if (blow) {
-                    blow.classList.add('active');
-                    blow.setAttribute('aria-hidden', 'false');
-                    // position the blow progress UI above the cake
-                    try {
-                        const prog = document.getElementById('blow-progress-ui');
-                        const cakeEl = document.getElementById('birthday-cake-container');
-                        if (prog && cakeEl) {
-                            const rect = cakeEl.getBoundingClientRect();
-                            // place the progress UI just above the top of the cake
-                            prog.style.left = (rect.left + rect.width / 2) + 'px';
-                            prog.style.top = (rect.top - Math.max(64, rect.height * 0.18)) + 'px';
-                            prog.style.transform = 'translate(-50%,-100%)';
-                            // also move the blow prompt above the two flames (centered over cake)
-                            const prompt = blow.querySelector('.candle-prompt');
-                            if (prompt) {
-                                prompt.style.position = 'fixed';
-                                prompt.style.left = (rect.left + rect.width / 2) + 'px';
-                                // put prompt slightly above the flames for clear visibility
-                                prompt.style.top = (rect.top - Math.max(140, rect.height * 0.4)) + 'px';
-                                prompt.style.transform = 'translate(-50%,-50%)';
-                                prompt.style.zIndex = 235;
-                                prompt.style.pointerEvents = 'auto';
-                            }
+                if (wish) {
+                    wish.classList.add('active');
+                    wish.setAttribute('aria-hidden', 'false');
+                    wish.style.pointerEvents = 'auto';
+                    wish.onclick = function() {
+                        wish.classList.remove('active');
+                        wish.setAttribute('aria-hidden', 'true');
+                        wish.style.pointerEvents = 'none';
+                        if (blow) {
+                            blow.classList.add('active');
+                            blow.setAttribute('aria-hidden', 'false');
+                            // position the blow progress UI above the cake
+                            try {
+                                const prog = document.getElementById('blow-progress-ui');
+                                const cakeEl = document.getElementById('birthday-cake-container');
+                                if (prog && cakeEl) {
+                                    const rect = cakeEl.getBoundingClientRect();
+                                    // place the progress UI just above the top of the cake
+                                    prog.style.left = (rect.left + rect.width / 2) + 'px';
+                                    prog.style.top = (rect.top - Math.max(64, rect.height * 0.18)) + 'px';
+                                    prog.style.transform = 'translate(-50%,-100%)';
+                                    // also move the blow prompt above the two flames (centered over cake)
+                                    const prompt = blow.querySelector('.candle-prompt');
+                                    if (prompt) {
+                                        prompt.style.position = 'fixed';
+                                        prompt.style.left = (rect.left + rect.width / 2) + 'px';
+                                        // put prompt slightly above the flames for clear visibility
+                                        prompt.style.top = (rect.top - Math.max(140, rect.height * 0.4)) + 'px';
+                                        prompt.style.transform = 'translate(-50%,-50%)';
+                                        prompt.style.zIndex = 235;
+                                        prompt.style.pointerEvents = 'auto';
+                                    }
+                                }
+                            } catch (e) { /* ignore */ }
                         }
-                    } catch (e) { /* ignore */ }
+                    };
                 }
                 if (overlay && overlay.parentElement) overlay.remove();
             }, 520);
@@ -2823,7 +3040,14 @@ const positions = [
         }
 
         function showWish(){
-            const toast = document.createElement('div'); toast.className = 'wish-toast'; toast.textContent = '✨ Chúc điều ước của bạn sẽ thành hiện thực.'; document.body.appendChild(toast);
+            const toast = document.createElement('div'); toast.className = 'wish-toast'; toast.textContent = 'Chúc điều ước của bạn sẽ thành hiện thực.'; document.body.appendChild(toast);
+            const cake = document.getElementById('birthday-cake-container');
+            if (cake) {
+                const rect = cake.getBoundingClientRect();
+                toast.style.left = (rect.left + rect.width / 2) + 'px';
+                toast.style.top = (rect.top - 120) + 'px';
+                toast.style.transform = 'translate(-50%, 0)';
+            }
             requestAnimationFrame(()=> toast.classList.add('visible'));
             setTimeout(()=>{ toast.classList.remove('visible'); setTimeout(()=>toast.remove(),400); }, 5200);
         }
