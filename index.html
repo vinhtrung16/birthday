@@ -1383,6 +1383,35 @@
         const countdownAudio = document.getElementById('countdown-audio');
         const birthdayAudio = document.getElementById('birthday-audio');
         let birthdayMusicPlayed = false;
+        let countdownAudioUnlocked = false;
+
+        function unlockCountdownAudio() {
+            if (countdownAudioUnlocked || !countdownAudio) return;
+            countdownAudioUnlocked = true;
+            if (countdownAudio) {
+                countdownAudio.muted = true;
+                countdownAudio.currentTime = 0;
+                countdownAudio.play().then(() => {
+                    countdownAudio.muted = false;
+                    attemptCountdownPlay();
+                }).catch(() => {
+                    countdownAudio.muted = false;
+                });
+            }
+            window.removeEventListener('pointerdown', unlockCountdownAudio);
+            window.removeEventListener('touchstart', unlockCountdownAudio);
+        }
+
+        function attemptCountdownPlay() {
+            if (!countdownAudio) return;
+            try {
+                countdownAudio.currentTime = 0;
+                countdownAudio.play().catch(() => {});
+            } catch (e) {}
+        }
+
+        window.addEventListener('pointerdown', unlockCountdownAudio, { once: true, passive: true });
+        window.addEventListener('touchstart', unlockCountdownAudio, { once: true, passive: true });
         
 const message =
 "Happy Birthday Nữ! 🎂\n" +
@@ -1620,8 +1649,7 @@ const message =
 
         async function startIntroCountdown() {
             if (countdownAudio) {
-                countdownAudio.currentTime = 0;
-                countdownAudio.play().catch(() => {});
+                attemptCountdownPlay();
             }
             // start gentle visual effects while waiting
             (function startIntroEffects(){
@@ -1656,7 +1684,7 @@ const message =
                     return;
                 }
                 updateIntroCountdown();
-            }, 1500);
+            }, 1000);
         }
 
         if (enterMainBtn) {
