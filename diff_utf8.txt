@@ -1,0 +1,556 @@
+﻿diff --git a/index.html b/index.html
+index 60690d2..990736a 100644
+--- a/index.html
++++ b/index.html
+@@ -112,10 +112,11 @@
+         .animate-shake { animation: shake 0.4s ease-in-out; }
+         
+         .glass-card {
+-            background: rgba(255, 255, 255, 0.96);
+-            backdrop-filter: blur(18px);
+-            border: 1px solid rgba(233, 30, 99, 0.16);
+-            box-shadow: 0 26px 70px rgba(233, 30, 99, 0.08);
++            background: rgba(255, 255, 255, 0.88);
++            -webkit-backdrop-filter: blur(12px);
++            backdrop-filter: blur(12px);
++            border: 1px solid rgba(233, 30, 99, 0.12);
++            box-shadow: 0 10px 30px rgba(120, 40, 90, 0.10);
+         }
+         .neon-text-glow {
+             text-shadow: 0 0 12px rgba(233, 30, 99, 0.18);
+@@ -490,30 +491,44 @@
+         .cake-cut-message {
+             position: absolute;
+             left: 50%;
+-            bottom: 14px;
+-            transform: translate(-50%, 16px);
++            bottom: 18px;
++            transform: translate(-50%, 12px) scale(0.98);
+             width: min(92vw, 420px);
+             display: flex;
+             flex-direction: column;
+-            gap: 8px;
++            gap: 10px;
+             z-index: 40;
+             opacity: 0;
+-            transition: opacity 320ms ease, transform 320ms ease;
++            transition: opacity 720ms cubic-bezier(.2,.9,.25,1), transform 720ms cubic-bezier(.2,.9,.25,1);
+             pointer-events: none;
+         }
+         .cake-cut-message.visible {
+             opacity: 1;
+-            transform: translate(-50%, 0);
++            transform: translate(-50%, 0) scale(1);
+         }
+         .cake-cut-note {
+-            background: rgba(255,255,255,0.96);
++            background: rgba(255,255,255,0.98);
+             color: #b60055;
+-            border-radius: 16px;
++            border-radius: 14px;
+             text-align: center;
+             padding: 10px 14px;
+             font-weight: 700;
+-            box-shadow: 0 8px 24px rgba(182, 0, 85, 0.14);
+-            border: 1px solid rgba(182, 0, 85, 0.12);
++            box-shadow: 0 6px 18px rgba(182, 0, 85, 0.08);
++            border: 1px solid rgba(182, 0, 85, 0.08);
++            transform: scale(0.98);
++            opacity: 0;
++            transition: transform 680ms cubic-bezier(.2,.9,.25,1), opacity 680ms cubic-bezier(.2,.9,.25,1);
++        }
++        .cake-cut-note.show {
++            transform: scale(1);
++            opacity: 1;
++        }
++        @media (prefers-reduced-motion: reduce) {
++            .cake-cut-message, .cake-cut-note {
++                transition: none !important;
++                transform: none !important;
++                opacity: 1 !important;
++            }
+         }
+         .countdown-overlay {
+             position: absolute;
+@@ -712,6 +727,120 @@
+             }
+         }
+     </style>
++        <!-- Dreamy Garden background styles -->
++        <style>
++            body {
++                background: #FFF6FA;
++                background-attachment: fixed;
++                -webkit-font-smoothing: antialiased;
++                -moz-osx-font-smoothing: grayscale;
++                overflow-x: hidden;
++            }
++
++            .background-atmosphere {
++                position: fixed;
++                inset: 0;
++                z-index: 0;
++                pointer-events: none;
++                overflow: hidden;
++            }
++
++            .background-atmosphere::before {
++                content: '';
++                position: absolute;
++                inset: 0;
++                background-image: url('image/image16.png');
++                background-size: cover;
++                background-position: center 28%;
++                background-repeat: no-repeat;
++                transform-origin: center;
++                filter: blur(3px) saturate(1.08) brightness(1.06);
++                will-change: transform;
++                animation: bg-breathe 56s ease-in-out infinite;
++            }
++
++            .background-atmosphere::after {
++                content: '';
++                position: absolute;
++                inset: 0;
++                background:
++                    radial-gradient(circle at top center, rgba(255,247,251,0.58), transparent 32%),
++                    radial-gradient(circle at 20% 18%, rgba(255,242,247,0.24), transparent 24%),
++                    radial-gradient(circle at 80% 16%, rgba(255,244,249,0.18), transparent 20%),
++                    linear-gradient(180deg, rgba(255,255,255,0.34), rgba(255,241,247,0.08) 36%, rgba(255,236,244,0.14) 74%, rgba(255,248,251,0.82));
++                pointer-events: none;
++            }
++
++            @keyframes bg-breathe {
++                0%, 100% { transform: scale(1) translateY(0); }
++                50% { transform: scale(1.028) translateY(-0.24%); }
++            }
++
++            .background-sparkles {
++                position: absolute;
++                inset: 0;
++                pointer-events: none;
++            }
++            .background-sparkle {
++                position: absolute;
++                width: 3px;
++                height: 3px;
++                border-radius: 50%;
++                background: rgba(255,255,255,0.78);
++                filter: blur(1px);
++                opacity: 0;
++                transform: scale(0.78);
++                animation: sparkle-soft 6.8s ease-in-out infinite;
++                will-change: transform, opacity;
++            }
++            .background-sparkle:nth-child(1) { left: 12%; top: 16%; animation-delay: 0s; }
++            .background-sparkle:nth-child(2) { left: 26%; top: 34%; animation-delay: 1.4s; }
++            .background-sparkle:nth-child(3) { left: 64%; top: 24%; animation-delay: 2.3s; }
++            .background-sparkle:nth-child(4) { left: 84%; top: 48%; animation-delay: 3.7s; }
++
++            @keyframes sparkle-soft {
++                0% { opacity: 0; transform: scale(0.76); }
++                12% { opacity: 0.22; transform: scale(0.96); }
++                34% { opacity: 0.14; transform: scale(0.92); }
++                100% { opacity: 0; transform: scale(0.76); }
++            }
++
++
++        #cut-cake-btn,
++        #open-gift-btn {
++            background: rgba(255, 255, 255, 0.78);
++            -webkit-backdrop-filter: blur(10px);
++            backdrop-filter: blur(10px);
++            box-shadow: 0 8px 24px rgba(150, 30, 100, 0.08);
++        }
++        #cut-cake-btn:hover,
++        #open-gift-btn:hover {
++            background: rgba(255, 255, 255, 0.88);
++            transform: translateY(-1px);
++            box-shadow: 0 10px 28px rgba(150, 30, 100, 0.12);
++        }
++        #cut-cake-btn:active,
++        #open-gift-btn:active {
++            transform: translateY(0) !important;
++        }
++
++
++            @media (prefers-reduced-motion: reduce) {
++                .background-atmosphere::before,
++                .background-atmosphere::after,
++                .background-sparkle {
++                    animation: none !important;
++                }
++                .background-atmosphere::before { transform: none; }
++                .background-sparkle { display: none !important; }
++            }
++
++            @media (max-width: 768px) {
++                .background-atmosphere::before {
++                    background-position: center 20%;
++                }
++            }
++        </style>
+     <style>
+         /* Modal animations */
+         @keyframes backdrop-fade-in { from { opacity: 0 } to { opacity: 1 } }
+@@ -846,7 +975,7 @@
+             width: 100%;
+             height: 100%;
+             pointer-events: none;
+-            z-index: 60; /* above header (z-50) but below modals (z-100+) */
++            z-index: 165; /* sit above gift modal (z-110) so subtle bursts are visible over the cake */
+             mix-blend-mode: screen;
+         }
+         .intro-screen {
+@@ -1212,6 +1341,142 @@
+ </head>
+ <body class="bg-background text-on-background min-h-screen overflow-x-hidden selection:bg-primary-container selection:text-on-primary-container">
+     <canvas id="fireworks-canvas" class="fireworks-canvas" aria-hidden="true"></canvas>
++
++    <!-- Fullscreen petal animation (Three.js) -->
++    <div id="threejs-petals-container" style="position:fixed;inset:0;pointer-events:none;z-index:330;">
++    </div>
++    <script src="https://ajax.googleapis.com/ajax/libs/threejs/r125/three.min.js"></script>
++    <script>
++    (function(){
++        const container = document.getElementById('threejs-petals-container');
++        const scene = new THREE.Scene();
++        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
++        camera.position.z = 5;
++
++        const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
++        const DPR = Math.min(window.devicePixelRatio || 1, 2);
++        renderer.setPixelRatio(DPR);
++        renderer.setSize(window.innerWidth, window.innerHeight, false);
++        renderer.domElement.style.pointerEvents = 'none';
++        container.appendChild(renderer.domElement);
++
++        function getVisibleSizeAtZ(camera, z = 0) {
++            const vFOV = THREE.MathUtils.degToRad(camera.fov);
++            const height = 2 * Math.tan(vFOV / 2) * Math.abs(camera.position.z - z);
++            const width = height * camera.aspect;
++            return { width, height };
++        }
++
++        let visible = getVisibleSizeAtZ(camera, 0);
++
++        if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
++            return;
++        }
++
++        const petals = [];
++        const petalCount = window.innerWidth < 720 ? 4 : 8;
++
++        // Create a small canvas texture to simulate paper/confetti look
++        function createPaperTexture() {
++            const size = 128;
++            const cvs = document.createElement('canvas');
++            cvs.width = cvs.height = size;
++            const ctx = cvs.getContext('2d');
++
++            // background paper color with subtle gradient
++            const g = ctx.createLinearGradient(0, 0, size, size);
++            g.addColorStop(0, '#fff6f8');
++            g.addColorStop(1, '#ffeef2');
++            ctx.fillStyle = g;
++            ctx.fillRect(0, 0, size, size);
++
++            // draw a slightly irregular rounded rectangle (paper shape)
++            ctx.save();
++            ctx.translate(size/2, size/2);
++            ctx.rotate((Math.random()-0.5) * 0.6);
++            ctx.translate(-size/2, -size/2);
++            ctx.fillStyle = 'rgba(255,240,245,1)';
++            ctx.beginPath();
++            const pad = 12;
++            const w = size - pad*2;
++            const h = size - pad*2;
++            const r = 10;
++            ctx.moveTo(pad + r, pad);
++            ctx.arcTo(pad + w, pad, pad + w, pad + h, r);
++            ctx.arcTo(pad + w, pad + h, pad, pad + h, r);
++            ctx.arcTo(pad, pad + h, pad, pad, r);
++            ctx.arcTo(pad, pad, pad + w, pad, r);
++            ctx.closePath();
++            ctx.fill();
++
++            // speckles for texture
++            for (let i = 0; i < 120; i++) {
++                ctx.fillStyle = 'rgba(220,180,195,' + (0.02 + Math.random()*0.06) + ')';
++                ctx.fillRect(pad + Math.random()*w, pad + Math.random()*h, 1, 1);
++            }
++
++            // subtle crease lines
++            ctx.strokeStyle = 'rgba(230,195,205,0.08)';
++            ctx.lineWidth = 1;
++            ctx.beginPath();
++            ctx.moveTo(pad + w*0.1, pad + h*0.2);
++            ctx.quadraticCurveTo(pad + w*0.5, pad + h*0.35, pad + w*0.9, pad + h*0.15);
++            ctx.stroke();
++            ctx.restore();
++
++            const tex = new THREE.CanvasTexture(cvs);
++            tex.needsUpdate = true;
++            return tex;
++        }
++
++        const paperTexture = createPaperTexture();
++        const petalGeometry = new THREE.PlaneGeometry(0.05, 0.06);
++        const petalMaterial = new THREE.MeshBasicMaterial({ map: paperTexture, side: THREE.DoubleSide, transparent: true, alphaTest: 0.2, opacity: 0.18, depthWrite: false });
++
++        for (let i = 0; i < petalCount; i++) {
++            const petal = new THREE.Mesh(petalGeometry, petalMaterial);
++            petal.rotation.z = (Math.random() - 0.5) * Math.PI * 0.6;
++            const xRange = visible.width * 0.5 + 0.5;
++            const yStart = visible.height * 0.5 + Math.random() * visible.height;
++            petal.position.set((Math.random() - 0.5) * xRange * 2, yStart, (Math.random() - 0.5) * 2);
++            const scale = 0.4 + Math.random() * 0.35;
++            petal.scale.setScalar(scale);
++            petal.userData = {
++                rotationSpeed: { x: (Math.random() - 0.5) * 0.008, y: (Math.random() - 0.5) * 0.008, z: (Math.random() - 0.5) * 0.035 },
++                fallSpeed: 0.002 + Math.random() * 0.007,
++                horizontalDrift: (Math.random() - 0.5) * 0.005
++            };
++            scene.add(petal);
++            petals.push(petal);
++        }
++
++        function animate() {
++            requestAnimationFrame(animate);
++            petals.forEach(petal => {
++                petal.position.y -= petal.userData.fallSpeed;
++                petal.position.x += petal.userData.horizontalDrift;
++                petal.rotation.x += petal.userData.rotationSpeed.x;
++                petal.rotation.y += petal.userData.rotationSpeed.y;
++                petal.rotation.z += petal.userData.rotationSpeed.z;
++                if (petal.position.y < -visible.height * 0.4) {
++                    petal.position.y = visible.height * 0.5 + Math.random() * visible.height * 0.4;
++                    petal.position.x = (Math.random() - 0.5) * visible.width * 0.6;
++                }
++            });
++            renderer.render(scene, camera);
++        }
++
++        window.addEventListener('resize', () => {
++            camera.aspect = window.innerWidth / window.innerHeight;
++            camera.updateProjectionMatrix();
++            renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
++            renderer.setSize(window.innerWidth, window.innerHeight, false);
++            visible = getVisibleSizeAtZ(camera, 0);
++        });
++
++        animate();
++    })();
++    </script>
+     <div id="intro-screen" class="intro-screen" aria-label="M├án h├¼nh mß╗ƒ ─æß║ºu">
+         <div class="intro-card">
+             <h1>Her Special Day is Coming</h1>
+@@ -1254,15 +1519,21 @@
+         <div class="candle-prompt">Chß║ím v├á giß╗» ─æß╗â thß╗òi nß║┐n</div>
+         <div class="candle-feedback" id="blow-feedback" aria-hidden="true"></div>
+     </div>
+-<!-- Ambient Animated Background -->
+-<div class="fixed inset-0 z-0 pointer-events-none">
+-<div class="absolute top-[-10%] left-[-10%] w-[60%] h-[60%] bg-primary/10 rounded-full blur-[120px]"></div>
+-<div class="absolute bottom-[-10%] right-[-10%] w-[60%] h-[60%] bg-secondary/10 rounded-full blur-[120px]"></div>
+-<div class="absolute top-[18%] left-[12%] animate-float opacity-30 text-primary"><span class="material-symbols-outlined text-[42px]" style='font-variation-settings: "FILL" 1;'>star</span></div>
+-<div class="absolute bottom-[18%] right-[12%] animate-float opacity-20 text-secondary" style="animation-delay: 1s;"><span class="material-symbols-outlined text-[46px]" style='font-variation-settings: "FILL" 1;'>auto_awesome</span></div>
+-</div>
+-<!-- Top Navigation Bar -->
+-<header class="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-xl border-b border-primary/10 shadow-sm flex items-center justify-between px-margin-mobile md:px-margin-desktop h-16">
++
++    <!-- Dreamy Garden Atmosphere -->
++    <div class="background-atmosphere" aria-hidden="true">
++        <div class="background-sparkles" aria-hidden="true">
++            <span class="background-sparkle"></span>
++            <span class="background-sparkle"></span>
++            <span class="background-sparkle"></span>
++            <span class="background-sparkle"></span>
++            <span class="background-sparkle"></span>
++            <span class="background-sparkle"></span>
++        </div>
++    </div>
++
++    <!-- Top Navigation Bar -->
++    <header class="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-xl border-b border-primary/10 shadow-sm flex items-center justify-between px-margin-mobile md:px-margin-desktop h-16">
+ <div class="flex items-center gap-2">
+ <span class="material-symbols-outlined text-primary text-[26px]">celebration</span>
+ <h1 class="font-headline-lg-mobile text-[24px] text-primary tracking-tight">For Nira</h1>
+@@ -2483,25 +2754,32 @@ const message =
+             messageBox.className = 'cake-cut-message';
+             stage.appendChild(messageBox);
+ 
+-            const notes = [
+-                'Mß╗ùi ng╞░ß╗¥i mß╗Öt miß║┐ng, k d├ánh nhau',
+-                'Xong rß╗ôi, ra ch╞íi tr├▓ ch╞íi ─æi'
+-            ];
++            const note1 = document.createElement('div');
++            note1.className = 'cake-cut-note';
++            note1.textContent = 'Mß╗ùi ng╞░ß╗¥i mß╗Öt miß║┐ng, k d├ánh nhau';
++
++            const note2 = document.createElement('div');
++            note2.className = 'cake-cut-note';
++            note2.textContent = 'Xong rß╗ôi, ra ch╞íi tr├▓ ch╞íi ─æi';
++
++            // append first note only and reveal message box
++            messageBox.appendChild(note1);
++            // force layout then show with transitions
++            requestAnimationFrame(() => {
++                messageBox.classList.add('visible');
++                // animate first note
++                requestAnimationFrame(() => note1.classList.add('show'));
++            });
+ 
+-            for (const note of notes) {
+-                messageBox.innerHTML = '';
+-                const noteEl = document.createElement('div');
+-                noteEl.className = 'cake-cut-note';
+-                noteEl.textContent = note;
+-                messageBox.appendChild(noteEl);
++            // keep first note visible; after a stable delay show second note
++            await new Promise(resolve => setTimeout(resolve, 1000)); // 800-1200ms stable gap
+ 
+-                requestAnimationFrame(() => messageBox.classList.add('visible'));
+-                await new Promise(resolve => setTimeout(resolve, 1800));
+-                messageBox.classList.remove('visible');
+-                await new Promise(resolve => setTimeout(resolve, 320));
+-            }
++            messageBox.appendChild(note2);
++            // animate second note slightly lighter
++            requestAnimationFrame(() => note2.classList.add('show'));
+ 
+-            messageBox.remove();
++            // leave notes on screen (do not remove) to keep composition stable
++            return;
+         };
+ 
+         function createMemoryBalloon() {
+@@ -2829,14 +3107,39 @@ const positions = [
+                 window.memoriesSpawned = true;
+                 const shouldReveal = !window.giftSequenceCompleted;
+                 const countdown = options?.countdown === true;
+-                if (shouldReveal) {
+-                    if (countdown) {
+-                        await revealCakeWithCountdown(cake);
+-                    } else {
+-                        await revealCakeWithoutCountdown(cake);
+-                    }
+-                    await window.showCakeCutNotes?.();
+-                } else {
++                        if (shouldReveal) {
++                            if (countdown) {
++                                await revealCakeWithCountdown(cake);
++                            } else {
++                                await revealCakeWithoutCountdown(cake);
++                            }
++
++                            // subtle pause before small fireworks bursts
++                            await new Promise(r => setTimeout(r, 250 + Math.random() * 150));
++
++                            try {
++                                // compute cake top area for bursts
++                                const rect = cake.getBoundingClientRect();
++                                const centerX = rect.left + rect.width / 2;
++                                const topY = rect.top + rect.height * 0.18;
++                                const atmosphere = document.querySelector('.background-atmosphere');
++                            if (atmosphere) {
++                                atmosphere.classList.add('celebration-active');
++                                setTimeout(() => atmosphere.classList.remove('celebration-active'), 2400);
++                            }
++                            // one or two small bursts near cake top / sides
++                                createSubtleBurst(centerX - rect.width * 0.18, topY, { count: 8 });
++                                setTimeout(() => createSubtleBurst(centerX + rect.width * 0.18, topY, { count: 8 }), 180 + Math.random() * 160);
++                            } catch (e) { /* fail silently */ }
++
++                            // allow bursts to fade
++                            await new Promise(r => setTimeout(r, 420));
++
++                            // short pause after fireworks before showing text
++                            await new Promise(r => setTimeout(r, 320));
++
++                            await window.showCakeCutNotes?.();
++                        } else {
+                     const cakeImage = cake.querySelector('img');
+                     if (cakeImage) cakeImage.style.visibility = 'hidden';
+                 }
+@@ -2856,7 +3159,6 @@ const positions = [
+         } 
+     });
+ </script>
+-</script>
+ <script>
+ (() => {
+     const canvas = document.getElementById('fireworks-canvas');
+@@ -2921,10 +3223,10 @@ const positions = [
+     }
+ 
+     function createParticles(x, y, color) {
+-        const count = Math.floor(rand(12, 26));
++        const count = Math.floor(rand(8, 16));
+         for (let i = 0; i < count; i++) {
+             const angle = rand(0, Math.PI * 2);
+-            const speed = rand(1, 8);
++            const speed = rand(0.8, 6);
+             particles.push({
+                 x, y,
+                 vx: Math.cos(angle) * speed,
+@@ -2933,11 +3235,37 @@ const positions = [
+                 decay: rand(0.93, 0.97),
+                 color,
+                 alpha: 1,
+-                gravity: 0.12 + Math.random() * 0.12
++                gravity: 0.08 + Math.random() * 0.10
++            });
++        }
++    }
++
++    // Subtle burst provider for post-cut celebration
++    function createSubtleBurst(x, y, opts = {}) {
++        if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
++        const palette = opts.palette || ['#ffd9e0', '#ffcad9', '#ffe8ef'];
++        const count = opts.count || Math.floor(rand(5, 10));
++        for (let i = 0; i < count; i++) {
++            const angle = rand(-Math.PI * 0.6, Math.PI * 0.6);
++            const spread = rand(0.5, 1.4);
++            const speed = rand(0.5, 2.6);
++            const color = palette[Math.floor(Math.random() * palette.length)];
++            particles.push({
++                x, y,
++                vx: Math.cos(angle) * speed * spread,
++                vy: Math.sin(angle) * speed * spread - Math.abs(rand(0,1)),
++                life: rand(30, 60),
++                decay: rand(0.92, 0.96),
++                color,
++                alpha: 0.95,
++                gravity: 0.04 + Math.random() * 0.05
+             });
+         }
+     }
+ 
++    // expose subtle burst for external callers (post-cut sequence)
++    try { window.createSubtleBurst = createSubtleBurst; } catch(e) {}
++
+     function launch(sx, sy, tx, ty, color) {
+         fireworks.push(new Firework(sx, sy, tx, ty, color));
+     }
+@@ -2965,13 +3293,13 @@ const positions = [
+             if (p.life <= 0 || p.y > canvas.height / DPR + 20) particles.splice(i, 1);
+         }
+ 
+-        // auto-launch fireworks less frequently and single launches to reduce density
+-        if (t - lastAuto > 900) {
+-            const sx = rand(window.innerWidth * 0.2, window.innerWidth * 0.8);
++        // auto-launch fireworks only after the cake has been cut or celebration begins
++        if ((window.cakeClicked || window.giftSequenceCompleted) && t - lastAuto > 1400) {
++            const sx = rand(window.innerWidth * 0.3, window.innerWidth * 0.7);
+             const sy = window.innerHeight + 20;
+-            const tx = rand(50, window.innerWidth - 50);
+-            const ty = rand(window.innerHeight * 0.05, window.innerHeight * 0.6);
+-            launch(sx, sy, tx, ty, `hsl(${Math.random() * 360},100%,60%)`);
++            const tx = rand(80, window.innerWidth - 80);
++            const ty = rand(window.innerHeight * 0.08, window.innerHeight * 0.52);
++            launch(sx, sy, tx, ty, `hsl(${rand(320, 360)},100%,65%)`);
+             lastAuto = t;
+         }
+ 
+

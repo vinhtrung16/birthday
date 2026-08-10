@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 
 <html class="light" lang="vi"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Chúc Mừng Sinh Nhật!</title>
+<title>Ch├║c Mß╗½ng Sinh Nhß║¡t!</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
@@ -112,42 +112,10 @@
         .animate-shake { animation: shake 0.4s ease-in-out; }
         
         .glass-card {
-            background: rgba(255, 255, 255, 0.64);
-            background-color: rgba(255, 255, 255, 0.66);
-            backdrop-filter: blur(18px) saturate(110%);
-            -webkit-backdrop-filter: blur(18px) saturate(110%);
-            border: 1px solid rgba(255, 255, 255, 0.70);
-            box-shadow: 0 12px 35px rgba(100, 30, 80, 0.12);
-            position: relative;
-        }
-        .glass-card::before {
-            content: '';
-            position: absolute;
-            inset: 1px;
-            border-radius: inherit;
-            border: 1px solid rgba(255, 255, 255, 0.28);
-            pointer-events: none;
-        }
-        #cut-cake-btn,
-        #open-gift-btn {
-            background-color: rgba(255, 255, 255, 0.54);
-            backdrop-filter: blur(12px) saturate(110%);
-            -webkit-backdrop-filter: blur(12px) saturate(110%);
-            border: 2px solid rgba(170, 30, 190, 0.85);
-            box-shadow: 0 8px 25px rgba(120, 30, 100, 0.08);
-        }
-        #cut-cake-btn:hover,
-        #open-gift-btn:hover {
-            background-color: rgba(255, 255, 255, 0.62);
-        }
-        #open-game-btn,
-        #open-letter-btn {
-            background-color: rgba(233, 30, 99, 0.94);
-            box-shadow: 0 10px 26px rgba(233, 30, 99, 0.16);
-        }
-        #open-game-btn:hover,
-        #open-letter-btn:hover {
-            box-shadow: 0 12px 30px rgba(233, 30, 99, 0.20);
+            background: rgba(255, 255, 255, 0.96);
+            backdrop-filter: blur(18px);
+            border: 1px solid rgba(233, 30, 99, 0.16);
+            box-shadow: 0 26px 70px rgba(233, 30, 99, 0.08);
         }
         .neon-text-glow {
             text-shadow: 0 0 12px rgba(233, 30, 99, 0.18);
@@ -394,20 +362,6 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            position: relative;
-            background: linear-gradient(135deg, rgba(255, 240, 245, 0.5) 0%, rgba(255, 250, 252, 0.3) 100%);
-        }
-        #memory-stage::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 200px;
-            height: 200px;
-            background: radial-gradient(circle, rgba(255, 180, 220, 0.08) 0%, transparent 70%);
-            border-radius: 50%;
-            pointer-events: none;
         }
         #gift-modal::before,
         #gift-modal::after {
@@ -536,44 +490,30 @@
         .cake-cut-message {
             position: absolute;
             left: 50%;
-            bottom: 18px;
-            transform: translate(-50%, 12px) scale(0.98);
+            bottom: 14px;
+            transform: translate(-50%, 16px);
             width: min(92vw, 420px);
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            gap: 8px;
             z-index: 40;
             opacity: 0;
-            transition: opacity 720ms cubic-bezier(.2,.9,.25,1), transform 720ms cubic-bezier(.2,.9,.25,1);
+            transition: opacity 320ms ease, transform 320ms ease;
             pointer-events: none;
         }
         .cake-cut-message.visible {
             opacity: 1;
-            transform: translate(-50%, 0) scale(1);
+            transform: translate(-50%, 0);
         }
         .cake-cut-note {
-            background: rgba(255,255,255,0.98);
+            background: rgba(255,255,255,0.96);
             color: #b60055;
-            border-radius: 14px;
+            border-radius: 16px;
             text-align: center;
             padding: 10px 14px;
             font-weight: 700;
-            box-shadow: 0 6px 18px rgba(182, 0, 85, 0.08);
-            border: 1px solid rgba(182, 0, 85, 0.08);
-            transform: scale(0.98);
-            opacity: 0;
-            transition: transform 680ms cubic-bezier(.2,.9,.25,1), opacity 680ms cubic-bezier(.2,.9,.25,1);
-        }
-        .cake-cut-note.show {
-            transform: scale(1);
-            opacity: 1;
-        }
-        @media (prefers-reduced-motion: reduce) {
-            .cake-cut-message, .cake-cut-note {
-                transition: none !important;
-                transform: none !important;
-                opacity: 1 !important;
-            }
+            box-shadow: 0 8px 24px rgba(182, 0, 85, 0.14);
+            border: 1px solid rgba(182, 0, 85, 0.12);
         }
         .countdown-overlay {
             position: absolute;
@@ -772,111 +712,6 @@
             }
         }
     </style>
-        <!-- Dreamy Garden background styles -->
-        <style>
-            body {
-                background: #FFF6FA;
-                background-attachment: fixed;
-                -webkit-font-smoothing: antialiased;
-                -moz-osx-font-smoothing: grayscale;
-                overflow-x: hidden;
-            }
-
-            .background-atmosphere {
-                position: fixed;
-                inset: 0;
-                z-index: 0;
-                pointer-events: none;
-                overflow: hidden;
-            }
-
-            .background-atmosphere::before {
-                content: '';
-                position: absolute;
-                inset: 0;
-                background-image: url('image/image16.png');
-                background-size: cover;
-                background-position: center 28%;
-                background-repeat: no-repeat;
-                transform-origin: center;
-                filter: blur(6px) saturate(0.98) brightness(0.98);
-                will-change: transform;
-                animation: bg-breathe 62s ease-in-out infinite;
-                transform: scale(1.04);
-            }
-
-            .background-atmosphere::after {
-                content: '';
-                position: absolute;
-                inset: 0;
-                background:
-                    radial-gradient(circle at 50% 36%, rgba(255,255,255,0.78), rgba(255,247,251,0.38) 24%, rgba(255,241,247,0.18) 42%, transparent 68%),
-                    radial-gradient(circle at 20% 16%, rgba(255,247,251,0.28), transparent 18%),
-                    radial-gradient(circle at 82% 16%, rgba(255,244,249,0.16), transparent 18%),
-                    linear-gradient(180deg, rgba(255,255,255,0.42), rgba(255,242,247,0.14) 34%, rgba(255,237,244,0.08) 72%, rgba(255,248,251,0.84));
-                pointer-events: none;
-            }
-
-            @keyframes bg-breathe {
-                0%, 100% { transform: scale(1) translateY(0); }
-                50% { transform: scale(1.028) translateY(-0.24%); }
-            }
-
-            .background-sparkles {
-                position: absolute;
-                inset: 0;
-                pointer-events: none;
-            }
-            .background-sparkle {
-                position: absolute;
-                width: 3px;
-                height: 3px;
-                border-radius: 50%;
-                background: rgba(255,255,255,0.78);
-                filter: blur(1px);
-                opacity: 0;
-                transform: scale(0.78);
-                animation: sparkle-soft 6.8s ease-in-out infinite;
-                will-change: transform, opacity;
-            }
-            .background-sparkle:nth-child(1) { left: 12%; top: 16%; animation-delay: 0s; }
-            .background-sparkle:nth-child(2) { left: 26%; top: 34%; animation-delay: 1.4s; }
-            .background-sparkle:nth-child(3) { left: 64%; top: 24%; animation-delay: 2.3s; }
-            .background-sparkle:nth-child(4) { left: 84%; top: 48%; animation-delay: 3.7s; }
-
-            @keyframes sparkle-soft {
-                0% { opacity: 0; transform: scale(0.76); }
-                12% { opacity: 0.22; transform: scale(0.96); }
-                34% { opacity: 0.14; transform: scale(0.92); }
-                100% { opacity: 0; transform: scale(0.76); }
-            }
-
-            .background-atmosphere.celebration-active::before {
-                filter: blur(6px) saturate(0.88) brightness(0.92);
-            }
-            .background-atmosphere.celebration-active::after {
-                opacity: 0.95;
-                background:
-                    radial-gradient(circle at 50% 36%, rgba(255,255,255,0.82), rgba(255,247,251,0.46) 24%, rgba(255,241,247,0.22) 44%, transparent 68%),
-                    linear-gradient(180deg, rgba(255,255,255,0.50), rgba(255,241,247,0.16) 34%, rgba(255,237,244,0.12) 72%, rgba(255,248,251,0.86));
-            }
-
-            @media (prefers-reduced-motion: reduce) {
-                .background-atmosphere::before,
-                .background-atmosphere::after,
-                .background-sparkle {
-                    animation: none !important;
-                }
-                .background-atmosphere::before { transform: none; }
-                .background-sparkle { display: none !important; }
-            }
-
-            @media (max-width: 768px) {
-                .background-atmosphere::before {
-                    background-position: center 20%;
-                }
-            }
-        </style>
     <style>
         /* Modal animations */
         @keyframes backdrop-fade-in { from { opacity: 0 } to { opacity: 1 } }
@@ -896,70 +731,25 @@
         }
     </style>
 <style>
-        /* SCRAPBOOK CONTAINER */
-        .scrapbook-container {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .scrapbook-title-section {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            text-align: center;
-            padding: 1.5rem 1rem 0.5rem;
-            z-index: 10;
-            opacity: 0;
-            animation: scrapbook-title-fade 0.8s cubic-bezier(.2,.8,.3,1) 0.3s forwards;
-        }
-
-        .scrapbook-title {
-            font-family: 'Fredoka', sans-serif;
-            font-size: clamp(1.2rem, 5vw, 1.8rem);
-            font-weight: 700;
-            color: #E91E63;
-            letter-spacing: -0.02em;
-            margin: 0;
-            margin-bottom: 0.3rem;
-        }
-
-        .scrapbook-subtitle {
-            font-family: 'Poppins', sans-serif;
-            font-size: clamp(0.8rem, 3vw, 1rem);
-            font-weight: 400;
-            color: #b60055;
-            opacity: 0.75;
-            margin: 0;
-            letter-spacing: 0;
-        }
-
-        /* MAIN PHOTO COMPOSITION */
         .memory-balloon {
             position: absolute;
-            z-index: 20;
+            z-index: 150;
             pointer-events: auto;
             opacity: 0;
-            transform: translate(-50%, -50%) scale(0.5);
-            cursor: pointer;
-            will-change: transform, opacity;
+            transform: translate(-50%, 48vh) scale(0.5);
+            transition: top 1.55s cubic-bezier(.18,.8,.28,1), opacity 0.5s ease, transform 1.55s cubic-bezier(.18,.8,.28,1);
         }
-
-        .memory-balloon.is-hero {
-            z-index: 30;
-        }
-
         .memory-balloon.float-up {
             opacity: 1;
-            transform: translate(-50%, -50%) scale(1);
-            transition: top 1.2s cubic-bezier(.18,.8,.28,1), opacity 0.6s ease, transform 1.2s cubic-bezier(.18,.8,.28,1);
+            transform: translate(-50%, 16vh) scale(1);
         }
-
-        /* BUBBLE ANIMATION */
+        .memory-balloon.burst .bubble-core {
+            animation: bubble-pop 760ms cubic-bezier(.2,.8,.3,1) forwards;
+        }
+        .memory-balloon.revealed {
+            opacity: 1;
+            transform: translate(-50%, 0) scale(1);
+        }
         .memory-balloon .bubble-core {
             width: clamp(90px, 14vw, 128px);
             height: clamp(90px, 14vw, 128px);
@@ -977,17 +767,10 @@
             transform: translate(-50%, -50%);
             z-index: 1;
         }
-
-        .memory-balloon.burst .bubble-core {
-            animation: bubble-pop 760ms cubic-bezier(.2,.8,.3,1) forwards;
-        }
-
         .memory-balloon.revealed .bubble-core {
             opacity: 0;
             transform: scale(1.55);
         }
-
-        /* PHOTO FRAME SCRAPBOOK STYLE */
         .memory-balloon .photo-frame {
             position: absolute;
             left: 50%;
@@ -996,8 +779,12 @@
             padding: 8px;
             background: white;
             box-shadow: 0 10px 30px rgba(182, 0, 85, 0.35);
-            border: 2px solid rgba(220, 100, 150, 0.75);
-            border-radius: 14px;
+            border: 2px solid #b60055;
+            border-radius: 12px;
+            width: clamp(82px, 12vw, 120px);
+            height: clamp(102px, 15vw, 142px);
+            opacity: 0;
+            transition: opacity 0.65s ease 0.18s, transform 0.75s cubic-bezier(.2,.85,.28,1) 0.18s;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -1005,163 +792,57 @@
             pointer-events: auto;
             z-index: 2;
             will-change: transform, opacity;
-            opacity: 0;
-            transition: opacity 0.65s ease 0.18s, transform 0.75s cubic-bezier(.2,.85,.28,1) 0.18s;
+            animation: memory-photo-float 4.8s ease-in-out infinite;
+            animation-delay: var(--photo-delay, 0s);
         }
-
+        .memory-balloon.revealed .photo-frame {
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1);
+            animation: memory-photo-float 4.8s ease-in-out infinite;
+        }
         .memory-balloon .photo-frame img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            border-radius: 12px;
-            display: block;
+            border-radius: 8px;
         }
-
-        /* HERO PHOTO STYLING */
-        .memory-balloon.is-hero .photo-frame {
-            width: clamp(140px, 20vw, 180px);
-            height: clamp(175px, 25vw, 225px);
-            border: 2.5px solid rgba(220, 100, 150, 0.85);
-            box-shadow: 0 12px 35px rgba(190, 60, 120, 0.2);
-        }
-
-        /* SECONDARY PHOTOS */
-        .memory-balloon:not(.is-hero) .photo-frame {
-            width: clamp(90px, 13vw, 130px);
-            height: clamp(110px, 16vw, 160px);
-            border: 1.5px solid rgba(220, 100, 150, 0.65);
-            box-shadow: 0 8px 20px rgba(190, 60, 120, 0.12);
-        }
-
-        .memory-balloon.revealed .photo-frame {
-            opacity: 1;
-            transform: translate(-50%, -50%) scale(1);
-        }
-
-        .memory-balloon.revealed {
-            opacity: 1;
-            transform: translate(-50%, -50%) scale(1);
-        }
-
-        /* Apply floating animation to revealed photos */
-        .memory-balloon.revealed.is-hero {
-            animation: scrapbook-hero-float 5.5s ease-in-out infinite;
-        }
-
-        .memory-balloon.revealed:not(.is-hero) {
-            animation: scrapbook-photo-float 4.2s ease-in-out infinite;
-        }
-
-        /* TAPE DECORATION (Optional for 2-3 images) */
-        .memory-balloon[data-tape] .photo-frame::before {
-            content: '';
-            position: absolute;
-            top: -8px;
-            left: 35%;
-            width: 30%;
-            height: 16px;
-            background: linear-gradient(90deg, rgba(255,200,220,0.6), rgba(255,200,220,0.8), rgba(255,200,220,0.6));
-            box-shadow: 0 2px 4px rgba(0,0,0,0.08);
-            border-radius: 2px;
-            z-index: 1;
-            transform: rotateZ(-2deg);
-        }
-
-        .memory-balloon[data-tape] .photo-frame::after {
-            content: '';
-            position: absolute;
-            bottom: -8px;
-            right: 32%;
-            width: 28%;
-            height: 14px;
-            background: linear-gradient(90deg, rgba(230,220,240,0.5), rgba(230,220,240,0.7), rgba(230,220,240,0.5));
-            box-shadow: 0 2px 4px rgba(0,0,0,0.08);
-            border-radius: 2px;
-            z-index: 1;
-            transform: rotateZ(3deg);
-        }
-
-        /* HOVER EFFECTS */
         .memory-balloon .photo-frame:hover {
-            transform: translate(-50%, -50%) scale(1.08) translateY(-3px);
-            box-shadow: 0 14px 35px rgba(190, 60, 120, 0.25);
-            z-index: 100;
+            transform: translate(-50%, -50%) scale(1.05) rotate(var(--photo-rotate, 0deg)) !important;
+            z-index: 160;
         }
-
-        .memory-balloon.is-hero .photo-frame:hover {
-            transform: translate(-50%, -50%) scale(1.06) translateY(-4px);
-            box-shadow: 0 16px 40px rgba(190, 60, 120, 0.28);
+        @keyframes memory-photo-float {
+            0%, 100% {
+                transform: translate(-50%, -50%) translate3d(0, 0, 0) scale(1) rotate(var(--photo-rotate, 0deg));
+            }
+            25% {
+                transform: translate(-50%, -50%) translate3d(calc(var(--drift-x, 0px) * 0.4), calc(var(--drift-y, 0px) * 0.35), 0) scale(1.03) rotate(calc(var(--photo-rotate, 0deg) + 2deg));
+            }
+            50% {
+                transform: translate(-50%, -50%) translate3d(var(--drift-x, 0px), var(--drift-y, 0px), 0) scale(1.06) rotate(calc(var(--photo-rotate, 0deg) - 2deg));
+            }
+            75% {
+                transform: translate(-50%, -50%) translate3d(calc(var(--drift-x, 0px) * -0.35), calc(var(--drift-y, 0px) * -0.2), 0) scale(1.02) rotate(calc(var(--photo-rotate, 0deg) + 1deg));
+            }
         }
-
-        /* FLOATING ANIMATIONS */
         @keyframes bubble-pop {
             0% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
             65% { opacity: 1; transform: translate(-50%, -58%) scale(1.18); }
             100% { opacity: 0; transform: translate(-50%, -70%) scale(1.75); }
         }
-
-        @keyframes scrapbook-hero-float {
-            0%, 100% {
-                transform: translate(-50%, -50%) translateY(0) rotate(var(--photo-rotate, 0deg)) scale(1);
-            }
-            25% {
-                transform: translate(-50%, -50%) translateY(-2px) rotate(var(--photo-rotate, 0deg)) scale(1);
-            }
-            50% {
-                transform: translate(-50%, -50%) translateY(2px) rotate(var(--photo-rotate, 0deg)) scale(1.01);
-            }
-            75% {
-                transform: translate(-50%, -50%) translateY(-1px) rotate(var(--photo-rotate, 0deg)) scale(1);
-            }
-        }
-
-        @keyframes scrapbook-photo-float {
-            0%, 100% {
-                transform: translate(-50%, -50%) translateY(0) rotate(var(--photo-rotate, 0deg)) scale(1);
-            }
-            25% {
-                transform: translate(-50%, -50%) translateY(-1.5px) rotate(var(--photo-rotate, 0deg)) scale(1);
-            }
-            50% {
-                transform: translate(-50%, -50%) translateY(1.5px) rotate(var(--photo-rotate, 0deg)) scale(1);
-            }
-            75% {
-                transform: translate(-50%, -50%) translateY(-0.8px) rotate(var(--photo-rotate, 0deg)) scale(1);
-            }
-        }
-
-        /* OPENING SEQUENCE ANIMATION */
-        @keyframes scrapbook-title-fade {
-            from {
-                opacity: 0;
-                transform: translateY(-10px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-            .memory-balloon {
-                animation: none !important;
-            }
-            .scrapbook-title-section {
-                animation: none !important;
-                opacity: 1;
-            }
-            .memory-balloon.float-up {
-                opacity: 1;
-                transform: translate(-50%, -50%) scale(1);
-            }
-        }
-
         @media (max-width: 640px) {
-            .scrapbook-title-section {
-                padding: 1rem 0.75rem 0.4rem;
+            .memory-balloon .bubble-core,
+            .memory-balloon .photo-frame {
+                width: 78px;
+                height: 97px;
+                padding: 5px;
             }
-            .scrapbook-title {
-                margin-bottom: 0.2rem;
+            .memory-balloon {
+                min-width: 90px;
+                min-height: 110px;
+            }
+            .memory-balloon .photo-frame {
+                width: 76px;
+                height: 94px;
             }
         }
     </style>
@@ -1173,7 +854,7 @@
             width: 100%;
             height: 100%;
             pointer-events: none;
-            z-index: 165; /* sit above gift modal (z-110) so subtle bursts are visible over the cake */
+            z-index: 60; /* above header (z-50) but below modals (z-100+) */
             mix-blend-mode: screen;
         }
         .intro-screen {
@@ -1470,10 +1151,10 @@
         #blow-progress-ui .progress-fill { height: 100%; width: 0%; background: linear-gradient(90deg,#ff8fab,#ffd9e6); transition: width 120ms linear; box-shadow: none; }
 
         /* Smoke and blow visuals */
-        .candle-smoke { position: absolute; width: 42px; height: 42px; border-radius: 50%; background: radial-gradient(circle, rgba(220,220,220,0.9), rgba(180,180,180,0.35)); opacity: 0; transform: translate(-50%, -50%) scale(0.3); animation: smoke-rise 750ms ease forwards; pointer-events: none; z-index: 58; mix-blend-mode: screen; }
+        .candle-smoke { position: absolute; width: 42px; height: 42px; border-radius: 50%; background: radial-gradient(circle, rgba(220,220,220,0.9), rgba(180,180,180,0.35)); opacity: 0; transform: translate(-50%, -50%) scale(0.3); animation: smoke-rise 1500ms ease forwards; pointer-events: none; z-index: 58; mix-blend-mode: screen; }
         @keyframes smoke-rise { 0%{opacity:0; transform: translate(-50%,-50%) scale(0.4);} 25%{opacity:0.9; transform: translate(-45%,-80%) scale(1);} 100%{opacity:0; transform: translate(-28%,-160%) scale(1.8);} }
 
-        .cake-flame.blown { animation: none !important; transform: translate(-50%,-200%) scale(0.6) !important; opacity: 0 !important; transition: transform 300ms ease, opacity 300ms ease; }
+        .cake-flame.blown { animation: none !important; transform: translate(-50%,-200%) scale(0.6) !important; opacity: 0 !important; transition: transform 600ms ease, opacity 600ms ease; }
 
         /* Elegant burst after candle blow */
         .magic-burst { position: fixed; inset: 0; pointer-events: none; overflow: hidden; z-index: 240; }
@@ -1539,199 +1220,57 @@
 </head>
 <body class="bg-background text-on-background min-h-screen overflow-x-hidden selection:bg-primary-container selection:text-on-primary-container">
     <canvas id="fireworks-canvas" class="fireworks-canvas" aria-hidden="true"></canvas>
-
-    <!-- Fullscreen petal animation (Three.js) -->
-    <div id="threejs-petals-container" style="position:fixed;inset:0;pointer-events:none;z-index:330;">
-    </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/threejs/r125/three.min.js"></script>
-    <script>
-    (function(){
-        const container = document.getElementById('threejs-petals-container');
-        const scene = new THREE.Scene();
-        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-        camera.position.z = 5;
-
-        const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
-        const DPR = Math.min(window.devicePixelRatio || 1, 2);
-        renderer.setPixelRatio(DPR);
-        renderer.setSize(window.innerWidth, window.innerHeight, false);
-        renderer.domElement.style.pointerEvents = 'none';
-        container.appendChild(renderer.domElement);
-
-        function getVisibleSizeAtZ(camera, z = 0) {
-            const vFOV = THREE.MathUtils.degToRad(camera.fov);
-            const height = 2 * Math.tan(vFOV / 2) * Math.abs(camera.position.z - z);
-            const width = height * camera.aspect;
-            return { width, height };
-        }
-
-        let visible = getVisibleSizeAtZ(camera, 0);
-
-        if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-            return;
-        }
-
-        const petals = [];
-        const petalCount = window.innerWidth < 720 ? 4 : 8;
-
-        // Create a small canvas texture to simulate paper/confetti look
-        function createPaperTexture() {
-            const size = 128;
-            const cvs = document.createElement('canvas');
-            cvs.width = cvs.height = size;
-            const ctx = cvs.getContext('2d');
-
-            // background paper color with subtle gradient
-            const g = ctx.createLinearGradient(0, 0, size, size);
-            g.addColorStop(0, '#fff6f8');
-            g.addColorStop(1, '#ffeef2');
-            ctx.fillStyle = g;
-            ctx.fillRect(0, 0, size, size);
-
-            // draw a slightly irregular rounded rectangle (paper shape)
-            ctx.save();
-            ctx.translate(size/2, size/2);
-            ctx.rotate((Math.random()-0.5) * 0.6);
-            ctx.translate(-size/2, -size/2);
-            ctx.fillStyle = 'rgba(255,240,245,1)';
-            ctx.beginPath();
-            const pad = 12;
-            const w = size - pad*2;
-            const h = size - pad*2;
-            const r = 10;
-            ctx.moveTo(pad + r, pad);
-            ctx.arcTo(pad + w, pad, pad + w, pad + h, r);
-            ctx.arcTo(pad + w, pad + h, pad, pad + h, r);
-            ctx.arcTo(pad, pad + h, pad, pad, r);
-            ctx.arcTo(pad, pad, pad + w, pad, r);
-            ctx.closePath();
-            ctx.fill();
-
-            // speckles for texture
-            for (let i = 0; i < 120; i++) {
-                ctx.fillStyle = 'rgba(220,180,195,' + (0.02 + Math.random()*0.06) + ')';
-                ctx.fillRect(pad + Math.random()*w, pad + Math.random()*h, 1, 1);
-            }
-
-            // subtle crease lines
-            ctx.strokeStyle = 'rgba(230,195,205,0.08)';
-            ctx.lineWidth = 1;
-            ctx.beginPath();
-            ctx.moveTo(pad + w*0.1, pad + h*0.2);
-            ctx.quadraticCurveTo(pad + w*0.5, pad + h*0.35, pad + w*0.9, pad + h*0.15);
-            ctx.stroke();
-            ctx.restore();
-
-            const tex = new THREE.CanvasTexture(cvs);
-            tex.needsUpdate = true;
-            return tex;
-        }
-
-        const paperTexture = createPaperTexture();
-        const petalGeometry = new THREE.PlaneGeometry(0.05, 0.06);
-        const petalMaterial = new THREE.MeshBasicMaterial({ map: paperTexture, side: THREE.DoubleSide, transparent: true, alphaTest: 0.2, opacity: 0.18, depthWrite: false });
-
-        for (let i = 0; i < petalCount; i++) {
-            const petal = new THREE.Mesh(petalGeometry, petalMaterial);
-            petal.rotation.z = (Math.random() - 0.5) * Math.PI * 0.6;
-            const xRange = visible.width * 0.5 + 0.5;
-            const yStart = visible.height * 0.5 + Math.random() * visible.height;
-            petal.position.set((Math.random() - 0.5) * xRange * 2, yStart, (Math.random() - 0.5) * 2);
-            const scale = 0.4 + Math.random() * 0.35;
-            petal.scale.setScalar(scale);
-            petal.userData = {
-                rotationSpeed: { x: (Math.random() - 0.5) * 0.008, y: (Math.random() - 0.5) * 0.008, z: (Math.random() - 0.5) * 0.035 },
-                fallSpeed: 0.002 + Math.random() * 0.007,
-                horizontalDrift: (Math.random() - 0.5) * 0.005
-            };
-            scene.add(petal);
-            petals.push(petal);
-        }
-
-        function animate() {
-            requestAnimationFrame(animate);
-            petals.forEach(petal => {
-                petal.position.y -= petal.userData.fallSpeed;
-                petal.position.x += petal.userData.horizontalDrift;
-                petal.rotation.x += petal.userData.rotationSpeed.x;
-                petal.rotation.y += petal.userData.rotationSpeed.y;
-                petal.rotation.z += petal.userData.rotationSpeed.z;
-                if (petal.position.y < -visible.height * 0.4) {
-                    petal.position.y = visible.height * 0.5 + Math.random() * visible.height * 0.4;
-                    petal.position.x = (Math.random() - 0.5) * visible.width * 0.6;
-                }
-            });
-            renderer.render(scene, camera);
-        }
-
-        window.addEventListener('resize', () => {
-            camera.aspect = window.innerWidth / window.innerHeight;
-            camera.updateProjectionMatrix();
-            renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
-            renderer.setSize(window.innerWidth, window.innerHeight, false);
-            visible = getVisibleSizeAtZ(camera, 0);
-        });
-
-        animate();
-    })();
-    </script>
-    <div id="intro-screen" class="intro-screen" aria-label="Màn hình mở đầu">
+    <div id="intro-screen" class="intro-screen" aria-label="M├án h├¼nh mß╗ƒ ─æß║ºu">
         <div class="intro-card">
             <h1>Her Special Day is Coming</h1>
-            <p>Đợi thêm một chút để khoảnh khắc này mở ra</p>
+            <p>─Éß╗úi th├¬m mß╗Öt ch├║t ─æß╗â khoß║únh khß║»c n├áy mß╗ƒ ra</p>
             <div class="intro-countdown-grid">
                 <div class="count-item">
                     <span id="count-days">00</span>
-                    <span class="count-label">Ngày</span>
+                    <span class="count-label">Ng├áy</span>
                 </div>
                 <div class="count-item">
                     <span id="count-hours">00</span>
-                    <span class="count-label">Giờ</span>
+                    <span class="count-label">Giß╗¥</span>
                 </div>
                 <div class="count-item">
                     <span id="count-minutes">00</span>
-                    <span class="count-label">Phút</span>
+                    <span class="count-label">Ph├║t</span>
                 </div>
                 <div class="count-item">
                     <span id="count-seconds">11</span>
-                    <span class="count-label">Giây</span>
+                    <span class="count-label">Gi├óy</span>
                 </div>
             </div>
-            <div class="intro-start-overlay" id="intro-start-overlay" aria-label="Bắt đầu đếm ngược">
-                <button class="intro-start-button" type="button">Nhấn để bắt đầu</button>
+            <div class="intro-start-overlay" id="intro-start-overlay" aria-label="Bß║»t ─æß║ºu ─æß║┐m ng╞░ß╗úc">
+                <button class="intro-start-button" type="button">Nhß║Ñn ─æß╗â bß║»t ─æß║ºu</button>
             </div>
             <div class="countdown-word-overlay" id="countdown-word-overlay"></div>
         </div>
     </div>
     <!-- Candle lighting overlay: tap-and-hold to reveal -->
     <div id="candle-overlay" class="candle-overlay" aria-hidden="true">
-        <div class="candle-prompt">Chạm và giữ để thắp nến</div>
+        <div class="candle-prompt">Chß║ím v├á giß╗» ─æß╗â thß║»p nß║┐n</div>
         <div class="candle-feedback" id="candle-feedback" aria-hidden="true"></div>
     </div>
     <!-- Wish overlay shown between lighting and blowing -->
     <div id="wish-overlay" class="candle-overlay" aria-hidden="true">
-        <div class="candle-prompt">Ước điều ước đi</div>
+        <div class="candle-prompt">╞»ß╗¢c ─æiß╗üu ╞░ß╗¢c ─æi</div>
     </div>
     <!-- Blow overlay (appears after candles are lit) -->
     <div id="blow-overlay" class="candle-overlay" aria-hidden="true">
-        <div class="candle-prompt">Chạm và giữ để thổi nến</div>
+        <div class="candle-prompt">Chß║ím v├á giß╗» ─æß╗â thß╗òi nß║┐n</div>
         <div class="candle-feedback" id="blow-feedback" aria-hidden="true"></div>
     </div>
-
-    <!-- Dreamy Garden Atmosphere -->
-    <div class="background-atmosphere" aria-hidden="true">
-        <div class="background-sparkles" aria-hidden="true">
-            <span class="background-sparkle"></span>
-            <span class="background-sparkle"></span>
-            <span class="background-sparkle"></span>
-            <span class="background-sparkle"></span>
-            <span class="background-sparkle"></span>
-            <span class="background-sparkle"></span>
-        </div>
-    </div>
-
-    <!-- Top Navigation Bar -->
-    <header class="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-xl border-b border-primary/10 shadow-sm flex items-center justify-between px-margin-mobile md:px-margin-desktop h-16">
+<!-- Ambient Animated Background -->
+<div class="fixed inset-0 z-0 pointer-events-none">
+<div class="absolute top-[-10%] left-[-10%] w-[60%] h-[60%] bg-primary/10 rounded-full blur-[120px]"></div>
+<div class="absolute bottom-[-10%] right-[-10%] w-[60%] h-[60%] bg-secondary/10 rounded-full blur-[120px]"></div>
+<div class="absolute top-[18%] left-[12%] animate-float opacity-30 text-primary"><span class="material-symbols-outlined text-[42px]" style='font-variation-settings: "FILL" 1;'>star</span></div>
+<div class="absolute bottom-[18%] right-[12%] animate-float opacity-20 text-secondary" style="animation-delay: 1s;"><span class="material-symbols-outlined text-[46px]" style='font-variation-settings: "FILL" 1;'>auto_awesome</span></div>
+</div>
+<!-- Top Navigation Bar -->
+<header class="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-xl border-b border-primary/10 shadow-sm flex items-center justify-between px-margin-mobile md:px-margin-desktop h-16">
 <div class="flex items-center gap-2">
 <span class="material-symbols-outlined text-primary text-[26px]">celebration</span>
 <h1 class="font-headline-lg-mobile text-[24px] text-primary tracking-tight">For Nira</h1>
@@ -1747,9 +1286,9 @@
             Happy Birthday
         </h2>
 <p class="font-body-md text-on-background/80 text-base md:text-lg leading-relaxed max-w-2xl mx-auto">
-            Một món quà nhỏ, gửi đến bạn
-            Hy vọng mỗi lần lướt xuống, bạn sẽ mỉm cười thêm một chút.
-            Tất cả những điều dưới đây đều được chuẩn bị dành riêng cho ngày đặc biệt của bạn.
+            Mß╗Öt m├│n qu├á nhß╗Å, gß╗¡i ─æß║┐n bß║ín
+            Hy vß╗ìng mß╗ùi lß║ºn l╞░ß╗¢t xuß╗æng, bß║ín sß║╜ mß╗ëm c╞░ß╗¥i th├¬m mß╗Öt ch├║t.
+            Tß║Ñt cß║ú nhß╗»ng ─æiß╗üu d╞░ß╗¢i ─æ├óy ─æß╗üu ─æ╞░ß╗úc chuß║⌐n bß╗ï d├ánh ri├¬ng cho ng├áy ─æß║╖c biß╗çt cß╗ºa bß║ín.
 </p>
 </div>
 <div class="w-full max-w-md mx-auto relative mb-12" id="avatar-card-wrapper">
@@ -1763,10 +1302,10 @@
 </div>
 <div class="fairy-container" id="fairy-guide">
     <div class="fairy-speech-bubble shadow-lg">
-        Bấm đây trước nè !
+        Bß║Ñm ─æ├óy tr╞░ß╗¢c n├¿ !
     </div>
 </div>
-<h3 class="font-headline-lg text-[32px] text-on-background mb-2">Võ Lê Xuân Nữ</h3>
+<h3 class="font-headline-lg text-[32px] text-on-background mb-2">V├╡ L├¬ Xu├ón Nß╗»</h3>
 <p class="font-body-md text-on-background/70 font-semibold">11 - 08 - 2003</p>
 <div class="mt-5 flex justify-center gap-3">
 <span class="w-2 h-2 rounded-full bg-primary"></span>
@@ -1778,19 +1317,19 @@
 <div class="flex flex-col gap-4 w-full max-w-sm justify-center relative" id="guide-target-area">
 <button class="w-full border-2 border-secondary text-secondary font-semibold text-[21px] py-4 px-8 rounded-2xl bg-white/95 hover:bg-secondary/5 transition-all duration-300 active:scale-95 flex items-center justify-center gap-3" id="cut-cake-btn">
 <span class="material-symbols-outlined text-[24px]">redeem</span>
-            Cắt bánh kem nè !
+            Cß║»t b├ính kem n├¿ !
         </button>
 <button class="w-full bg-primary text-white font-semibold text-[21px] py-4 px-8 rounded-2xl shadow-xl shadow-primary/20 hover:shadow-primary/30 transition-all duration-300 active:scale-95 flex items-center justify-center gap-3" id="open-game-btn">
 <span class="material-symbols-outlined text-[24px]">drafts</span>
-            Chơi trò chơi nè !
+            Ch╞íi tr├▓ ch╞íi n├¿ !
         </button>
 <button class="w-full border-2 border-secondary text-secondary font-semibold text-[21px] py-4 px-8 rounded-2xl bg-white/95 hover:bg-secondary/5 transition-all duration-300 active:scale-95 flex items-center justify-center gap-3" id="open-gift-btn">
 <span class="material-symbols-outlined text-[24px]">redeem</span>
-            Mở quà nè !
+            Mß╗ƒ qu├á n├¿ !
         </button>
 <button class="w-full bg-primary text-white font-semibold text-[21px] py-4 px-8 rounded-2xl shadow-xl shadow-primary/20 hover:shadow-primary/30 transition-all duration-300 active:scale-95 flex items-center justify-center gap-3" id="open-letter-btn">
 <span class="material-symbols-outlined text-[24px]">drafts</span>
-            Đọc thư nè !
+            ─Éß╗ìc th╞░ n├¿ !
         </button>
 </div>
 </main>
@@ -1806,13 +1345,13 @@
 <div class="absolute inset-0 flex items-center justify-center pointer-events-none" id="status-container"></div>
 </div>
 <button class="bg-primary text-white font-headline-lg-mobile text-[18px] py-3 px-10 rounded-full shadow-lg shadow-primary/20 hover:shadow-xl active:scale-95 transition-all opacity-0 pointer-events-none" id="close-letter-bottom-btn">
-            Đóng
+            ─É├│ng
         </button>
 </div>
 </div>
 <!-- Gift Overlay Modal -->
 <div class="fixed inset-0 z-[110] hidden flex flex-col items-center justify-center bg-background/95 backdrop-blur-lg overflow-hidden" id="gift-modal">
-<button class="absolute top-2 right-8 text-on-surface bg-surface-container-high rounded-full close-gift-small hover:scale-110 transition-all z-[160]" id="close-gift-modal">
+<button class="absolute top-8 right-8 text-on-surface bg-surface-container-high rounded-full close-gift-small hover:scale-110 transition-all z-[160]" id="close-gift-modal">
 <span class="material-symbols-outlined">close</span>
 </button>
 <div class="text-center mb-4 px-6 z-10" aria-hidden="true"></div>
@@ -1827,22 +1366,22 @@
 <!-- Two separate flames positioned above the '2' and '3' digits -->
 <div class="cake-flame flame-1" aria-hidden="true"></div>
 <div class="cake-flame flame-2" aria-hidden="true"></div>
-<img alt="Bánh sinh nhật neon" class="cake-img" id="cake-main-img" src="image/cake.png"/>
+<img alt="B├ính sinh nhß║¡t neon" class="cake-img" id="cake-main-img" src="image/cake.png"/>
 </div>
 </div>
-<div id="cake-cta" class="cake-cta">Chạm vào bánh để cắt nhé</div>
+<div id="cake-cta" class="cake-cta">Chß║ím v├áo b├ính ─æß╗â cß║»t nh├⌐</div>
 <div class="gift-stars" aria-hidden="true">
-    <span class="gift-star">✨</span>
-    <span class="gift-star">⭐</span>
-    <span class="gift-star">💖</span>
-    <span class="gift-star">✨</span>
-    <span class="gift-star">⭐</span>
+    <span class="gift-star">Γ£¿</span>
+    <span class="gift-star">Γ¡É</span>
+    <span class="gift-star">≡ƒÆû</span>
+    <span class="gift-star">Γ£¿</span>
+    <span class="gift-star">Γ¡É</span>
 </div>
 </div>
 <!-- Memory detail modal (opened when clicking a photo) -->
 <div id="memory-modal" class="hidden fixed inset-0 z-[170] items-center justify-center bg-black/60">
     <div class="memory-modal-content bg-white rounded-2xl p-4 max-w-[92%] max-h-[90%] flex flex-col items-center">
-        <button id="memory-modal-close" class="ml-auto mb-2 text-on-surface text-[20px] bg-surface-container-high rounded-full p-2">✕</button>
+        <button id="memory-modal-close" class="ml-auto mb-2 text-on-surface text-[20px] bg-surface-container-high rounded-full p-2">Γ£ò</button>
         <div class="w-full flex items-center justify-center">
             <img id="memory-modal-img" src="" alt="memory detail" style="max-width:100%; max-height:78vh; border-radius:12px;" />
         </div>
@@ -1852,8 +1391,8 @@
 <!-- Game Modal: 3x3 puzzle -->
 <div id="game-modal" class="hidden fixed inset-0 z-[340] items-center justify-center bg-black/60">
     <div class="w-full max-w-md bg-white rounded-2xl p-4 relative">
-        <button id="close-game-btn" class="absolute top-3 right-3 text-primary bg-surface-container-high rounded-full p-2">✕</button>
-        <h3 class="text-primary font-headline-lg-mobile text-[20px] text-center">Xếp Hình (3×3)</h3>
+        <button id="close-game-btn" class="absolute top-3 right-3 text-primary bg-surface-container-high rounded-full p-2">Γ£ò</button>
+        <h3 class="text-primary font-headline-lg-mobile text-[20px] text-center">Xß║┐p H├¼nh (3├ù3)</h3>
         <div class="flex gap-2 my-3 items-center justify-center">
             <!-- start button removed: puzzle auto-starts when modal opens -->
         </div>
@@ -1866,9 +1405,9 @@
 <!-- Word Game Modal: arrange letters into 'ICHIGO ICHIE' -->
 <div id="word-modal" class="hidden fixed inset-0 z-[350] items-center justify-center bg-black/60">
     <div class="w-full max-w-md bg-white rounded-2xl p-4 relative">
-        <button id="close-word-btn" class="absolute top-3 right-3 text-primary bg-surface-container-high rounded-full p-2">✕</button>
-        <h3 class="text-primary font-headline-lg-mobile text-[20px] text-center">Xếp Chữ</h3>
-        <p class="text-center text-on-background/70 mt-2">Sắp xếp các chữ cái thành từ đúng. Gõ đáp án vào ô bên dưới và nhấn gửi.</p>
+        <button id="close-word-btn" class="absolute top-3 right-3 text-primary bg-surface-container-high rounded-full p-2">Γ£ò</button>
+        <h3 class="text-primary font-headline-lg-mobile text-[20px] text-center">Xß║┐p Chß╗»</h3>
+        <p class="text-center text-on-background/70 mt-2">Sß║»p xß║┐p c├íc chß╗» c├íi th├ánh tß╗½ ─æ├║ng. G├╡ ─æ├íp ├ín v├áo ├┤ b├¬n d╞░ß╗¢i v├á nhß║Ñn gß╗¡i.</p>
         <div id="word-board" class="grid grid-cols-6 gap-2 w-full mt-4" style="min-height:120px;">
             <!-- letter tiles injected here -->
         </div>
@@ -1878,20 +1417,20 @@
 <!-- Code Game Modal: enter secret code DDMMYY -->
 <div id="code-modal" class="hidden fixed inset-0 z-[360] items-center justify-center bg-black/60">
     <div class="w-full max-w-md bg-white rounded-2xl p-4 relative">
-        <button id="close-code-btn" class="absolute top-3 right-3 text-primary bg-surface-container-high rounded-full p-2">✕</button>
-        <h3 class="text-primary font-headline-lg-mobile text-[20px] text-center">Mở quà</h3>
+        <button id="close-code-btn" class="absolute top-3 right-3 text-primary bg-surface-container-high rounded-full p-2">Γ£ò</button>
+        <h3 class="text-primary font-headline-lg-mobile text-[20px] text-center">Mß╗ƒ qu├á</h3>
         <div class="mt-3 text-left text-sm text-on-background/80 space-y-2">
-            <p>Mọi cánh cửa đều cần một chiếc chìa khóa.</p>
-            <p>Còn chiếc chìa khóa của chiếc rương này...</p>
-            <p>lại chính là ngày mà một cô gái xuất hiện trên thế giới.</p>
-            <p>Ngày mà mỗi năm chỉ đến một lần.</p>
-            <p>Ngày đó cũng chính là lý do hôm nay có món quà này.</p>
-            <p>Hãy nhập theo dạng DDMMYY.</p>
+            <p>Mß╗ìi c├ính cß╗¡a ─æß╗üu cß║ºn mß╗Öt chiß║┐c ch├¼a kh├│a.</p>
+            <p>C├▓n chiß║┐c ch├¼a kh├│a cß╗ºa chiß║┐c r╞░╞íng n├áy...</p>
+            <p>lß║íi ch├¡nh l├á ng├áy m├á mß╗Öt c├┤ g├íi xuß║Ñt hiß╗çn tr├¬n thß║┐ giß╗¢i.</p>
+            <p>Ng├áy m├á mß╗ùi n─âm chß╗ë ─æß║┐n mß╗Öt lß║ºn.</p>
+            <p>Ng├áy ─æ├│ c┼⌐ng ch├¡nh l├á l├╜ do h├┤m nay c├│ m├│n qu├á n├áy.</p>
+            <p>H├úy nhß║¡p theo dß║íng DDMMYY.</p>
         </div>
-        <p id="code-hint-text" class="hidden text-center text-on-background/70 mt-3">Hãy nhập mật mã vừa rồi để xem quà.</p>
+        <p id="code-hint-text" class="hidden text-center text-on-background/70 mt-3">H├úy nhß║¡p mß║¡t m├ú vß╗½a rß╗ôi ─æß╗â xem qu├á.</p>
         <div class="mt-4 flex gap-2 items-center">
             <input id="code-input" type="password" maxlength="6" placeholder="" class="grow border rounded-md py-2 px-3 text-center text-lg" autocomplete="off" inputmode="numeric" />
-            <button id="code-submit" class="bg-primary text-white px-4 py-2 rounded-full">Mở quà</button>
+            <button id="code-submit" class="bg-primary text-white px-4 py-2 rounded-full">Mß╗ƒ qu├á</button>
         </div>
         <div id="code-message" class="text-center text-primary mt-3"></div>
     </div>
@@ -1991,10 +1530,10 @@
         }
         
 const message =
-"Happy Birthday Nữ! 🎂\n" +
-"Chúc mừng bạn đã bước sang một tuổi mới. Tui cũng không giỏi nói mấy lời hoa mỹ, nên chỉ muốn gửi đến bạn vài lời chúc thật lòng. \n" +
-"Sắp tới bạn sẽ bắt đầu một hành trình mới ở Nhật. Chúc bạn luôn mạnh mẽ, lạc quan, sớm thích nghi với cuộc sống mới, gặp được nhiều người tốt và có nhiều kỷ niệm đẹp.\n" +
-"Cảm ơn bạn đã dành thời gian xem hết món quà này. Chúc bạn có một sinh nhật thật vui và một chặng đường mới thật nhiều may mắn. 🎉";
+"Happy Birthday Nß╗»! ≡ƒÄé\n" +
+"Ch├║c mß╗½ng bß║ín ─æ├ú b╞░ß╗¢c sang mß╗Öt tuß╗òi mß╗¢i. Tui c┼⌐ng kh├┤ng giß╗Åi n├│i mß║Ñy lß╗¥i hoa mß╗╣, n├¬n chß╗ë muß╗æn gß╗¡i ─æß║┐n bß║ín v├ái lß╗¥i ch├║c thß║¡t l├▓ng. \n" +
+"Sß║»p tß╗¢i bß║ín sß║╜ bß║»t ─æß║ºu mß╗Öt h├ánh tr├¼nh mß╗¢i ß╗ƒ Nhß║¡t. Ch├║c bß║ín lu├┤n mß║ính mß║╜, lß║íc quan, sß╗¢m th├¡ch nghi vß╗¢i cuß╗Öc sß╗æng mß╗¢i, gß║╖p ─æ╞░ß╗úc nhiß╗üu ng╞░ß╗¥i tß╗æt v├á c├│ nhiß╗üu kß╗╖ niß╗çm ─æß║╣p.\n" +
+"Cß║úm ╞ín bß║ín ─æ├ú d├ánh thß╗¥i gian xem hß║┐t m├│n qu├á n├áy. Ch├║c bß║ín c├│ mß╗Öt sinh nhß║¡t thß║¡t vui v├á mß╗Öt chß║╖ng ─æ╞░ß╗¥ng mß╗¢i thß║¡t nhiß╗üu may mß║»n. ≡ƒÄë";
        let typingTimeout;
 
         // Fairy Guide Logic
@@ -2049,9 +1588,9 @@ const message =
         // Status messages logic
         async function playStatusSequence() {
             const statuses = [
-                { text: "ʕっ•ᴥ•ʔっ  Đợi tí đang viết thư...", duration: 3000 },
-                { text: "ʕっ•ᴥ•ʔっ  Sắp xong rồi...", duration: 3000 },
-                { text: "ʕっ•ᴥ•ʔっ  Xong rồi nè...", duration: 3000 }
+                { text: "╩òπüúΓÇóß┤ÑΓÇó╩öπüú  ─Éß╗úi t├¡ ─æang viß║┐t th╞░...", duration: 3000 },
+                { text: "╩òπüúΓÇóß┤ÑΓÇó╩öπüú  Sß║»p xong rß╗ôi...", duration: 3000 },
+                { text: "╩òπüúΓÇóß┤ÑΓÇó╩öπüú  Xong rß╗ôi n├¿...", duration: 3000 }
             ];
 
             for (const status of statuses) {
@@ -2635,7 +2174,7 @@ const message =
         }
 
         function onWin() {
-            message.textContent = '🎉 Hoàn thành! Chúc mừng bạn!';
+            message.textContent = '≡ƒÄë Ho├án th├ánh! Ch├║c mß╗½ng bß║ín!';
             celebrateConfetti();
             setTimeout(() => {
                 if (window.openWordGame) window.openWordGame();
@@ -2708,25 +2247,25 @@ const message =
                     const input = document.createElement('input');
                     input.id = 'word-input';
                     input.type = 'text';
-                    input.placeholder = 'Gõ đáp án vào đây và nhấn Enter';
+                    input.placeholder = 'G├╡ ─æ├íp ├ín v├áo ─æ├óy v├á nhß║Ñn Enter';
                     input.className = 'grow border rounded-md py-2 px-3';
                     input.autocomplete = 'off';
                     const submit = document.createElement('button');
                     submit.id = 'word-submit';
                     submit.className = 'bg-primary text-white px-4 py-2 rounded-full';
-                    submit.textContent = 'Gửi';
+                    submit.textContent = 'Gß╗¡i';
                     function submitAnswer(){
                         const val = (input.value || '').toUpperCase().replace(/\s+/g,'');
                         if (!val) return;
                         if (val === target) {
-                            wordMessage.textContent = 'Chính xác!';
+                            wordMessage.textContent = 'Ch├¡nh x├íc!';
                             celebrateConfetti();
                             setTimeout(() => {
                                 closeWordGame();
                                 if (window.openCodeGame) window.openCodeGame();
                             }, 1400);
                         } else {
-                            wordMessage.textContent = 'Sai rồi — thử lại.';
+                            wordMessage.textContent = 'Sai rß╗ôi ΓÇö thß╗¡ lß║íi.';
                         }
                     }
                     submit.addEventListener('click', submitAnswer);
@@ -2743,7 +2282,7 @@ const message =
                 // wire hint/reveal buttons
                 if (revealBtn) {
                     revealBtn.addEventListener('click', () => {
-                        wordMessage.textContent = 'Đáp án: ICHIGO ICHIE';
+                        wordMessage.textContent = '─É├íp ├ín: ICHIGO ICHIE';
                         const input = document.getElementById('word-input');
                         if (input) input.value = 'ICHIGO ICHIE';
                     });
@@ -2814,7 +2353,7 @@ const message =
                 }
                 if (codeHintText) codeHintText.classList.remove('hidden');
                 if (value === targetCode) {
-                    codeMessage.textContent = 'Đúng rồi! Hãy mở quà nhé.';
+                    codeMessage.textContent = '─É├║ng rß╗ôi! H├úy mß╗ƒ qu├á nh├⌐.';
                     celebrateConfetti();
                     setTimeout(() => {
                         closeCodeGame();
@@ -2826,7 +2365,7 @@ const message =
                         }
                     }, 1200);
                 } else {
-                    codeMessage.textContent = 'Sai rồi — hãy nhập mật mã vừa rồi để xem quà.';
+                    codeMessage.textContent = 'Sai rß╗ôi ΓÇö h├úy nhß║¡p mß║¡t m├ú vß╗½a rß╗ôi ─æß╗â xem qu├á.';
                 }
             }
 
@@ -2945,8 +2484,32 @@ const message =
         }
 
         window.showCakeCutNotes = async function() {
-            // Notes are intentionally disabled for the gift countdown.
-            return;
+            const stage = document.getElementById('memory-stage');
+            if (!stage) return;
+
+            const messageBox = document.createElement('div');
+            messageBox.className = 'cake-cut-message';
+            stage.appendChild(messageBox);
+
+            const notes = [
+                'Mß╗ùi ng╞░ß╗¥i mß╗Öt miß║┐ng, k d├ánh nhau',
+                'Xong rß╗ôi, ra ch╞íi tr├▓ ch╞íi ─æi'
+            ];
+
+            for (const note of notes) {
+                messageBox.innerHTML = '';
+                const noteEl = document.createElement('div');
+                noteEl.className = 'cake-cut-note';
+                noteEl.textContent = note;
+                messageBox.appendChild(noteEl);
+
+                requestAnimationFrame(() => messageBox.classList.add('visible'));
+                await new Promise(resolve => setTimeout(resolve, 1800));
+                messageBox.classList.remove('visible');
+                await new Promise(resolve => setTimeout(resolve, 320));
+            }
+
+            messageBox.remove();
         };
 
         function createMemoryBalloon() {
@@ -3183,64 +2746,60 @@ const message =
         }
 
         const memoryItems = [
-            { src: 'image/image2.jpg', description: 'Trời xanh, mây trắng, nắng vàng... và một chút dịu dàng cho ngày hôm đó.' },
-            { src: 'image/image12.png', description: 'Nàng thơ' },
-            { src: 'image/image4.jpg', description: 'Ánh nhìn có thể cắt đứt mọi thứ...' },
-            { src: 'image/image14.png', description: '日本人' },
+            { src: 'image/image2.jpg', description: 'Trß╗¥i xanh, m├óy trß║»ng, nß║»ng v├áng... v├á mß╗Öt ch├║t dß╗ïu d├áng cho ng├áy h├┤m ─æ├│.' },
+            { src: 'image/image12.png', description: 'N├áng th╞í' },
+            { src: 'image/image4.jpg', description: '├ünh nh├¼n c├│ thß╗â cß║»t ─æß╗⌐t mß╗ìi thß╗⌐...' },
+            { src: 'image/image14.png', description: 'µùÑµ£¼Σ║║' },
             { src: 'image/image6.jpg', description: 'So cool, I like  it' },
-            { src: 'image/image7.jpg', description: 'Này nhìn dịu quá' },
+            { src: 'image/image7.jpg', description: 'N├áy nh├¼n dß╗ïu qu├í' },
             { src: 'image/image8.jpg', description: '=))))))' },
-            { src: 'image/image9.jpg', description: 'Bông hoa ở giữa là bông hoa đẹp nhất' },
-            { src: 'image/image10.png', description: 'Này đẹp nhì' },
-            { src: 'image/image11.jpg', description: 'Ờ... Dậy thì thành công' },
-            { src: 'image/image13.png', description: 'Tiên cá mắc cạn...' }
+            { src: 'image/image9.jpg', description: 'B├┤ng hoa ß╗ƒ giß╗»a l├á b├┤ng hoa ─æß║╣p nhß║Ñt' },
+            { src: 'image/image10.png', description: 'N├áy ─æß║╣p nh├¼' },
+            { src: 'image/image11.jpg', description: 'ß╗£... Dß║¡y th├¼ th├ánh c├┤ng' },
+            { src: 'image/image13.png', description: 'Ti├¬n c├í mß║»c cß║ín...' }
         ];
 
         window.spawnGiftMemoryBalloons = function(count = memoryItems.length) {
             const modal = document.getElementById('gift-modal');
             if (!modal) return;
             modal.querySelectorAll('.memory-balloon').forEach(b => b.remove());
-            modal.querySelectorAll('.scrapbook-title-section').forEach(s => s.remove());
-            modal.querySelectorAll('.cake-cut-message').forEach(m => m.remove());
 
-            // Add title section
-            const titleSection = document.createElement('div');
-            titleSection.className = 'scrapbook-title-section';
-            titleSection.innerHTML = `
-                <h2 class="scrapbook-title">Một chút kỷ niệm ♡</h2>
-                <p class="scrapbook-subtitle">Những khoảnh khắc nhỏ nhưng thật đáng nhớ</p>
-            `;
-            modal.appendChild(titleSection);
+const positions = [
+    { left: 17, top: 14 },
+    { left: 63, top: 14 },
 
-            // SCRAPBOOK CENTERED LAYOUT with BALLOON ANIMATION
-            // Hero photo: image7.jpg (index 5) at center
-            // Balloons float up → burst → photos appear
-            const positions = [
-                // Top row
-                { left: 18, top: 18, rotation: -4, tape: false },    // 0: image2.jpg
-                { left: 82, top: 16, rotation: 3, tape: false },     // 1: image12.png
-                
-                // Upper middle row
-                { left: 8, top: 35, rotation: -3, tape: true },      // 2: image4.jpg (with tape)
-                { left: 92, top: 32, rotation: 2, tape: false },     // 3: image14.png
-                
-                // Left-middle
-                { left: 20, top: 52, rotation: -2, tape: false },    // 4: image6.jpg
-                
-                // CENTER - HERO
-                { left: 50, top: 50, rotation: 1, tape: false, isHero: true },  // 5: image7.jpg (HERO)
-                
-                // Right-middle
-                { left: 80, top: 55, rotation: -1, tape: false },    // 6: image8.jpg
-                
-                // Lower middle row
-                { left: 25, top: 72, rotation: 2, tape: true },      // 7: image9.jpg (with tape)
-                { left: 75, top: 70, rotation: -2, tape: false },    // 8: image10.png
-                
-                // Bottom row
-                { left: 15, top: 85, rotation: -3, tape: false },    // 9: image11.jpg
-                { left: 85, top: 87, rotation: 3, tape: false }      // 10: image13.png
-            ];
+    { left: 9, top: 30 },
+    { left: 79, top: 30 },
+
+    { left: 21, top: 50 },
+    { left: 67, top: 50 },
+
+    { left: 35, top: 66 },
+    { left: 53, top: 66 },
+
+    { left: 15, top: 82 },
+    { left: 73, top: 82 }
+];
+
+const mobilePositions = [
+    { left: 18, top: 14 },
+    { left: 82, top: 14 },
+
+    { left: 18, top: 32 },
+    { left: 82, top: 32 },
+
+    { left: 18, top: 50 },
+    { left: 82, top: 50 },
+
+    { left: 18, top: 68 },
+    { left: 82, top: 68 },
+
+    { left: 18, top: 86 },
+    { left: 82, top: 86 }
+];
+
+const isSmallScreen = window.matchMedia('(max-width: 640px)').matches;
+const safePositions = isSmallScreen ? mobilePositions : positions;
 
             const orderedItems = [...memoryItems].slice(0, Math.min(count, memoryItems.length));
             const riseDelay = 120;
@@ -3249,51 +2808,43 @@ const message =
             orderedItems.forEach((item, index) => {
                 const balloon = document.createElement('div');
                 balloon.className = 'memory-balloon';
-                const position = positions[index] || { left: 50, top: 50, rotation: 0, tape: false };
-                
-                const isHero = position.isHero === true;
-                if (isHero) balloon.classList.add('is-hero');
-                
-                const rotation = position.rotation;
-                const driftX = (Math.random() - 0.5) * 10;
-                const driftY = (Math.random() - 0.5) * 8;
+                const position = positions[index] || { left: 50, top: 30 + (index % 3) * 10 };
+                const rotation = (Math.random() - 0.5) * 18;
+                const driftX = (Math.random() - 0.5) * 22;
+                const driftY = (Math.random() - 0.5) * 14;
                 const photoDelay = (Math.random() * 2).toFixed(2);
-                const burstDelay = burstBaseDelay + index * 120;
+                const burstDelay = burstBaseDelay + index * 180;
                 const revealDelay = burstDelay + 300;
-                
+
                 balloon.style.left = `${position.left}%`;
-                balloon.style.top = `${position.top + 50}vh`;
+                balloon.style.top = `${position.top + 34}vh`;
+                balloon.style.setProperty('--rot', `${rotation}deg`);
                 balloon.style.setProperty('--photo-rotate', `${rotation}deg`);
                 balloon.style.setProperty('--drift-x', `${driftX}px`);
+                if (isSmallScreen) {
+                    balloon.style.left = `${Math.max(14, Math.min(86, position.left))}%`;
+                    balloon.style.top = `${Math.max(20, Math.min(90, position.top + 34))}vh`;
+                }
                 balloon.style.setProperty('--drift-y', `${driftY}px`);
                 balloon.style.setProperty('--photo-delay', `${photoDelay}s`);
-                
-                if (position.tape) {
-                    balloon.setAttribute('data-tape', 'true');
-                }
-                
                 balloon.innerHTML = `
                     <div class="bubble-core"></div>
                     <div class="photo-frame">
-                        <img src="${item.src}" class="w-full h-full object-cover rounded-lg" alt="memory" />
+                        <img src="${item.src}" class="w-full h-full object-cover rounded-xl" alt="memory" />
                     </div>
                 `;
                 balloon.addEventListener('click', () => openMemoryModal(item.src, item.description));
                 modal.appendChild(balloon);
 
-                // BALLOON ANIMATION SEQUENCE
-                // 1. Float up
                 setTimeout(() => {
                     balloon.style.top = `${position.top}vh`;
                     balloon.classList.add('float-up');
                 }, riseDelay);
 
-                // 2. Burst
                 setTimeout(() => {
                     balloon.classList.add('burst');
                 }, burstDelay);
 
-                // 3. Reveal photo
                 setTimeout(() => {
                     balloon.classList.add('revealed');
                 }, revealDelay);
@@ -3310,38 +2861,14 @@ const message =
                 window.memoriesSpawned = true;
                 const shouldReveal = !window.giftSequenceCompleted;
                 const countdown = options?.countdown === true;
-                        if (shouldReveal) {
-                            if (countdown) {
-                                await revealCakeWithCountdown(cake);
-                            } else {
-                                await revealCakeWithoutCountdown(cake);
-                            }
-
-                            // subtle pause before small fireworks bursts
-                            await new Promise(r => setTimeout(r, 250 + Math.random() * 150));
-
-                            try {
-                                // compute cake top area for bursts
-                                const rect = cake.getBoundingClientRect();
-                                const centerX = rect.left + rect.width / 2;
-                                const topY = rect.top + rect.height * 0.18;
-                                const atmosphere = document.querySelector('.background-atmosphere');
-                            if (atmosphere) {
-                                atmosphere.classList.add('celebration-active');
-                                setTimeout(() => atmosphere.classList.remove('celebration-active'), 2400);
-                            }
-                            // one or two small bursts near cake top / sides
-                                createSubtleBurst(centerX - rect.width * 0.18, topY, { count: 8 });
-                                setTimeout(() => createSubtleBurst(centerX + rect.width * 0.18, topY, { count: 8 }), 180 + Math.random() * 160);
-                            } catch (e) { /* fail silently */ }
-
-                            // allow bursts to fade
-                            await new Promise(r => setTimeout(r, 420));
-
-                            // short pause after fireworks before showing text
-                            await new Promise(r => setTimeout(r, 320));
-
-                        } else {
+                if (shouldReveal) {
+                    if (countdown) {
+                        await revealCakeWithCountdown(cake);
+                    } else {
+                        await revealCakeWithoutCountdown(cake);
+                    }
+                    await window.showCakeCutNotes?.();
+                } else {
                     const cakeImage = cake.querySelector('img');
                     if (cakeImage) cakeImage.style.visibility = 'hidden';
                 }
@@ -3360,6 +2887,7 @@ const message =
             }); 
         } 
     });
+</script>
 </script>
 <script>
 (() => {
@@ -3425,10 +2953,10 @@ const message =
     }
 
     function createParticles(x, y, color) {
-        const count = Math.floor(rand(8, 16));
+        const count = Math.floor(rand(12, 26));
         for (let i = 0; i < count; i++) {
             const angle = rand(0, Math.PI * 2);
-            const speed = rand(0.8, 6);
+            const speed = rand(1, 8);
             particles.push({
                 x, y,
                 vx: Math.cos(angle) * speed,
@@ -3437,36 +2965,10 @@ const message =
                 decay: rand(0.93, 0.97),
                 color,
                 alpha: 1,
-                gravity: 0.08 + Math.random() * 0.10
+                gravity: 0.12 + Math.random() * 0.12
             });
         }
     }
-
-    // Subtle burst provider for post-cut celebration
-    function createSubtleBurst(x, y, opts = {}) {
-        if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-        const palette = opts.palette || ['#ffd9e0', '#ffcad9', '#ffe8ef'];
-        const count = opts.count || Math.floor(rand(5, 10));
-        for (let i = 0; i < count; i++) {
-            const angle = rand(-Math.PI * 0.6, Math.PI * 0.6);
-            const spread = rand(0.5, 1.4);
-            const speed = rand(0.5, 2.6);
-            const color = palette[Math.floor(Math.random() * palette.length)];
-            particles.push({
-                x, y,
-                vx: Math.cos(angle) * speed * spread,
-                vy: Math.sin(angle) * speed * spread - Math.abs(rand(0,1)),
-                life: rand(30, 60),
-                decay: rand(0.92, 0.96),
-                color,
-                alpha: 0.95,
-                gravity: 0.04 + Math.random() * 0.05
-            });
-        }
-    }
-
-    // expose subtle burst for external callers (post-cut sequence)
-    try { window.createSubtleBurst = createSubtleBurst; } catch(e) {}
 
     function launch(sx, sy, tx, ty, color) {
         fireworks.push(new Firework(sx, sy, tx, ty, color));
@@ -3495,13 +2997,13 @@ const message =
             if (p.life <= 0 || p.y > canvas.height / DPR + 20) particles.splice(i, 1);
         }
 
-        // auto-launch fireworks only after the cake has been cut or celebration begins
-        if ((window.cakeClicked || window.giftSequenceCompleted) && t - lastAuto > 1400) {
-            const sx = rand(window.innerWidth * 0.3, window.innerWidth * 0.7);
+        // auto-launch fireworks less frequently and single launches to reduce density
+        if (t - lastAuto > 900) {
+            const sx = rand(window.innerWidth * 0.2, window.innerWidth * 0.8);
             const sy = window.innerHeight + 20;
-            const tx = rand(80, window.innerWidth - 80);
-            const ty = rand(window.innerHeight * 0.08, window.innerHeight * 0.52);
-            launch(sx, sy, tx, ty, `hsl(${rand(320, 360)},100%,65%)`);
+            const tx = rand(50, window.innerWidth - 50);
+            const ty = rand(window.innerHeight * 0.05, window.innerHeight * 0.6);
+            launch(sx, sy, tx, ty, `hsl(${Math.random() * 360},100%,60%)`);
             lastAuto = t;
         }
 
@@ -3654,7 +3156,7 @@ const message =
         overlay.appendChild(progressUI);
 
         let startTs = 0, intervalId = null;
-        const holdDuration = 1000;
+        const holdDuration = 2000;
 
         function updateProgress() {
             const elapsed = Date.now() - startTs;
@@ -3734,7 +3236,7 @@ const message =
         }
 
         function showWish(){
-            const toast = document.createElement('div'); toast.className = 'wish-toast'; toast.textContent = 'Chúc điều ước của bạn sẽ thành hiện thực.'; document.body.appendChild(toast);
+            const toast = document.createElement('div'); toast.className = 'wish-toast'; toast.textContent = 'Ch├║c ─æiß╗üu ╞░ß╗¢c cß╗ºa bß║ín sß║╜ th├ánh hiß╗çn thß╗▒c.'; document.body.appendChild(toast);
             const cake = document.getElementById('birthday-cake-container');
             if (cake) {
                 const rect = cake.getBoundingClientRect();

@@ -1,0 +1,44 @@
+<div class="dreamy-bg" aria-hidden="true">
+  <div class="dreamy-floral flower-1"></div>
+  <div class="dreamy-floral flower-2"></div>
+  <div class="dreamy-floral flower-3"></div>
+  <div class="dreamy-floral flower-4"></div>
+  <div class="dreamy-glow glow-1"></div>
+  <div class="dreamy-glow glow-2"></div>
+  <div class="dreamy-bokeh bokeh-1"></div>
+  <div class="dreamy-bokeh bokeh-2"></div>
+  <div class="dreamy-sparkles" id="dreamy-sparkles"></div>
+  <div class="dreamy-petals" id="dreamy-petals"></div>
+</div>
+
+<script>
+(function(){
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    const sparkles = document.getElementById('dreamy-sparkles');
+    const petals = document.getElementById('dreamy-petals');
+    if (!sparkles || !petals) return;
+
+    const sparkleCount = Math.max(6, Math.min(18, Math.floor(window.innerWidth / 120)));
+    for (let i=0;i<sparkleCount;i++){
+        const el = document.createElement('div');
+        el.className = 'dreamy-sparkle';
+        el.style.left = (Math.random()*96+2) + '%';
+        el.style.top = (Math.random()*70+6) + '%';
+        el.style.animationDuration = (3 + Math.random()*4.5) + 's';
+        el.style.animationDelay = (Math.random()*4000) + 'ms';
+        sparkles.appendChild(el);
+    }
+
+    const petalCount = window.innerWidth > 720 ? 10 : 5;
+    for (let i=0;i<petalCount;i++){
+        const p = document.createElement('div');
+        p.className = 'dreamy-petal';
+        p.style.left = (Math.random()*96+2) + '%';
+        p.style.top = (80 + Math.random()*18) + '%';
+        p.style.animationDuration = (12 + Math.random()*10) + 's';
+        p.style.animationDelay = (Math.random()*6000) + 'ms';
+        p.style.transform = `translateY(0) rotate(${(Math.random()*40-20)}deg) scale(${0.7+Math.random()*0.5})`;
+        petals.appendChild(p);
+    }
+})();
+</script>
