@@ -1380,31 +1380,61 @@
         const fairyGuide = document.getElementById('fairy-guide');
         const profileAvatar = document.getElementById('profile-avatar');
         const fairyWrapper = document.getElementById('avatar-card-wrapper');
+        const introScreen = document.getElementById('intro-screen');
         const countdownAudio = document.getElementById('countdown-audio');
         const birthdayAudio = document.getElementById('birthday-audio');
         let birthdayMusicPlayed = false;
         let countdownAudioUnlocked = false;
+        let countdownAudioStarted = false;
+        let countdownAudioAllowed = true;
+        let countdownAudioDisabled = false;
+
+        function stopCountdownAudio() {
+            countdownAudioAllowed = false;
+            countdownAudioDisabled = true;
+            if (!countdownAudio) return;
+            countdownAudio.pause();
+            countdownAudio.currentTime = 0;
+            countdownAudio.muted = true;
+            countdownAudio.removeAttribute('src');
+            countdownAudio.load();
+        }
 
         function unlockCountdownAudio() {
-            if (countdownAudioUnlocked || !countdownAudio) return;
+            if (countdownAudioDisabled || !countdownAudioAllowed || countdownAudioUnlocked || !countdownAudio) return;
             countdownAudioUnlocked = true;
             if (countdownAudio) {
-                countdownAudio.muted = true;
+                countdownAudio.muted = false;
                 countdownAudio.currentTime = 0;
                 countdownAudio.play().then(() => {
-                    countdownAudio.muted = false;
                     attemptCountdownPlay();
                 }).catch(() => {
-                    countdownAudio.muted = false;
+                    // Browser may still block autoplay on first load until user gesture is confirmed.
+                    setTimeout(() => {
+                        try {
+                            if (countdownAudioDisabled || !countdownAudioAllowed) return;
+                            countdownAudio.currentTime = 0;
+                            countdownAudio.muted = false;
+                            countdownAudio.play().catch(() => {});
+                        } catch (e) {}
+                    }, 200);
                 });
             }
             window.removeEventListener('pointerdown', unlockCountdownAudio);
             window.removeEventListener('touchstart', unlockCountdownAudio);
+            document.removeEventListener('click', unlockCountdownAudio);
+            document.removeEventListener('keydown', unlockCountdownAudio);
+            if (introScreen) {
+                introScreen.removeEventListener('pointerdown', unlockCountdownAudio);
+                introScreen.removeEventListener('click', unlockCountdownAudio);
+            }
         }
 
         function attemptCountdownPlay() {
-            if (!countdownAudio) return;
+            if (!countdownAudio || countdownAudioDisabled || !countdownAudioAllowed || countdownAudioStarted) return;
+            countdownAudioStarted = true;
             try {
+                countdownAudio.muted = false;
                 countdownAudio.currentTime = 0;
                 countdownAudio.play().catch(() => {});
             } catch (e) {}
@@ -1412,6 +1442,13 @@
 
         window.addEventListener('pointerdown', unlockCountdownAudio, { once: true, passive: true });
         window.addEventListener('touchstart', unlockCountdownAudio, { once: true, passive: true });
+        document.addEventListener('click', unlockCountdownAudio, { once: true, passive: true });
+        document.addEventListener('keydown', unlockCountdownAudio, { once: true });
+
+        if (introScreen) {
+            introScreen.addEventListener('pointerdown', unlockCountdownAudio, { once: true, passive: true });
+            introScreen.addEventListener('click', unlockCountdownAudio, { once: true, passive: true });
+        }
         
 const message =
 "Happy Birthday Nữ! 🎂\n" +
@@ -1568,7 +1605,6 @@ const message =
             });
         }
 
-        const introScreen = document.getElementById('intro-screen');
         const daysEl = document.getElementById('count-days');
         const hoursEl = document.getElementById('count-hours');
         const minutesEl = document.getElementById('count-minutes');
@@ -1634,12 +1670,17 @@ const message =
 
         async function enterMainScreen() {
             if (!introScreen) return;
+            stopCountdownAudio();
+            window.removeEventListener('pointerdown', unlockCountdownAudio);
+            window.removeEventListener('touchstart', unlockCountdownAudio);
+            document.removeEventListener('click', unlockCountdownAudio);
+            document.removeEventListener('keydown', unlockCountdownAudio);
+            if (introScreen) {
+                introScreen.removeEventListener('pointerdown', unlockCountdownAudio);
+                introScreen.removeEventListener('click', unlockCountdownAudio);
+            }
             if (introEffectTimer) { clearInterval(introEffectTimer); introEffectTimer = null; }
             if (introConfettiTimer) { clearInterval(introConfettiTimer); introConfettiTimer = null; }
-            if (countdownAudio) {
-                countdownAudio.pause();
-                countdownAudio.currentTime = 0;
-            }
             introScreen.classList.add('fade-away');
             introScreen.style.pointerEvents = 'none';
             setTimeout(() => {
