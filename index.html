@@ -965,6 +965,37 @@
             opacity: 0;
             pointer-events: none;
         }
+        .intro-start-overlay {
+            position: absolute;
+            left: 50%;
+            bottom: 200px;
+            transform: translateX(-50%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: transparent;
+            backdrop-filter: none;
+            z-index: 20;
+            transition: opacity 220ms ease, visibility 220ms ease;
+            cursor: pointer;
+        }
+        .intro-start-overlay.hidden {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+        .intro-start-button {
+            padding: 0.9rem 1.7rem;
+            border-radius: 999px;
+            border: 1px solid rgba(255, 255, 255, 0.35);
+            background: rgba(255, 255, 255, 0.16);
+            color: #fff;
+            font-size: 1rem;
+            font-weight: 700;
+            letter-spacing: 0.02em;
+            box-shadow: 0 18px 40px rgba(182, 0, 85, 0.18);
+            text-shadow: 0 2px 10px rgba(0,0,0,0.12);
+        }
         .countdown-word-overlay {
             position: absolute;
             inset: 0;
@@ -1117,10 +1148,46 @@
 
         .cake-flame.blown { animation: none !important; transform: translate(-50%,-200%) scale(0.6) !important; opacity: 0 !important; transition: transform 600ms ease, opacity 600ms ease; }
 
-        /* Confetti */
-        .confetti-container { position: fixed; inset: 0; pointer-events: none; overflow: visible; z-index: 240; }
-        .confetti-piece { position: absolute; width: 10px; height: 16px; border-radius: 2px; opacity: 0.95; animation: confetti-fall 2200ms cubic-bezier(.2,.7,.3,1) forwards; }
-        @keyframes confetti-fall { 0%{transform: translateY(-10vh) rotate(0);} 100%{transform: translateY(110vh) rotate(520deg);} }
+        /* Elegant burst after candle blow */
+        .magic-burst { position: fixed; inset: 0; pointer-events: none; overflow: hidden; z-index: 240; }
+        .magic-piece {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            border-radius: 50%;
+            opacity: 0;
+            animation: magic-burst 2800ms cubic-bezier(.18,.8,.2,1) forwards;
+            box-shadow: 0 0 18px currentColor;
+        }
+        .magic-piece.ring {
+            width: 14px; height: 14px;
+            border: 2px solid currentColor; background: rgba(255,255,255,0.08);
+            border-radius: 50%;
+        }
+        .magic-piece.star {
+            width: 12px; height: 12px;
+            background: linear-gradient(135deg, rgba(255,255,255,1), currentColor);
+            clip-path: polygon(50% 0%, 60% 35%, 100% 50%, 60% 65%, 50% 100%, 40% 65%, 0% 50%, 40% 35%);
+        }
+        .magic-piece.petal {
+            width: 12px; height: 18px;
+            border-radius: 60% 40% 60% 40%;
+            background: linear-gradient(135deg, rgba(255,255,255,0.9), currentColor);
+        }
+        @keyframes magic-burst {
+            0% {
+                opacity: 0;
+                transform: translate(-50%, -50%) scale(0.3) rotate(0deg);
+            }
+            12% { opacity: 1; }
+            100% {
+                opacity: 0;
+                transform: translate(
+                    calc(-50% + var(--dx)),
+                    calc(-50% + var(--dy))
+                ) scale(1.2) rotate(var(--rot));
+            }
+        }
 
         .wish-toast {
             position: fixed;
@@ -1166,6 +1233,9 @@
                     <span id="count-seconds">11</span>
                     <span class="count-label">Giây</span>
                 </div>
+            </div>
+            <div class="intro-start-overlay" id="intro-start-overlay" aria-label="Bắt đầu đếm ngược">
+                <button class="intro-start-button" type="button">Nhấn để bắt đầu</button>
             </div>
             <div class="countdown-word-overlay" id="countdown-word-overlay"></div>
         </div>
@@ -1381,6 +1451,7 @@
         const profileAvatar = document.getElementById('profile-avatar');
         const fairyWrapper = document.getElementById('avatar-card-wrapper');
         const introScreen = document.getElementById('intro-screen');
+        const introStartOverlay = document.getElementById('intro-start-overlay');
         const countdownAudio = document.getElementById('countdown-audio');
         const birthdayAudio = document.getElementById('birthday-audio');
         let birthdayMusicPlayed = false;
@@ -1396,8 +1467,6 @@
             countdownAudio.pause();
             countdownAudio.currentTime = 0;
             countdownAudio.muted = true;
-            countdownAudio.removeAttribute('src');
-            countdownAudio.load();
         }
 
         function unlockCountdownAudio() {
@@ -1409,7 +1478,7 @@
                 countdownAudio.play().then(() => {
                     attemptCountdownPlay();
                 }).catch(() => {
-                    // Browser may still block autoplay on first load until user gesture is confirmed.
+                    // Browser blocks autoplay on deployed pages until the first real user gesture.
                     setTimeout(() => {
                         try {
                             if (countdownAudioDisabled || !countdownAudioAllowed) return;
@@ -1440,14 +1509,16 @@
             } catch (e) {}
         }
 
-        window.addEventListener('pointerdown', unlockCountdownAudio, { once: true, passive: true });
-        window.addEventListener('touchstart', unlockCountdownAudio, { once: true, passive: true });
-        document.addEventListener('click', unlockCountdownAudio, { once: true, passive: true });
-        document.addEventListener('keydown', unlockCountdownAudio, { once: true });
+        // Countdown/audio must only start from the explicit intro start button.
+        // Browser autoplay policies block auto-starting on page load or on unrelated clicks.
+        window.removeEventListener('pointerdown', unlockCountdownAudio);
+        window.removeEventListener('touchstart', unlockCountdownAudio);
+        document.removeEventListener('click', unlockCountdownAudio);
+        document.removeEventListener('keydown', unlockCountdownAudio);
 
         if (introScreen) {
-            introScreen.addEventListener('pointerdown', unlockCountdownAudio, { once: true, passive: true });
-            introScreen.addEventListener('click', unlockCountdownAudio, { once: true, passive: true });
+            introScreen.removeEventListener('pointerdown', unlockCountdownAudio);
+            introScreen.removeEventListener('click', unlockCountdownAudio);
         }
         
 const message =
@@ -1614,6 +1685,7 @@ const message =
         let introInterval;
         let introEffectTimer;
         let introConfettiTimer;
+        let introStarted = false;
 
         function updateIntroCountdown() {
             if (daysEl) daysEl.textContent = '00';
@@ -1689,7 +1761,7 @@ const message =
         }
 
         async function startIntroCountdown() {
-            if (countdownAudio) {
+            if (countdownAudio && countdownAudioUnlocked) {
                 attemptCountdownPlay();
             }
             // start gentle visual effects while waiting
@@ -1728,13 +1800,29 @@ const message =
             }, 1000);
         }
 
+        function startIntroSequence() {
+            if (introStarted) return;
+            introStarted = true;
+            if (introStartOverlay) {
+                introStartOverlay.classList.add('hidden');
+            }
+            unlockCountdownAudio();
+            startIntroCountdown();
+        }
+
+        if (introStartOverlay) {
+            introStartOverlay.addEventListener('click', (event) => {
+                event.preventDefault();
+                event.stopPropagation();
+                startIntroSequence();
+            }, { once: true });
+        }
+
         if (enterMainBtn) {
             enterMainBtn.addEventListener('click', () => {
                 enterMainScreen();
             });
         }
-
-        startIntroCountdown();
 
         // Gift Logic
         function openCakeModal() {
@@ -3092,20 +3180,27 @@ const positions = [
         }
 
         function launchConfetti(){
-            const container = document.createElement('div'); container.className = 'confetti-container'; document.body.appendChild(container);
-            const colors = ['#ff4da6','#ffd166','#a0e7e5','#ff8fab','#cdb4db','#ffd1a9'];
-            const count = 56;
+            const container = document.createElement('div'); container.className = 'magic-burst'; document.body.appendChild(container);
+            const colors = ['#ff5ebc','#ffd166','#7de7d0','#ff9ec7','#c8b6ff','#f9c784','#ffffff'];
+            const count = 54;
             for(let i=0;i<count;i++){
-                const piece = document.createElement('div'); piece.className = 'confetti-piece';
-                piece.style.background = colors[Math.floor(Math.random()*colors.length)];
-                piece.style.left = (20 + Math.random()*60) + '%';
-                piece.style.top = (-5 + Math.random()*6) + 'vh';
-                piece.style.transform = `rotate(${Math.random()*360}deg)`;
-                const delay = Math.random()*300; piece.style.animationDelay = delay+'ms';
-                piece.style.width = (8 + Math.random()*8) + 'px'; piece.style.height = (12 + Math.random()*10) + 'px';
+                const piece = document.createElement('div');
+                const typeRoll = Math.random();
+                piece.className = typeRoll > 0.65 ? 'magic-piece ring' : typeRoll > 0.32 ? 'magic-piece star' : 'magic-piece petal';
+                const color = colors[Math.floor(Math.random()*colors.length)];
+                piece.style.color = color;
+                piece.style.background = typeRoll > 0.65 ? 'transparent' : color;
+                piece.style.setProperty('--dx', `${(Math.random() - 0.5) * 520}px`);
+                piece.style.setProperty('--dy', `${-120 + Math.random() * 360}px`);
+                piece.style.setProperty('--rot', `${(Math.random() - 0.5) * 720}deg`);
+                piece.style.left = '50%';
+                piece.style.top = '50%';
+                const delay = Math.random()*220;
+                piece.style.animationDelay = delay + 'ms';
+                piece.style.filter = 'drop-shadow(0 0 10px ' + color + ')';
                 container.appendChild(piece);
             }
-            setTimeout(()=>{ container.remove(); }, 3800);
+            setTimeout(()=>{ container.remove(); }, 3400);
         }
 
         function showWish(){
